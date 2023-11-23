@@ -41,13 +41,15 @@
             this.but20t = new System.Windows.Forms.Button();
             this.but10t = new System.Windows.Forms.Button();
             this.choose2 = new System.Windows.Forms.Label();
+            this.fons = new System.Windows.Forms.Label();
+            this.fons2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gName
             // 
             this.gName.AutoSize = true;
             this.gName.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.gName.Location = new System.Drawing.Point(186, 36);
+            this.gName.Location = new System.Drawing.Point(203, 34);
             this.gName.Name = "gName";
             this.gName.Size = new System.Drawing.Size(405, 58);
             this.gName.TabIndex = 0;
@@ -84,16 +86,19 @@
             this.but10.TabIndex = 5;
             this.but10.Text = "10";
             this.but10.UseVisualStyleBackColor = true;
+            this.but10.Visible = false;
+            this.but10.Click += new System.EventHandler(this.but10_Click);
             // 
             // choose1
             // 
-            this.choose1.AutoSize = true;
+            this.choose1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.choose1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.choose1.Location = new System.Drawing.Point(132, 191);
+            this.choose1.Location = new System.Drawing.Point(120, 191);
             this.choose1.Name = "choose1";
-            this.choose1.Size = new System.Drawing.Size(142, 25);
+            this.choose1.Size = new System.Drawing.Size(173, 32);
             this.choose1.TabIndex = 6;
-            this.choose1.Text = "Cik lauciņus?";
+            this.choose1.Text = " Cik lauciņus?";
+            this.choose1.Visible = false;
             this.choose1.Click += new System.EventHandler(this.choose1_Click);
             // 
             // but20
@@ -105,6 +110,8 @@
             this.but20.TabIndex = 7;
             this.but20.Text = "20";
             this.but20.UseVisualStyleBackColor = true;
+            this.but20.Visible = false;
+            this.but20.Click += new System.EventHandler(this.but20_Click);
             // 
             // but40
             // 
@@ -115,6 +122,8 @@
             this.but40.TabIndex = 8;
             this.but40.Text = "40";
             this.but40.UseVisualStyleBackColor = true;
+            this.but40.Visible = false;
+            this.but40.Click += new System.EventHandler(this.but40_Click);
             // 
             // but50
             // 
@@ -125,6 +134,8 @@
             this.but50.TabIndex = 9;
             this.but50.Text = "50";
             this.but50.UseVisualStyleBackColor = true;
+            this.but50.Visible = false;
+            this.but50.Click += new System.EventHandler(this.but50_Click);
             // 
             // but50t
             // 
@@ -135,6 +146,8 @@
             this.but50t.TabIndex = 17;
             this.but50t.Text = "50";
             this.but50t.UseVisualStyleBackColor = true;
+            this.but50t.Visible = false;
+            this.but50t.Click += new System.EventHandler(this.but50t_Click);
             // 
             // but40t
             // 
@@ -145,6 +158,8 @@
             this.but40t.TabIndex = 16;
             this.but40t.Text = "40";
             this.but40t.UseVisualStyleBackColor = true;
+            this.but40t.Visible = false;
+            this.but40t.Click += new System.EventHandler(this.but40t_Click);
             // 
             // but20t
             // 
@@ -155,6 +170,8 @@
             this.but20t.TabIndex = 15;
             this.but20t.Text = "20";
             this.but20t.UseVisualStyleBackColor = true;
+            this.but20t.Visible = false;
+            this.but20t.Click += new System.EventHandler(this.but20t_Click);
             // 
             // but10t
             // 
@@ -165,22 +182,48 @@
             this.but10t.TabIndex = 14;
             this.but10t.Text = "10";
             this.but10t.UseVisualStyleBackColor = true;
+            this.but10t.Visible = false;
+            this.but10t.Click += new System.EventHandler(this.but10t_Click);
             // 
             // choose2
             // 
-            this.choose2.AutoSize = true;
+            this.choose2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.choose2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.choose2.Location = new System.Drawing.Point(506, 191);
+            this.choose2.Location = new System.Drawing.Point(520, 191);
             this.choose2.Name = "choose2";
-            this.choose2.Size = new System.Drawing.Size(142, 25);
+            this.choose2.Size = new System.Drawing.Size(168, 32);
             this.choose2.TabIndex = 18;
             this.choose2.Text = "Cik lauciņus?";
+            this.choose2.Visible = false;
+            // 
+            // fons
+            // 
+            this.fons.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.fons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fons.Location = new System.Drawing.Point(78, 182);
+            this.fons.Name = "fons";
+            this.fons.Size = new System.Drawing.Size(238, 114);
+            this.fons.TabIndex = 19;
+            this.fons.Visible = false;
+            this.fons.Click += new System.EventHandler(this.fons_Click);
+            // 
+            // fons2
+            // 
+            this.fons2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.fons2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fons2.Location = new System.Drawing.Point(467, 182);
+            this.fons2.Name = "fons2";
+            this.fons2.Size = new System.Drawing.Size(240, 114);
+            this.fons2.TabIndex = 20;
+            this.fons2.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fons2);
+            this.Controls.Add(this.fons);
             this.Controls.Add(this.choose2);
             this.Controls.Add(this.but50t);
             this.Controls.Add(this.but40t);
@@ -219,6 +262,8 @@
         private System.Windows.Forms.Button but20t;
         private System.Windows.Forms.Button but10t;
         private System.Windows.Forms.Label choose2;
+        private System.Windows.Forms.Label fons;
+        private System.Windows.Forms.Label fons2;
     }
 }
 

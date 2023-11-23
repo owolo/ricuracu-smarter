@@ -10,3 +10,15 @@ C:\Users\Chris\Downloads\skolas coding\c#\Ricu Racu\obj\Debug\Ricu Racu.csproj.G
 C:\Users\Chris\Downloads\skolas coding\c#\Ricu Racu\obj\Debug\Ricu Racu.csproj.CoreCompileInputs.cache
 C:\Users\Chris\Downloads\skolas coding\c#\Ricu Racu\obj\Debug\Ricu Racu.exe
 C:\Users\Chris\Downloads\skolas coding\c#\Ricu Racu\obj\Debug\Ricu Racu.pdb
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.csproj.AssemblyReference.cache
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form1.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form2.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form3.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Properties.Resources.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.csproj.GenerateResource.cache
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.exe
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.pdb
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.exe.config
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.exe
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.pdb
