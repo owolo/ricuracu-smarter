@@ -116,49 +116,57 @@ namespace Ricu_Racu
         private void but10_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 spele = new Form2();
+            Form2 spele = new Form2(10);
             spele.Show();
         }
 
         private void but20_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 spele = new Form2();
+            Form2 spele = new Form2(20);
             spele.Show();
         }
 
         private void but40_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 spele = new Form2();
+            Form2 spele = new Form2(40);
             spele.Show();
         }
 
         private void but50_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 spele = new Form2();
+            Form2 spele = new Form2(50);
             spele.Show();
         }
 
         private void but10t_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form2 spele = new Form2(10);
+            spele.Show();
         }
 
         private void but20t_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form2 spele = new Form2(20);
+            spele.Show();
         }
 
         private void but40t_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form2 spele = new Form2(40);
+            spele.Show();
         }
 
         private void but50t_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Form2 spele = new Form2(50);
+            spele.Show();
         }
 
         private void fons_Click(object sender, EventArgs e)

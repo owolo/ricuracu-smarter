@@ -41,28 +41,28 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.izm5050 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.block1 = new System.Windows.Forms.Label();
+            this.block2 = new System.Windows.Forms.Label();
+            this.block3 = new System.Windows.Forms.Label();
+            this.block4 = new System.Windows.Forms.Label();
+            this.block5 = new System.Windows.Forms.Label();
+            this.block6 = new System.Windows.Forms.Label();
+            this.block7 = new System.Windows.Forms.Label();
+            this.block8 = new System.Windows.Forms.Label();
+            this.block9 = new System.Windows.Forms.Label();
+            this.block10 = new System.Windows.Forms.Label();
+            this.block11 = new System.Windows.Forms.Label();
+            this.block12 = new System.Windows.Forms.Label();
+            this.block13 = new System.Windows.Forms.Label();
+            this.block14 = new System.Windows.Forms.Label();
+            this.block15 = new System.Windows.Forms.Label();
+            this.block16 = new System.Windows.Forms.Label();
+            this.block17 = new System.Windows.Forms.Label();
+            this.block18 = new System.Windows.Forms.Label();
+            this.block19 = new System.Windows.Forms.Label();
+            this.block20 = new System.Windows.Forms.Label();
+            this.spawnRed = new System.Windows.Forms.Label();
+            this.spawnGreen = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -172,7 +172,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(634, 371);
+            this.pictureBox1.Location = new System.Drawing.Point(647, 382);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 172);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -202,198 +202,212 @@
             this.izm5050.UseVisualStyleBackColor = true;
             this.izm5050.Click += new System.EventHandler(this.izm5050_Click);
             // 
-            // label1
+            // block1
             // 
-            this.label1.BackColor = System.Drawing.Color.Silver;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(87, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 61);
-            this.label1.TabIndex = 12;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.block1.BackColor = System.Drawing.Color.Silver;
+            this.block1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block1.Location = new System.Drawing.Point(87, 55);
+            this.block1.Name = "block1";
+            this.block1.Size = new System.Drawing.Size(66, 61);
+            this.block1.TabIndex = 12;
+            this.block1.Visible = false;
+            this.block1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // block2
             // 
-            this.label2.BackColor = System.Drawing.Color.Silver;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(159, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 61);
-            this.label2.TabIndex = 13;
+            this.block2.BackColor = System.Drawing.Color.Silver;
+            this.block2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block2.Location = new System.Drawing.Point(159, 55);
+            this.block2.Name = "block2";
+            this.block2.Size = new System.Drawing.Size(66, 61);
+            this.block2.TabIndex = 13;
+            this.block2.Visible = false;
             // 
-            // label3
+            // block3
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(303, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 61);
-            this.label3.TabIndex = 15;
+            this.block3.BackColor = System.Drawing.Color.Silver;
+            this.block3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block3.Location = new System.Drawing.Point(303, 55);
+            this.block3.Name = "block3";
+            this.block3.Size = new System.Drawing.Size(66, 61);
+            this.block3.TabIndex = 15;
+            this.block3.Visible = false;
             // 
-            // label4
+            // block4
             // 
-            this.label4.BackColor = System.Drawing.Color.Silver;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(231, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 61);
-            this.label4.TabIndex = 14;
+            this.block4.BackColor = System.Drawing.Color.Silver;
+            this.block4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block4.Location = new System.Drawing.Point(231, 55);
+            this.block4.Name = "block4";
+            this.block4.Size = new System.Drawing.Size(66, 61);
+            this.block4.TabIndex = 14;
+            this.block4.Visible = false;
             // 
-            // label5
+            // block5
             // 
-            this.label5.BackColor = System.Drawing.Color.Silver;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(447, 55);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 61);
-            this.label5.TabIndex = 17;
+            this.block5.BackColor = System.Drawing.Color.Silver;
+            this.block5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block5.Location = new System.Drawing.Point(447, 55);
+            this.block5.Name = "block5";
+            this.block5.Size = new System.Drawing.Size(66, 61);
+            this.block5.TabIndex = 17;
+            this.block5.Visible = false;
             // 
-            // label6
+            // block6
             // 
-            this.label6.BackColor = System.Drawing.Color.Silver;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(375, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 61);
-            this.label6.TabIndex = 16;
+            this.block6.BackColor = System.Drawing.Color.Silver;
+            this.block6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block6.Location = new System.Drawing.Point(375, 55);
+            this.block6.Name = "block6";
+            this.block6.Size = new System.Drawing.Size(66, 61);
+            this.block6.TabIndex = 16;
+            this.block6.Visible = false;
             // 
-            // label7
+            // block7
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(591, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 61);
-            this.label7.TabIndex = 19;
+            this.block7.BackColor = System.Drawing.Color.Silver;
+            this.block7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block7.Location = new System.Drawing.Point(591, 55);
+            this.block7.Name = "block7";
+            this.block7.Size = new System.Drawing.Size(66, 61);
+            this.block7.TabIndex = 19;
+            this.block7.Visible = false;
             // 
-            // label8
+            // block8
             // 
-            this.label8.BackColor = System.Drawing.Color.Silver;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Location = new System.Drawing.Point(519, 55);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 61);
-            this.label8.TabIndex = 18;
+            this.block8.BackColor = System.Drawing.Color.Silver;
+            this.block8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block8.Location = new System.Drawing.Point(519, 55);
+            this.block8.Name = "block8";
+            this.block8.Size = new System.Drawing.Size(66, 61);
+            this.block8.TabIndex = 18;
+            this.block8.Visible = false;
             // 
-            // label9
+            // block9
             // 
-            this.label9.BackColor = System.Drawing.Color.Silver;
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label9.Location = new System.Drawing.Point(735, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(66, 61);
-            this.label9.TabIndex = 21;
+            this.block9.BackColor = System.Drawing.Color.Silver;
+            this.block9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block9.Location = new System.Drawing.Point(735, 55);
+            this.block9.Name = "block9";
+            this.block9.Size = new System.Drawing.Size(66, 61);
+            this.block9.TabIndex = 21;
+            this.block9.Visible = false;
             // 
-            // label10
+            // block10
             // 
-            this.label10.BackColor = System.Drawing.Color.Silver;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(663, 55);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 61);
-            this.label10.TabIndex = 20;
+            this.block10.BackColor = System.Drawing.Color.Silver;
+            this.block10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block10.Location = new System.Drawing.Point(663, 55);
+            this.block10.Name = "block10";
+            this.block10.Size = new System.Drawing.Size(66, 61);
+            this.block10.TabIndex = 20;
+            this.block10.Visible = false;
             // 
-            // label11
+            // block11
             // 
-            this.label11.BackColor = System.Drawing.Color.Silver;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(735, 146);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 61);
-            this.label11.TabIndex = 31;
+            this.block11.BackColor = System.Drawing.Color.Silver;
+            this.block11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block11.Location = new System.Drawing.Point(735, 146);
+            this.block11.Name = "block11";
+            this.block11.Size = new System.Drawing.Size(66, 61);
+            this.block11.TabIndex = 31;
             // 
-            // label12
+            // block12
             // 
-            this.label12.BackColor = System.Drawing.Color.Silver;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(663, 146);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 61);
-            this.label12.TabIndex = 30;
+            this.block12.BackColor = System.Drawing.Color.Silver;
+            this.block12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block12.Location = new System.Drawing.Point(663, 146);
+            this.block12.Name = "block12";
+            this.block12.Size = new System.Drawing.Size(66, 61);
+            this.block12.TabIndex = 30;
             // 
-            // label13
+            // block13
             // 
-            this.label13.BackColor = System.Drawing.Color.Silver;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label13.Location = new System.Drawing.Point(591, 146);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 61);
-            this.label13.TabIndex = 29;
+            this.block13.BackColor = System.Drawing.Color.Silver;
+            this.block13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block13.Location = new System.Drawing.Point(591, 146);
+            this.block13.Name = "block13";
+            this.block13.Size = new System.Drawing.Size(66, 61);
+            this.block13.TabIndex = 29;
             // 
-            // label14
+            // block14
             // 
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Location = new System.Drawing.Point(519, 146);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 61);
-            this.label14.TabIndex = 28;
+            this.block14.BackColor = System.Drawing.Color.Silver;
+            this.block14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block14.Location = new System.Drawing.Point(519, 146);
+            this.block14.Name = "block14";
+            this.block14.Size = new System.Drawing.Size(66, 61);
+            this.block14.TabIndex = 28;
             // 
-            // label15
+            // block15
             // 
-            this.label15.BackColor = System.Drawing.Color.Silver;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Location = new System.Drawing.Point(447, 146);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(66, 61);
-            this.label15.TabIndex = 27;
+            this.block15.BackColor = System.Drawing.Color.Silver;
+            this.block15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block15.Location = new System.Drawing.Point(447, 146);
+            this.block15.Name = "block15";
+            this.block15.Size = new System.Drawing.Size(66, 61);
+            this.block15.TabIndex = 27;
             // 
-            // label16
+            // block16
             // 
-            this.label16.BackColor = System.Drawing.Color.Silver;
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label16.Location = new System.Drawing.Point(375, 146);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 61);
-            this.label16.TabIndex = 26;
+            this.block16.BackColor = System.Drawing.Color.Silver;
+            this.block16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block16.Location = new System.Drawing.Point(375, 146);
+            this.block16.Name = "block16";
+            this.block16.Size = new System.Drawing.Size(66, 61);
+            this.block16.TabIndex = 26;
             // 
-            // label17
+            // block17
             // 
-            this.label17.BackColor = System.Drawing.Color.Silver;
-            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label17.Location = new System.Drawing.Point(303, 146);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 61);
-            this.label17.TabIndex = 25;
+            this.block17.BackColor = System.Drawing.Color.Silver;
+            this.block17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block17.Location = new System.Drawing.Point(303, 146);
+            this.block17.Name = "block17";
+            this.block17.Size = new System.Drawing.Size(66, 61);
+            this.block17.TabIndex = 25;
             // 
-            // label18
+            // block18
             // 
-            this.label18.BackColor = System.Drawing.Color.Silver;
-            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label18.Location = new System.Drawing.Point(231, 146);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 61);
-            this.label18.TabIndex = 24;
+            this.block18.BackColor = System.Drawing.Color.Silver;
+            this.block18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block18.Location = new System.Drawing.Point(231, 146);
+            this.block18.Name = "block18";
+            this.block18.Size = new System.Drawing.Size(66, 61);
+            this.block18.TabIndex = 24;
             // 
-            // label19
+            // block19
             // 
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Location = new System.Drawing.Point(159, 146);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(66, 61);
-            this.label19.TabIndex = 23;
+            this.block19.BackColor = System.Drawing.Color.Silver;
+            this.block19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block19.Location = new System.Drawing.Point(159, 146);
+            this.block19.Name = "block19";
+            this.block19.Size = new System.Drawing.Size(66, 61);
+            this.block19.TabIndex = 23;
             // 
-            // label20
+            // block20
             // 
-            this.label20.BackColor = System.Drawing.Color.Silver;
-            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label20.Location = new System.Drawing.Point(87, 146);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(66, 61);
-            this.label20.TabIndex = 22;
+            this.block20.BackColor = System.Drawing.Color.Silver;
+            this.block20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.block20.Location = new System.Drawing.Point(87, 146);
+            this.block20.Name = "block20";
+            this.block20.Size = new System.Drawing.Size(66, 61);
+            this.block20.TabIndex = 22;
             // 
-            // label21
+            // spawnRed
             // 
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(15, 101);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(66, 61);
-            this.label21.TabIndex = 32;
+            this.spawnRed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.spawnRed.Location = new System.Drawing.Point(15, 101);
+            this.spawnRed.Name = "spawnRed";
+            this.spawnRed.Size = new System.Drawing.Size(66, 61);
+            this.spawnRed.TabIndex = 32;
             // 
-            // label22
+            // spawnGreen
             // 
-            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label22.Location = new System.Drawing.Point(807, 101);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 61);
-            this.label22.TabIndex = 33;
+            this.spawnGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.spawnGreen.Location = new System.Drawing.Point(807, 101);
+            this.spawnGreen.Name = "spawnGreen";
+            this.spawnGreen.Size = new System.Drawing.Size(66, 61);
+            this.spawnGreen.TabIndex = 33;
             // 
             // pictureBox2
             // 
@@ -417,6 +431,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 35;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -428,18 +443,20 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 36;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Silver;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(591, 55);
+            this.pictureBox5.Location = new System.Drawing.Point(786, 275);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(66, 61);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 37;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Visible = false;
             // 
             // pictureBox6
             // 
@@ -451,6 +468,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 38;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Visible = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
@@ -463,6 +481,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 39;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Visible = false;
             // 
             // time
             // 
@@ -489,28 +508,28 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.spawnGreen);
+            this.Controls.Add(this.spawnRed);
+            this.Controls.Add(this.block11);
+            this.Controls.Add(this.block12);
+            this.Controls.Add(this.block13);
+            this.Controls.Add(this.block14);
+            this.Controls.Add(this.block15);
+            this.Controls.Add(this.block16);
+            this.Controls.Add(this.block17);
+            this.Controls.Add(this.block18);
+            this.Controls.Add(this.block19);
+            this.Controls.Add(this.block20);
+            this.Controls.Add(this.block9);
+            this.Controls.Add(this.block10);
+            this.Controls.Add(this.block7);
+            this.Controls.Add(this.block8);
+            this.Controls.Add(this.block5);
+            this.Controls.Add(this.block6);
+            this.Controls.Add(this.block3);
+            this.Controls.Add(this.block4);
+            this.Controls.Add(this.block2);
+            this.Controls.Add(this.block1);
             this.Controls.Add(this.izm5050);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -555,28 +574,28 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button izm5050;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label block1;
+        private System.Windows.Forms.Label block2;
+        private System.Windows.Forms.Label block3;
+        private System.Windows.Forms.Label block4;
+        private System.Windows.Forms.Label block5;
+        private System.Windows.Forms.Label block6;
+        private System.Windows.Forms.Label block7;
+        private System.Windows.Forms.Label block8;
+        private System.Windows.Forms.Label block9;
+        private System.Windows.Forms.Label block10;
+        private System.Windows.Forms.Label block11;
+        private System.Windows.Forms.Label block12;
+        private System.Windows.Forms.Label block13;
+        private System.Windows.Forms.Label block14;
+        private System.Windows.Forms.Label block15;
+        private System.Windows.Forms.Label block16;
+        private System.Windows.Forms.Label block17;
+        private System.Windows.Forms.Label block18;
+        private System.Windows.Forms.Label block19;
+        private System.Windows.Forms.Label block20;
+        private System.Windows.Forms.Label spawnRed;
+        private System.Windows.Forms.Label spawnGreen;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
