@@ -311,6 +311,7 @@
             this.block11.Name = "block11";
             this.block11.Size = new System.Drawing.Size(66, 61);
             this.block11.TabIndex = 31;
+            this.block11.Visible = false;
             // 
             // block12
             // 
@@ -320,6 +321,7 @@
             this.block12.Name = "block12";
             this.block12.Size = new System.Drawing.Size(66, 61);
             this.block12.TabIndex = 30;
+            this.block12.Visible = false;
             // 
             // block13
             // 
@@ -329,6 +331,7 @@
             this.block13.Name = "block13";
             this.block13.Size = new System.Drawing.Size(66, 61);
             this.block13.TabIndex = 29;
+            this.block13.Visible = false;
             // 
             // block14
             // 
@@ -338,6 +341,7 @@
             this.block14.Name = "block14";
             this.block14.Size = new System.Drawing.Size(66, 61);
             this.block14.TabIndex = 28;
+            this.block14.Visible = false;
             // 
             // block15
             // 
@@ -347,6 +351,7 @@
             this.block15.Name = "block15";
             this.block15.Size = new System.Drawing.Size(66, 61);
             this.block15.TabIndex = 27;
+            this.block15.Visible = false;
             // 
             // block16
             // 
@@ -356,6 +361,7 @@
             this.block16.Name = "block16";
             this.block16.Size = new System.Drawing.Size(66, 61);
             this.block16.TabIndex = 26;
+            this.block16.Visible = false;
             // 
             // block17
             // 
@@ -365,6 +371,7 @@
             this.block17.Name = "block17";
             this.block17.Size = new System.Drawing.Size(66, 61);
             this.block17.TabIndex = 25;
+            this.block17.Visible = false;
             // 
             // block18
             // 
@@ -374,6 +381,7 @@
             this.block18.Name = "block18";
             this.block18.Size = new System.Drawing.Size(66, 61);
             this.block18.TabIndex = 24;
+            this.block18.Visible = false;
             // 
             // block19
             // 
@@ -383,6 +391,7 @@
             this.block19.Name = "block19";
             this.block19.Size = new System.Drawing.Size(66, 61);
             this.block19.TabIndex = 23;
+            this.block19.Visible = false;
             // 
             // block20
             // 
@@ -392,6 +401,7 @@
             this.block20.Name = "block20";
             this.block20.Size = new System.Drawing.Size(66, 61);
             this.block20.TabIndex = 22;
+            this.block20.Visible = false;
             // 
             // spawnRed
             // 
@@ -450,7 +460,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Silver;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(786, 275);
+            this.pictureBox5.Location = new System.Drawing.Point(591, 55);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(66, 61);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

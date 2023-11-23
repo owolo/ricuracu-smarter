@@ -31,13 +31,9 @@
             this.gName = new System.Windows.Forms.Label();
             this.onePlay = new System.Windows.Forms.Button();
             this.twoPlay = new System.Windows.Forms.Button();
-            this.but10 = new System.Windows.Forms.Button();
             this.choose1 = new System.Windows.Forms.Label();
+            this.but10 = new System.Windows.Forms.Button();
             this.but20 = new System.Windows.Forms.Button();
-            this.but40 = new System.Windows.Forms.Button();
-            this.but50 = new System.Windows.Forms.Button();
-            this.but50t = new System.Windows.Forms.Button();
-            this.but40t = new System.Windows.Forms.Button();
             this.but20t = new System.Windows.Forms.Button();
             this.but10t = new System.Windows.Forms.Button();
             this.choose2 = new System.Windows.Forms.Label();
@@ -77,18 +73,6 @@
             this.twoPlay.UseVisualStyleBackColor = true;
             this.twoPlay.Click += new System.EventHandler(this.twoPlay_Click);
             // 
-            // but10
-            // 
-            this.but10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but10.Location = new System.Drawing.Point(87, 246);
-            this.but10.Name = "but10";
-            this.but10.Size = new System.Drawing.Size(44, 42);
-            this.but10.TabIndex = 5;
-            this.but10.Text = "10";
-            this.but10.UseVisualStyleBackColor = true;
-            this.but10.Visible = false;
-            this.but10.Click += new System.EventHandler(this.but10_Click);
-            // 
             // choose1
             // 
             this.choose1.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -101,89 +85,53 @@
             this.choose1.Visible = false;
             this.choose1.Click += new System.EventHandler(this.choose1_Click);
             // 
+            // but10
+            // 
+            this.but10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.but10.Location = new System.Drawing.Point(125, 246);
+            this.but10.Name = "but10";
+            this.but10.Size = new System.Drawing.Size(44, 42);
+            this.but10.TabIndex = 7;
+            this.but10.Text = "10";
+            this.but10.UseVisualStyleBackColor = true;
+            this.but10.Visible = false;
+            this.but10.Click += new System.EventHandler(this.but10_Click);
+            // 
             // but20
             // 
             this.but20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but20.Location = new System.Drawing.Point(137, 246);
+            this.but20.Location = new System.Drawing.Point(213, 246);
             this.but20.Name = "but20";
             this.but20.Size = new System.Drawing.Size(44, 42);
-            this.but20.TabIndex = 7;
+            this.but20.TabIndex = 8;
             this.but20.Text = "20";
             this.but20.UseVisualStyleBackColor = true;
             this.but20.Visible = false;
             this.but20.Click += new System.EventHandler(this.but20_Click);
             // 
-            // but40
-            // 
-            this.but40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but40.Location = new System.Drawing.Point(213, 246);
-            this.but40.Name = "but40";
-            this.but40.Size = new System.Drawing.Size(44, 42);
-            this.but40.TabIndex = 8;
-            this.but40.Text = "40";
-            this.but40.UseVisualStyleBackColor = true;
-            this.but40.Visible = false;
-            this.but40.Click += new System.EventHandler(this.but40_Click);
-            // 
-            // but50
-            // 
-            this.but50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but50.Location = new System.Drawing.Point(263, 246);
-            this.but50.Name = "but50";
-            this.but50.Size = new System.Drawing.Size(44, 42);
-            this.but50.TabIndex = 9;
-            this.but50.Text = "50";
-            this.but50.UseVisualStyleBackColor = true;
-            this.but50.Visible = false;
-            this.but50.Click += new System.EventHandler(this.but50_Click);
-            // 
-            // but50t
-            // 
-            this.but50t.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but50t.Location = new System.Drawing.Point(654, 246);
-            this.but50t.Name = "but50t";
-            this.but50t.Size = new System.Drawing.Size(44, 42);
-            this.but50t.TabIndex = 17;
-            this.but50t.Text = "50";
-            this.but50t.UseVisualStyleBackColor = true;
-            this.but50t.Visible = false;
-            this.but50t.Click += new System.EventHandler(this.but50t_Click);
-            // 
-            // but40t
-            // 
-            this.but40t.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but40t.Location = new System.Drawing.Point(604, 246);
-            this.but40t.Name = "but40t";
-            this.but40t.Size = new System.Drawing.Size(44, 42);
-            this.but40t.TabIndex = 16;
-            this.but40t.Text = "40";
-            this.but40t.UseVisualStyleBackColor = true;
-            this.but40t.Visible = false;
-            this.but40t.Click += new System.EventHandler(this.but40t_Click);
-            // 
             // but20t
             // 
             this.but20t.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but20t.Location = new System.Drawing.Point(528, 246);
+            this.but20t.Location = new System.Drawing.Point(604, 246);
             this.but20t.Name = "but20t";
             this.but20t.Size = new System.Drawing.Size(44, 42);
-            this.but20t.TabIndex = 15;
+            this.but20t.TabIndex = 16;
             this.but20t.Text = "20";
             this.but20t.UseVisualStyleBackColor = true;
             this.but20t.Visible = false;
-            this.but20t.Click += new System.EventHandler(this.but20t_Click);
+            this.but20t.Click += new System.EventHandler(this.but10t_Click);
             // 
             // but10t
             // 
             this.but10t.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but10t.Location = new System.Drawing.Point(478, 246);
+            this.but10t.Location = new System.Drawing.Point(528, 246);
             this.but10t.Name = "but10t";
             this.but10t.Size = new System.Drawing.Size(44, 42);
-            this.but10t.TabIndex = 14;
+            this.but10t.TabIndex = 15;
             this.but10t.Text = "10";
             this.but10t.UseVisualStyleBackColor = true;
             this.but10t.Visible = false;
-            this.but10t.Click += new System.EventHandler(this.but10t_Click);
+            this.but10t.Click += new System.EventHandler(this.but20t_Click);
             // 
             // choose2
             // 
@@ -225,15 +173,11 @@
             this.Controls.Add(this.fons2);
             this.Controls.Add(this.fons);
             this.Controls.Add(this.choose2);
-            this.Controls.Add(this.but50t);
-            this.Controls.Add(this.but40t);
             this.Controls.Add(this.but20t);
             this.Controls.Add(this.but10t);
-            this.Controls.Add(this.but50);
-            this.Controls.Add(this.but40);
             this.Controls.Add(this.but20);
-            this.Controls.Add(this.choose1);
             this.Controls.Add(this.but10);
+            this.Controls.Add(this.choose1);
             this.Controls.Add(this.twoPlay);
             this.Controls.Add(this.onePlay);
             this.Controls.Add(this.gName);
@@ -252,13 +196,9 @@
         private System.Windows.Forms.Label gName;
         private System.Windows.Forms.Button onePlay;
         private System.Windows.Forms.Button twoPlay;
-        private System.Windows.Forms.Button but10;
         private System.Windows.Forms.Label choose1;
+        private System.Windows.Forms.Button but10;
         private System.Windows.Forms.Button but20;
-        private System.Windows.Forms.Button but40;
-        private System.Windows.Forms.Button but50;
-        private System.Windows.Forms.Button but50t;
-        private System.Windows.Forms.Button but40t;
         private System.Windows.Forms.Button but20t;
         private System.Windows.Forms.Button but10t;
         private System.Windows.Forms.Label choose2;
