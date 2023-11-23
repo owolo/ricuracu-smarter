@@ -87,8 +87,20 @@ namespace Ricu_Racu
                 this.Size = new Size(1230, 580);
                 pictureBox2.Location = new Point(1145, 82);
                 spawnGreen.BackColor = Color.Silver;
-                pictureBox1.Location = new Point(1145, 82);
-                
+                pictureBox1.Location = new Point(960, 283);
+                jautajums.Location = new Point(480, 222);
+                time.Location = new Point(780, 222);
+                atbilde1.Location = new Point(495, 290);
+                atbilde2.Location = new Point(666, 290);
+                atbilde3.Location = new Point(495, 381);
+                atbilde4.Location = new Point(666, 381);
+                atbildeBut1.Location = new Point(450, 321);
+                atbildeBut2.Location = new Point(621, 321);
+                atbildeBut3.Location = new Point(450, 413);
+                atbildeBut4.Location = new Point(621, 413);
+                skipJaut.Location = new Point(455, 501);
+                izm5050.Location = new Point(628, 501);
+
                 for (int i = 0; i < blockSkaits; i++) //for green piece line
                 {
 

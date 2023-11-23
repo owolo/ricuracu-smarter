@@ -39,7 +39,7 @@
             this.atbilde3 = new System.Windows.Forms.Label();
             this.atbilde4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.skipJaut = new System.Windows.Forms.Button();
             this.izm5050 = new System.Windows.Forms.Button();
             this.block1 = new System.Windows.Forms.Label();
             this.block2 = new System.Windows.Forms.Label();
@@ -180,16 +180,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button1
+            // skipJaut
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.button1.Location = new System.Drawing.Point(87, 561);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 34);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Izlaist jautājumu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.skipJaut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.skipJaut.Location = new System.Drawing.Point(87, 561);
+            this.skipJaut.Name = "skipJaut";
+            this.skipJaut.Size = new System.Drawing.Size(131, 34);
+            this.skipJaut.TabIndex = 10;
+            this.skipJaut.Text = "Izlaist jautājumu";
+            this.skipJaut.UseVisualStyleBackColor = true;
+            this.skipJaut.Click += new System.EventHandler(this.button1_Click);
             // 
             // izm5050
             // 
@@ -541,7 +541,7 @@
             this.Controls.Add(this.block2);
             this.Controls.Add(this.block1);
             this.Controls.Add(this.izm5050);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.skipJaut);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.atbilde4);
             this.Controls.Add(this.atbilde3);
@@ -582,7 +582,7 @@
         private System.Windows.Forms.Label atbilde3;
         private System.Windows.Forms.Label atbilde4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button skipJaut;
         private System.Windows.Forms.Button izm5050;
         private System.Windows.Forms.Label block1;
         private System.Windows.Forms.Label block2;
