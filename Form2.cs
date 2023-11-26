@@ -36,32 +36,6 @@ namespace Ricu_Racu
             playerSkaits = izvPlayerSkaits;
         }
 
-        private void SpawnPowerUp()
-        {
-            Image supPowImage = Image.FromFile("question.png");
-            double space = 4;
-
-            PictureBox powerUp = new PictureBox
-            {
-                Size = new Size(blockGar, blockAug),
-                Image = supPowImage,
-                BackColor = Color.Silver,
-        };
-            int yPosition = random.Next(47, 120);  // Random position between the two lines
-
-            if (random.Next(0, 2) == 0)  // Randomly choose a side (left or right)
-            {
-                powerUp.Location = new Point(65, yPosition);
-            }
-            else
-            {
-                powerUp.Location = new Point ((int)(65 + (blockSkaits - 1) * (blockGar + space)), yPosition);
-            }
-
-            this.Controls.Add(powerUp);
-            powerUp.BringToFront();
-        }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             double space = 4;
@@ -87,6 +61,24 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
+                if (!supPowRedIr)
+                {
+                    PictureBox supPowRed = new PictureBox
+                    {
+                        Size = new Size(blockGar, blockAug),
+                        Image = supPowImage,
+                        BackColor = Color.Silver,
+                    };
+                    int yPosition = 82;  // Random position between the two lines
+                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+
+                    supPowRed.Location = new Point(xPosition, yPosition);
+
+                    this.Controls.Add(supPowRed);
+                    supPowRed.BringToFront();
+                    supPowRed.BorderStyle = BorderStyle.FixedSingle;
+                    supPowRedIr = true;
+                }
             }
             if (blockSkaits == 20 && playerSkaits == 1)
             {
@@ -109,7 +101,7 @@ namespace Ricu_Racu
                 pictureBox2.Visible = false;
                 spawnGreen.Visible = false;
 
-                for (int i = 0; i < blockSkaits; i++) //for green piece line
+                for (int i = 0; i < blockSkaits; i++) //for red piece line
                 {
 
                     Label block = new Label();
@@ -121,6 +113,24 @@ namespace Ricu_Racu
                     block.BorderStyle = BorderStyle.FixedSingle;
 
                     this.Controls.Add(block);
+                }
+                if (!supPowRedIr)
+                {
+                    PictureBox supPowRed = new PictureBox
+                    {
+                        Size = new Size(blockGar, blockAug),
+                        Image = supPowImage,
+                        BackColor = Color.Silver,
+                    };
+                    int yPosition = 82;  // Random position between the two lines
+                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+
+                    supPowRed.Location = new Point(xPosition, yPosition);
+
+                    this.Controls.Add(supPowRed);
+                    supPowRed.BringToFront();
+                    supPowRed.BorderStyle = BorderStyle.FixedSingle;
+                    supPowRedIr = true;
                 }
             }
             if (blockSkaits == 10 && playerSkaits == 2)
@@ -140,19 +150,21 @@ namespace Ricu_Racu
                     block.BorderStyle = BorderStyle.FixedSingle;
 
                     this.Controls.Add(block);
+
                     if (!supPowGreenIr)
                     {
                         PictureBox supPowGreen = new PictureBox
                         {
-                            Location = new Point(xP, 47),
-                            Image = supPowImage,
                             Size = new Size(blockGar, blockAug),
-                            Name = $"supPowGreen",
-                            BackColor = Color.Silver
+                            Image = supPowImage,
+                            BackColor = Color.Silver,
                         };
+                        int yPosition = 47;  // Random position between the two lines
+                        int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+
+                        supPowGreen.Location = new Point(xPosition, yPosition);
+
                         this.Controls.Add(supPowGreen);
-                        supPow.Visible = true;
-                        supPowGreen.Visible = true;
                         supPowGreen.BringToFront();
                         supPowGreen.BorderStyle = BorderStyle.FixedSingle;
                         supPowGreenIr = true;
@@ -175,14 +187,16 @@ namespace Ricu_Racu
                     {
                         PictureBox supPowRed = new PictureBox
                         {
-                            Location = new Point(xP, 120),
-                            Image = supPowImage,
                             Size = new Size(blockGar, blockAug),
-                            Name = $"supPowRed",
-                            BackColor = Color.Silver
+                            Image = supPowImage,
+                            BackColor = Color.Silver,
                         };
+                        int yPosition = 120;  // Random position between the two lines
+                        int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+
+                        supPowRed.Location = new Point(xPosition, yPosition);
+
                         this.Controls.Add(supPowRed);
-                        supPowRed.Visible = true;
                         supPowRed.BringToFront();
                         supPowRed.BorderStyle = BorderStyle.FixedSingle;
                         supPowRedIr = true;
@@ -221,6 +235,25 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
+                if (!supPowGreenIr)
+                {
+                    PictureBox supPowGreen = new PictureBox
+                    {
+                        Size = new Size(blockGar, blockAug),
+                        Image = supPowImage,
+                        BackColor = Color.Silver,
+                    };
+                    int yPosition = 47;  // Random position between the two lines
+                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+
+                    supPowGreen.Location = new Point(xPosition, yPosition);
+
+                    this.Controls.Add(supPowGreen);
+                    supPowGreen.BringToFront();
+                    supPowGreen.BorderStyle = BorderStyle.FixedSingle;
+                    supPowGreenIr = true;
+                }
+
                 for (int i = 0; i < blockSkaits; i++) //for red piece line
                 {
                     Label block = new Label();
@@ -233,7 +266,45 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
+                if (!supPowRedIr)
+                {
+                    PictureBox supPowRed = new PictureBox
+                    {
+                        Size = new Size(blockGar, blockAug),
+                        Image = supPowImage,
+                        BackColor = Color.Silver,
+                    };
+                    int yPosition = 120;  // Random position between the two lines
+                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+
+                    supPowRed.Location = new Point(xPosition, yPosition);
+
+                    this.Controls.Add(supPowRed);
+                    supPowRed.BringToFront();
+                    supPowRed.BorderStyle = BorderStyle.FixedSingle;
+                    supPowRedIr = true;
+                }
             }
+
+        }
+        private void SpawnPowerUp()
+        {
+            Image supPowImage = Image.FromFile("question.png");
+            double space = 4;
+
+            PictureBox powerUp = new PictureBox
+            {
+                Size = new Size(blockGar, blockAug),
+                Image = supPowImage,
+                BackColor = Color.Silver,
+            };
+            int yPosition = 47;  // Random position between the two lines
+            int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+
+            powerUp.Location = new Point(xPosition, yPosition);
+
+            this.Controls.Add(powerUp);
+            powerUp.BringToFront();
         }
 
         private void jautajums_Click(object sender, EventArgs e)

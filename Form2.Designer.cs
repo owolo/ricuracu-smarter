@@ -480,6 +480,7 @@
             this.supPow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.supPow.TabIndex = 39;
             this.supPow.TabStop = false;
+            this.supPow.Visible = false;
             // 
             // time
             // 
