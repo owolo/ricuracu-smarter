@@ -112,11 +112,11 @@
             // but20t
             // 
             this.but20t.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but20t.Location = new System.Drawing.Point(604, 246);
+            this.but20t.Location = new System.Drawing.Point(525, 246);
             this.but20t.Name = "but20t";
             this.but20t.Size = new System.Drawing.Size(44, 42);
             this.but20t.TabIndex = 16;
-            this.but20t.Text = "20";
+            this.but20t.Text = "10";
             this.but20t.UseVisualStyleBackColor = true;
             this.but20t.Visible = false;
             this.but20t.Click += new System.EventHandler(this.but10t_Click);
@@ -124,11 +124,11 @@
             // but10t
             // 
             this.but10t.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.but10t.Location = new System.Drawing.Point(528, 246);
+            this.but10t.Location = new System.Drawing.Point(616, 246);
             this.but10t.Name = "but10t";
             this.but10t.Size = new System.Drawing.Size(44, 42);
             this.but10t.TabIndex = 15;
-            this.but10t.Text = "10";
+            this.but10t.Text = "20";
             this.but10t.UseVisualStyleBackColor = true;
             this.but10t.Visible = false;
             this.but10t.Click += new System.EventHandler(this.but20t_Click);

@@ -39,7 +39,7 @@ namespace Ricu_Racu
                 but10.Visible = false;
             }
 
-            if (but10t.Visible == true)
+            if (but20t.Visible == true)
             {
                 but20.Visible = false;
             }
@@ -64,11 +64,6 @@ namespace Ricu_Racu
             if (choose1.Visible == true)
             {
                 choose2.Visible = false;
-            }
-
-            if (but10.Visible == true)
-            {
-                but10t.Visible = false;
             }
 
             if (but10.Visible == true)
@@ -115,10 +110,18 @@ namespace Ricu_Racu
 
         private void but10t_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 spele = new Form2(playerSkaits, 10);
-            spele.Show();
+            try
+            {
+                this.Hide();
+                Form2 spele = new Form2(playerSkaits, 10);
+                spele.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
+
 
         private void but20t_Click(object sender, EventArgs e)
         {

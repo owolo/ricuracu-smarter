@@ -13,10 +13,16 @@ namespace Ricu_Racu
 {
     public partial class Form2 : Form
     {
-        private int blockSkaits;
-        private int playerSkaits;
+        private readonly int blockSkaits;
+        private readonly int playerSkaits;
+        private int spawnSkaits = 0;
         private const int blockGar = 50;
         private const int blockAug = 50;
+        //private bool irIzm5050 = false;
+        //private bool irSkipJaut = false;
+        //bool supPowGreenIr = false;
+        private Random random = new Random();
+
         public Form2()
         {
             InitializeComponent();
@@ -30,20 +36,51 @@ namespace Ricu_Racu
             playerSkaits = izvPlayerSkaits;
         }
 
+        private void SpawnPowerUp()
+        {
+            Image supPowImage = Image.FromFile("question.png");
+            double space = 4;
+
+            PictureBox powerUp = new PictureBox
+            {
+                Size = new Size(blockGar, blockAug),
+                Image = supPowImage,
+                BackColor = Color.Silver,
+        };
+            int yPosition = random.Next(47, 120);  // Random position between the two lines
+
+            if (random.Next(0, 2) == 0)  // Randomly choose a side (left or right)
+            {
+                powerUp.Location = new Point(65, yPosition);
+            }
+            else
+            {
+                powerUp.Location = new Point ((int)(65 + (blockSkaits - 1) * (blockGar + space)), yPosition);
+            }
+
+            this.Controls.Add(powerUp);
+            powerUp.BringToFront();
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
             double space = 4;
+            bool supPowGreenIr = false;
+            bool supPowRedIr = false;
+            Image supPowImage = Image.FromFile("question.png");
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
-                this.Size = new Size(690, 550);
+                this.Size = new Size(650, 550);
+                pictureBox2.Visible = false;
+                spawnGreen.Visible = false;
 
                 for (int i = 0; i < blockSkaits; i++)  //for green piece line
                 {
                     Label block = new Label();
                     block.Size = new Size(blockGar, blockAug);
                     block.Text = $"";
-                    int xP = ((int)(65 + i * (blockGar + space)));
+                    int xP = (int)(65 + i * (blockGar + space));
                     block.Location = new Point(xP, 82);
                     block.BackColor = Color.Silver;
                     block.BorderStyle = BorderStyle.FixedSingle;
@@ -51,40 +88,9 @@ namespace Ricu_Racu
                     this.Controls.Add(block);
                 }
             }
-
-            if (blockSkaits == 10 && playerSkaits == 2)
-            {
-                this.Size = new Size(690, 550);
-
-                for (int i = 0; i < blockSkaits; i++)  //for green piece line
-                {
-                    Label block = new Label();
-                    block.Size = new Size(blockGar, blockAug);
-                    block.Text = $"";
-                    int xP = ((int)(65 + i * (blockGar + space)));
-                    block.Location = new Point(xP, 47);
-                    block.BackColor = Color.Silver;
-                    block.BorderStyle = BorderStyle.FixedSingle;
-
-                    this.Controls.Add(block);
-                }
-                for (int i = 0; i < blockSkaits; i++) //for red piece line
-                {
-                    Label block = new Label();
-                    block.Size = new Size(blockGar, blockAug);
-                    block.Text = $"";
-                    int xP = ((int)(65 + i * (blockGar + space)));
-                    block.Location = new Point(xP, 138);
-                    block.BackColor = Color.Silver;
-                    block.BorderStyle = BorderStyle.FixedSingle;
-
-                    this.Controls.Add(block);
-                }
-            }
-
             if (blockSkaits == 20 && playerSkaits == 1)
             {
-                this.Size = new Size(1230, 580);
+                this.Size = new Size(1200, 580);
                 pictureBox2.Location = new Point(1145, 82);
                 spawnGreen.BackColor = Color.Silver;
                 pictureBox1.Location = new Point(960, 283);
@@ -98,8 +104,10 @@ namespace Ricu_Racu
                 atbildeBut2.Location = new Point(621, 321);
                 atbildeBut3.Location = new Point(450, 413);
                 atbildeBut4.Location = new Point(621, 413);
-                skipJaut.Location = new Point(455, 501);
-                izm5050.Location = new Point(628, 501);
+                skipJaut.Location = new Point(455, 490);
+                izm5050.Location = new Point(628, 490);
+                pictureBox2.Visible = false;
+                spawnGreen.Visible = false;
 
                 for (int i = 0; i < blockSkaits; i++) //for green piece line
                 {
@@ -107,7 +115,7 @@ namespace Ricu_Racu
                     Label block = new Label();
                     block.Size = new Size(blockGar, blockAug);
                     block.Text = $"";
-                    int xP = ((int)(65 + i * (blockGar + space)));
+                    int xP = (int)(65 + i * (blockGar + space));
                     block.Location = new Point(xP, 82);
                     block.BackColor = Color.Silver;
                     block.BorderStyle = BorderStyle.FixedSingle;
@@ -115,10 +123,10 @@ namespace Ricu_Racu
                     this.Controls.Add(block);
                 }
             }
-
-            if (blockSkaits == 20 && playerSkaits == 2)
+            if (blockSkaits == 10 && playerSkaits == 2)
             {
-                this.Size = new Size(1377, 663);
+                this.Size = new Size(690, 550);
+                
 
                 for (int i = 0; i < blockSkaits; i++) //for green piece line
                 {
@@ -126,8 +134,88 @@ namespace Ricu_Racu
                     Label block = new Label();
                     block.Size = new Size(blockGar, blockAug);
                     block.Text = $"";
-                    int xP = ((int)(65 + i * (blockGar + space)));
-                    block.Location = new Point(xP, 147);
+                    int xP = (int)(65 + i * (blockGar + space));
+                    block.Location = new Point(xP, 47);
+                    block.BackColor = Color.Silver;
+                    block.BorderStyle = BorderStyle.FixedSingle;
+
+                    this.Controls.Add(block);
+                    if (!supPowGreenIr)
+                    {
+                        PictureBox supPowGreen = new PictureBox
+                        {
+                            Location = new Point(xP, 47),
+                            Image = supPowImage,
+                            Size = new Size(blockGar, blockAug),
+                            Name = $"supPowGreen",
+                            BackColor = Color.Silver
+                        };
+                        this.Controls.Add(supPowGreen);
+                        supPow.Visible = true;
+                        supPowGreen.Visible = true;
+                        supPowGreen.BringToFront();
+                        supPowGreen.BorderStyle = BorderStyle.FixedSingle;
+                        supPowGreenIr = true;
+                    }
+
+                }
+                for (int i = 0; i < blockSkaits; i++) //for red piece line
+                {
+                    Label block = new Label();
+                    block.Size = new Size(blockGar, blockAug);
+                    block.Text = $"";
+                    int xP = (int)(65 + i * (blockGar + space));
+                    block.Location = new Point(xP, 120);
+                    block.BackColor = Color.Silver;
+                    block.BorderStyle = BorderStyle.FixedSingle;
+
+                    this.Controls.Add(block);
+
+                    if (!supPowRedIr)
+                    {
+                        PictureBox supPowRed = new PictureBox
+                        {
+                            Location = new Point(xP, 120),
+                            Image = supPowImage,
+                            Size = new Size(blockGar, blockAug),
+                            Name = $"supPowRed",
+                            BackColor = Color.Silver
+                        };
+                        this.Controls.Add(supPowRed);
+                        supPowRed.Visible = true;
+                        supPowRed.BringToFront();
+                        supPowRed.BorderStyle = BorderStyle.FixedSingle;
+                        supPowRedIr = true;
+                    }
+                }
+            }
+            if (blockSkaits == 20 && playerSkaits == 2)
+            {
+                this.Size = new Size(1235, 580);
+                pictureBox2.Location = new Point(1145, 82);
+                spawnGreen.BackColor = Color.Silver;
+                pictureBox1.Location = new Point(960, 283);
+                jautajums.Location = new Point(480, 222);
+                time.Location = new Point(780, 222);
+                atbilde1.Location = new Point(495, 290);
+                atbilde2.Location = new Point(666, 290);
+                atbilde3.Location = new Point(495, 381);
+                atbilde4.Location = new Point(666, 381);
+                atbildeBut1.Location = new Point(450, 321);
+                atbildeBut2.Location = new Point(621, 321);
+                atbildeBut3.Location = new Point(450, 413);
+                atbildeBut4.Location = new Point(621, 413);
+                skipJaut.Location = new Point(455, 490);
+                izm5050.Location = new Point(628, 490);
+                spawnGreen.Visible = false;
+
+                for (int i = 0; i < blockSkaits; i++)  //for green piece line
+                {
+                    Label block = new Label();
+                    block.Size = new Size(blockGar, blockAug);
+                    block.Text = $"";
+                    int xP = (int)(65 + i * (blockGar + space));
+                    block.Location = new Point(xP, 47);
                     block.BackColor = Color.Silver;
                     block.BorderStyle = BorderStyle.FixedSingle;
 
@@ -138,8 +226,8 @@ namespace Ricu_Racu
                     Label block = new Label();
                     block.Size = new Size(blockGar, blockAug);
                     block.Text = $"";
-                    int xP = ((int)(65 + i * (blockGar + space)));
-                    block.Location = new Point(xP, 138);
+                    int xP = (int)(65 + i * (blockGar + space));
+                    block.Location = new Point(xP, 120);
                     block.BackColor = Color.Silver;
                     block.BorderStyle = BorderStyle.FixedSingle;
 

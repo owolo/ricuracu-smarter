@@ -65,18 +65,16 @@
             this.spawnGreen = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.atmetL = new System.Windows.Forms.PictureBox();
+            this.atmetK = new System.Windows.Forms.PictureBox();
+            this.supPow = new System.Windows.Forms.PictureBox();
             this.time = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atmetK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supPow)).BeginInit();
             this.SuspendLayout();
             // 
             // atbildeBut1
@@ -443,55 +441,45 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // pictureBox4
+            // atmetL
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(159, 146);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 36;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.atmetL.BackColor = System.Drawing.Color.Silver;
+            this.atmetL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.atmetL.Image = ((System.Drawing.Image)(resources.GetObject("atmetL.Image")));
+            this.atmetL.Location = new System.Drawing.Point(647, 239);
+            this.atmetL.Name = "atmetL";
+            this.atmetL.Size = new System.Drawing.Size(66, 61);
+            this.atmetL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.atmetL.TabIndex = 36;
+            this.atmetL.TabStop = false;
+            this.atmetL.Visible = false;
+            this.atmetL.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox5
+            // atmetK
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(591, 55);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 37;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
+            this.atmetK.BackColor = System.Drawing.Color.Silver;
+            this.atmetK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.atmetK.Image = ((System.Drawing.Image)(resources.GetObject("atmetK.Image")));
+            this.atmetK.Location = new System.Drawing.Point(647, 315);
+            this.atmetK.Name = "atmetK";
+            this.atmetK.Size = new System.Drawing.Size(66, 61);
+            this.atmetK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.atmetK.TabIndex = 38;
+            this.atmetK.TabStop = false;
+            this.atmetK.Visible = false;
+            this.atmetK.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
-            // pictureBox6
+            // supPow
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(303, 55);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 38;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Visible = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(519, 146);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 39;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Visible = false;
+            this.supPow.BackColor = System.Drawing.Color.Silver;
+            this.supPow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.supPow.Image = ((System.Drawing.Image)(resources.GetObject("supPow.Image")));
+            this.supPow.Location = new System.Drawing.Point(780, 239);
+            this.supPow.Name = "supPow";
+            this.supPow.Size = new System.Drawing.Size(66, 61);
+            this.supPow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.supPow.TabIndex = 39;
+            this.supPow.TabStop = false;
             // 
             // time
             // 
@@ -512,10 +500,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 616);
             this.Controls.Add(this.time);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.supPow);
+            this.Controls.Add(this.atmetK);
+            this.Controls.Add(this.atmetL);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.spawnGreen);
@@ -561,10 +548,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atmetK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supPow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -608,10 +594,9 @@
         private System.Windows.Forms.Label spawnGreen;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox atmetL;
+        private System.Windows.Forms.PictureBox atmetK;
+        private System.Windows.Forms.PictureBox supPow;
         private System.Windows.Forms.Label time;
     }
 }
