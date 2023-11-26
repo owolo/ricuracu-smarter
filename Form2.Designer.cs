@@ -63,15 +63,15 @@
             this.block20 = new System.Windows.Forms.Label();
             this.spawnRed = new System.Windows.Forms.Label();
             this.spawnGreen = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.green = new System.Windows.Forms.PictureBox();
+            this.red = new System.Windows.Forms.PictureBox();
             this.atmetL = new System.Windows.Forms.PictureBox();
             this.atmetK = new System.Windows.Forms.PictureBox();
             this.supPow = new System.Windows.Forms.PictureBox();
             this.time = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.green)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetK)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supPow)).BeginInit();
@@ -404,7 +404,7 @@
             // spawnRed
             // 
             this.spawnRed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spawnRed.Location = new System.Drawing.Point(15, 101);
+            this.spawnRed.Location = new System.Drawing.Point(15, 55);
             this.spawnRed.Name = "spawnRed";
             this.spawnRed.Size = new System.Drawing.Size(66, 61);
             this.spawnRed.TabIndex = 32;
@@ -412,34 +412,34 @@
             // spawnGreen
             // 
             this.spawnGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spawnGreen.Location = new System.Drawing.Point(807, 101);
+            this.spawnGreen.Location = new System.Drawing.Point(807, 146);
             this.spawnGreen.Name = "spawnGreen";
             this.spawnGreen.Size = new System.Drawing.Size(66, 61);
             this.spawnGreen.TabIndex = 33;
             // 
-            // pictureBox2
+            // green
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(807, 101);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.green.BackColor = System.Drawing.Color.Silver;
+            this.green.Image = ((System.Drawing.Image)(resources.GetObject("green.Image")));
+            this.green.Location = new System.Drawing.Point(807, 146);
+            this.green.Name = "green";
+            this.green.Size = new System.Drawing.Size(66, 61);
+            this.green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.green.TabIndex = 34;
+            this.green.TabStop = false;
+            this.green.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // pictureBox3
+            // red
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(15, 101);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 61);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 35;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.red.BackColor = System.Drawing.Color.Silver;
+            this.red.Image = ((System.Drawing.Image)(resources.GetObject("red.Image")));
+            this.red.Location = new System.Drawing.Point(15, 55);
+            this.red.Name = "red";
+            this.red.Size = new System.Drawing.Size(66, 61);
+            this.red.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.red.TabIndex = 35;
+            this.red.TabStop = false;
+            this.red.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // atmetL
             // 
@@ -504,8 +504,8 @@
             this.Controls.Add(this.supPow);
             this.Controls.Add(this.atmetK);
             this.Controls.Add(this.atmetL);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.red);
+            this.Controls.Add(this.green);
             this.Controls.Add(this.spawnGreen);
             this.Controls.Add(this.spawnRed);
             this.Controls.Add(this.block11);
@@ -547,8 +547,8 @@
             this.Text = "Spēle: \"Kurš ir gudrāks?";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.green)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.red)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supPow)).EndInit();
@@ -593,8 +593,8 @@
         private System.Windows.Forms.Label block20;
         private System.Windows.Forms.Label spawnRed;
         private System.Windows.Forms.Label spawnGreen;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox green;
+        private System.Windows.Forms.PictureBox red;
         private System.Windows.Forms.PictureBox atmetL;
         private System.Windows.Forms.PictureBox atmetK;
         private System.Windows.Forms.PictureBox supPow;

@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ricu_Racu
@@ -15,12 +8,10 @@ namespace Ricu_Racu
     {
         private readonly int blockSkaits;
         private readonly int playerSkaits;
-        private int spawnSkaits = 0;
         private const int blockGar = 50;
         private const int blockAug = 50;
         //private bool irIzm5050 = false;
         //private bool irSkipJaut = false;
-        //bool supPowGreenIr = false;
         private Random random = new Random();
 
         public Form2()
@@ -39,15 +30,18 @@ namespace Ricu_Racu
         private void Form2_Load(object sender, EventArgs e)
         {
             double space = 4;
-            bool supPowGreenIr = false;
-            bool supPowRedIr = false;
-            Image supPowImage = Image.FromFile("question.png");
+            bool atmetLIr = false;
+            bool atmetKIr = false;
+            Image atmetLImage = Image.FromFile("arrow right.png");
+            Image atmetKImage = Image.FromFile("arrow left.png");
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
                 this.Size = new Size(650, 550);
-                pictureBox2.Visible = false;
+                green.Visible = false;
                 spawnGreen.Visible = false;
+                red.Location = new Point(11, 82);
+                spawnRed.Location = new Point(11, 82);
 
                 for (int i = 0; i < blockSkaits; i++)  //for green piece line
                 {
@@ -61,29 +55,29 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                if (!supPowRedIr)
+                if (!atmetKIr)
                 {
-                    PictureBox supPowRed = new PictureBox
+                    PictureBox atmetK = new PictureBox
                     {
                         Size = new Size(blockGar, blockAug),
-                        Image = supPowImage,
+                        Image = atmetKImage,
                         BackColor = Color.Silver,
                     };
                     int yPosition = 82;  // Random position between the two lines
                     int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
 
-                    supPowRed.Location = new Point(xPosition, yPosition);
+                    atmetK.Location = new Point(xPosition, yPosition);
 
-                    this.Controls.Add(supPowRed);
-                    supPowRed.BringToFront();
-                    supPowRed.BorderStyle = BorderStyle.FixedSingle;
-                    supPowRedIr = true;
+                    this.Controls.Add(atmetK);
+                    atmetK.BringToFront();
+                    atmetK.BorderStyle = BorderStyle.FixedSingle;
+                    atmetKIr = true;
                 }
             }
             if (blockSkaits == 20 && playerSkaits == 1)
             {
                 this.Size = new Size(1200, 580);
-                pictureBox2.Location = new Point(1145, 82);
+                green.Location = new Point(1145, 82);
                 spawnGreen.BackColor = Color.Silver;
                 pictureBox1.Location = new Point(960, 283);
                 jautajums.Location = new Point(480, 222);
@@ -98,7 +92,9 @@ namespace Ricu_Racu
                 atbildeBut4.Location = new Point(621, 413);
                 skipJaut.Location = new Point(455, 490);
                 izm5050.Location = new Point(628, 490);
-                pictureBox2.Visible = false;
+                red.Location = new Point(11, 82);
+                spawnRed.Location = new Point(11, 82);
+                green.Visible = false;
                 spawnGreen.Visible = false;
 
                 for (int i = 0; i < blockSkaits; i++) //for red piece line
@@ -114,29 +110,35 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                if (!supPowRedIr)
+                if (!atmetKIr)
                 {
-                    PictureBox supPowRed = new PictureBox
-                    {
-                        Size = new Size(blockGar, blockAug),
-                        Image = supPowImage,
-                        BackColor = Color.Silver,
-                    };
-                    int yPosition = 82;  // Random position between the two lines
-                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
+                    for (int i = 0; i < 3; i++) {
+                        PictureBox atmetK = new PictureBox
+                        {
+                            Size = new Size(blockGar, blockAug),
+                            Image = atmetKImage,
+                            BackColor = Color.Silver,
+                        };
+                        int yPosition = 82;  // Random position between the two lines
+                        int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
 
-                    supPowRed.Location = new Point(xPosition, yPosition);
+                        atmetK.Location = new Point(xPosition, yPosition);
 
-                    this.Controls.Add(supPowRed);
-                    supPowRed.BringToFront();
-                    supPowRed.BorderStyle = BorderStyle.FixedSingle;
-                    supPowRedIr = true;
+                        this.Controls.Add(atmetK);
+                        atmetK.BringToFront();
+                        atmetK.BorderStyle = BorderStyle.FixedSingle;
+                        atmetKIr = true;
+                    }
                 }
             }
             if (blockSkaits == 10 && playerSkaits == 2)
             {
                 this.Size = new Size(690, 550);
-                
+                red.Location = new Point(11, 47);
+                spawnRed.Location = new Point(11, 47);
+                green.Location = new Point(605, 120);
+                spawnGreen.Location = new Point(605, 120);
+
 
                 for (int i = 0; i < blockSkaits; i++) //for green piece line
                 {
@@ -151,23 +153,23 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
 
-                    if (!supPowGreenIr)
+                    if (!atmetLIr)
                     {
-                        PictureBox supPowGreen = new PictureBox
+                        PictureBox atmetL = new PictureBox
                         {
                             Size = new Size(blockGar, blockAug),
-                            Image = supPowImage,
+                            Image = atmetLImage,
                             BackColor = Color.Silver,
                         };
                         int yPosition = 47;  // Random position between the two lines
                         int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
 
-                        supPowGreen.Location = new Point(xPosition, yPosition);
+                        atmetL.Location = new Point(xPosition, yPosition);
 
-                        this.Controls.Add(supPowGreen);
-                        supPowGreen.BringToFront();
-                        supPowGreen.BorderStyle = BorderStyle.FixedSingle;
-                        supPowGreenIr = true;
+                        this.Controls.Add(atmetL);
+                        atmetL.BringToFront();
+                        atmetL.BorderStyle = BorderStyle.FixedSingle;
+                        atmetLIr = true;
                     }
 
                 }
@@ -183,30 +185,30 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
 
-                    if (!supPowRedIr)
+                    if (!atmetKIr)
                     {
-                        PictureBox supPowRed = new PictureBox
+                        PictureBox atmetK = new PictureBox
                         {
                             Size = new Size(blockGar, blockAug),
-                            Image = supPowImage,
+                            Image = atmetKImage,    
                             BackColor = Color.Silver,
                         };
                         int yPosition = 120;  // Random position between the two lines
                         int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
 
-                        supPowRed.Location = new Point(xPosition, yPosition);
+                        atmetK.Location = new Point(xPosition, yPosition);
 
-                        this.Controls.Add(supPowRed);
-                        supPowRed.BringToFront();
-                        supPowRed.BorderStyle = BorderStyle.FixedSingle;
-                        supPowRedIr = true;
+                        this.Controls.Add(atmetK);
+                        atmetK.BringToFront();
+                        atmetK.BorderStyle = BorderStyle.FixedSingle;
+                        atmetKIr = true;
                     }
                 }
             }
             if (blockSkaits == 20 && playerSkaits == 2)
             {
                 this.Size = new Size(1235, 580);
-                pictureBox2.Location = new Point(1145, 82);
+                green.Location = new Point(1145, 82);
                 spawnGreen.BackColor = Color.Silver;
                 pictureBox1.Location = new Point(960, 283);
                 jautajums.Location = new Point(480, 222);
@@ -222,6 +224,10 @@ namespace Ricu_Racu
                 skipJaut.Location = new Point(455, 490);
                 izm5050.Location = new Point(628, 490);
                 spawnGreen.Visible = false;
+                red.Location = new Point(11, 47);
+                spawnRed.Location = new Point(11, 47);
+                green.Location = new Point(1145, 120);
+                spawnGreen.Location = new Point(1145, 120);
 
                 for (int i = 0; i < blockSkaits; i++)  //for green piece line
                 {
@@ -235,23 +241,23 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                if (!supPowGreenIr)
+                if (!atmetLIr)
                 {
-                    PictureBox supPowGreen = new PictureBox
+                    PictureBox atmetL = new PictureBox
                     {
                         Size = new Size(blockGar, blockAug),
-                        Image = supPowImage,
+                        Image = atmetLImage,
                         BackColor = Color.Silver,
                     };
                     int yPosition = 47;  // Random position between the two lines
                     int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
 
-                    supPowGreen.Location = new Point(xPosition, yPosition);
+                    atmetL.Location = new Point(xPosition, yPosition);
 
-                    this.Controls.Add(supPowGreen);
-                    supPowGreen.BringToFront();
-                    supPowGreen.BorderStyle = BorderStyle.FixedSingle;
-                    supPowGreenIr = true;
+                    this.Controls.Add(atmetL);
+                    atmetL.BringToFront();
+                    atmetL.BorderStyle = BorderStyle.FixedSingle;
+                    atmetLIr = true;
                 }
 
                 for (int i = 0; i < blockSkaits; i++) //for red piece line
@@ -266,36 +272,36 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                if (!supPowRedIr)
+                if (!atmetKIr)
                 {
-                    PictureBox supPowRed = new PictureBox
+                    PictureBox atmetK = new PictureBox
                     {
                         Size = new Size(blockGar, blockAug),
-                        Image = supPowImage,
+                        Image = atmetKImage,
                         BackColor = Color.Silver,
                     };
                     int yPosition = 120;  // Random position between the two lines
                     int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));  // Random block on x-axis
 
-                    supPowRed.Location = new Point(xPosition, yPosition);
+                    atmetK.Location = new Point(xPosition, yPosition);
 
-                    this.Controls.Add(supPowRed);
-                    supPowRed.BringToFront();
-                    supPowRed.BorderStyle = BorderStyle.FixedSingle;
-                    supPowRedIr = true;
+                    this.Controls.Add(atmetK);
+                    atmetK.BringToFront();
+                    atmetK.BorderStyle = BorderStyle.FixedSingle;
+                    atmetKIr = true;
                 }
             }
 
         }
         private void SpawnPowerUp()
         {
-            Image supPowImage = Image.FromFile("question.png");
+            Image atmetImage = Image.FromFile("question.png");
             double space = 4;
 
             PictureBox powerUp = new PictureBox
             {
                 Size = new Size(blockGar, blockAug),
-                Image = supPowImage,
+                Image = atmetImage,
                 BackColor = Color.Silver,
             };
             int yPosition = 47;  // Random position between the two lines

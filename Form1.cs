@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ricu_Racu
 {
     public partial class Form1 : Form
     {
+        private bool menuVisible = false;
         public Form1()
         {
             InitializeComponent();
@@ -29,64 +23,27 @@ namespace Ricu_Racu
         private void onePlay_Click(object sender, EventArgs e)
         {
             playerSkaits = 1;
-            if (choose2.Visible == true)
+            if (menuVisible == false)
             {
-                choose1.Visible = false;
+                ShowMenu();
             }
-
-            if (but10t.Visible == true)
-            {
-                but10.Visible = false;
-            }
-
-            if (but20t.Visible == true)
-            {
-                but20.Visible = false;
-            }
-
-            if (fons2.Visible == true)
-            {
-                fons.Visible = false;
-            }
-
             else
             {
-                choose1.Visible = true;
-                but10.Visible = true;
-                but20.Visible = true;
-                fons.Visible = true;
+                HideMenu();
             }
         }
 
         private void twoPlay_Click(object sender, EventArgs e)
         {
             playerSkaits = 2;
-            if (choose1.Visible == true)
-            {
-                choose2.Visible = false;
-            }
 
-            if (but10.Visible == true)
+            if (menuVisible == false)
             {
-                but10t.Visible = false;
+                ShowMenu2();
             }
-
-            if (but20.Visible == true)
-            {
-                but20t.Visible = false;
-            }
-
-            if (fons.Visible == true)
-            {
-                fons2.Visible = false;
-            }
-
             else
             {
-                choose2.Visible = true;
-                but10t.Visible = true;
-                but20t.Visible = true;
-                fons2.Visible = true;
+                HideMenu2();
             }
         }
 
@@ -110,18 +67,12 @@ namespace Ricu_Racu
 
         private void but10t_Click(object sender, EventArgs e)
         {
-            try
             {
                 this.Hide();
                 Form2 spele = new Form2(playerSkaits, 10);
                 spele.Show();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}");
-            }
         }
-
 
         private void but20t_Click(object sender, EventArgs e)
         {
@@ -133,6 +84,56 @@ namespace Ricu_Racu
         private void fons_Click(object sender, EventArgs e)
         {
 
+        }
+        private void ShowMenu()
+        {
+            choose1.Visible = true;
+            choose2.Visible = false;
+            but10.Visible = true;
+            but20.Visible = true;
+            but10t.Visible = false;
+            but20t.Visible = false;
+            fons.Visible = true;
+            fons2.Visible = false;
+            menuVisible = true;
+        }
+
+        private void HideMenu()
+        {
+            choose1.Visible = false;
+            choose2.Visible = false;
+            but10.Visible = false;
+            but20.Visible = false;
+            but10t.Visible = false;
+            but20t.Visible = false;
+            fons.Visible = false;
+            fons2.Visible = false;
+            menuVisible = false;
+        }
+        private void ShowMenu2()
+        {
+            choose1.Visible = false;
+            choose2.Visible = true;
+            but10.Visible = false;
+            but20.Visible = false;
+            but10t.Visible = true;
+            but20t.Visible = true;
+            fons.Visible = false;
+            fons2.Visible = true;
+            menuVisible = true;
+        }
+
+        private void HideMenu2()
+        {
+            choose1.Visible = false;
+            choose2.Visible = false;
+            but10.Visible = false;
+            but20.Visible = false;
+            but10t.Visible = false;
+            but20t.Visible = false;
+            fons.Visible = false;
+            fons2.Visible = false;
+            menuVisible = false;
         }
     }
 }
