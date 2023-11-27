@@ -83,7 +83,6 @@
             this.choose1.TabIndex = 6;
             this.choose1.Text = " Cik lauciņus?";
             this.choose1.Visible = false;
-            this.choose1.Click += new System.EventHandler(this.choose1_Click);
             // 
             // but10
             // 
@@ -153,7 +152,6 @@
             this.fons.Size = new System.Drawing.Size(238, 114);
             this.fons.TabIndex = 19;
             this.fons.Visible = false;
-            this.fons.Click += new System.EventHandler(this.fons_Click);
             // 
             // fons2
             // 

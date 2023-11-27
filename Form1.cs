@@ -15,11 +15,6 @@ namespace Ricu_Racu
 
         int playerSkaits;
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void onePlay_Click(object sender, EventArgs e)
         {
             playerSkaits = 1;
@@ -47,10 +42,6 @@ namespace Ricu_Racu
             }
         }
 
-        private void choose1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void but10_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -67,11 +58,9 @@ namespace Ricu_Racu
 
         private void but10t_Click(object sender, EventArgs e)
         {
-            {
                 this.Hide();
                 Form2 spele = new Form2(playerSkaits, 10);
                 spele.Show();
-            }
         }
 
         private void but20t_Click(object sender, EventArgs e)
@@ -81,10 +70,6 @@ namespace Ricu_Racu
             spele.Show();
         }
 
-        private void fons_Click(object sender, EventArgs e)
-        {
-
-        }
         private void ShowMenu()
         {
             choose1.Visible = true;

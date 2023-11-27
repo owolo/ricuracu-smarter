@@ -30,17 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.atbildeBut1 = new System.Windows.Forms.Button();
-            this.atbildeBut4 = new System.Windows.Forms.Button();
             this.atbildeBut2 = new System.Windows.Forms.Button();
             this.atbildeBut3 = new System.Windows.Forms.Button();
             this.jautajums = new System.Windows.Forms.Label();
-            this.atbilde1 = new System.Windows.Forms.Label();
-            this.atbilde2 = new System.Windows.Forms.Label();
-            this.atbilde3 = new System.Windows.Forms.Label();
-            this.atbilde4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.skipJaut = new System.Windows.Forms.Button();
-            this.izm5050 = new System.Windows.Forms.Button();
+            this.dice = new System.Windows.Forms.PictureBox();
             this.block1 = new System.Windows.Forms.Label();
             this.block2 = new System.Windows.Forms.Label();
             this.block3 = new System.Windows.Forms.Label();
@@ -67,19 +60,16 @@
             this.red = new System.Windows.Forms.PictureBox();
             this.atmetL = new System.Windows.Forms.PictureBox();
             this.atmetK = new System.Windows.Forms.PictureBox();
-            this.supPow = new System.Windows.Forms.PictureBox();
-            this.time = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.green)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supPow)).BeginInit();
             this.SuspendLayout();
             // 
             // atbildeBut1
             // 
-            this.atbildeBut1.Location = new System.Drawing.Point(87, 371);
+            this.atbildeBut1.Location = new System.Drawing.Point(87, 356);
             this.atbildeBut1.Name = "atbildeBut1";
             this.atbildeBut1.Size = new System.Drawing.Size(142, 46);
             this.atbildeBut1.TabIndex = 0;
@@ -87,18 +77,9 @@
             this.atbildeBut1.UseVisualStyleBackColor = true;
             this.atbildeBut1.Click += new System.EventHandler(this.atbildeBut1_Click);
             // 
-            // atbildeBut4
-            // 
-            this.atbildeBut4.Location = new System.Drawing.Point(298, 473);
-            this.atbildeBut4.Name = "atbildeBut4";
-            this.atbildeBut4.Size = new System.Drawing.Size(142, 46);
-            this.atbildeBut4.TabIndex = 1;
-            this.atbildeBut4.Text = "Izvēlēties šo atbildi";
-            this.atbildeBut4.UseVisualStyleBackColor = true;
-            // 
             // atbildeBut2
             // 
-            this.atbildeBut2.Location = new System.Drawing.Point(298, 371);
+            this.atbildeBut2.Location = new System.Drawing.Point(298, 356);
             this.atbildeBut2.Name = "atbildeBut2";
             this.atbildeBut2.Size = new System.Drawing.Size(142, 46);
             this.atbildeBut2.TabIndex = 2;
@@ -108,12 +89,13 @@
             // 
             // atbildeBut3
             // 
-            this.atbildeBut3.Location = new System.Drawing.Point(87, 473);
+            this.atbildeBut3.Location = new System.Drawing.Point(195, 434);
             this.atbildeBut3.Name = "atbildeBut3";
             this.atbildeBut3.Size = new System.Drawing.Size(142, 46);
             this.atbildeBut3.TabIndex = 3;
             this.atbildeBut3.Text = "Izvēlēties šo atbildi";
             this.atbildeBut3.UseVisualStyleBackColor = true;
+            this.atbildeBut3.Click += new System.EventHandler(this.atbildeBut3_Click);
             // 
             // jautajums
             // 
@@ -124,81 +106,16 @@
             this.jautajums.Size = new System.Drawing.Size(273, 25);
             this.jautajums.TabIndex = 4;
             this.jautajums.Text = "Jautājums: Cik būs 2+2*2?";
-            this.jautajums.Click += new System.EventHandler(this.jautajums_Click);
             // 
-            // atbilde1
+            // dice
             // 
-            this.atbilde1.AutoSize = true;
-            this.atbilde1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.atbilde1.Location = new System.Drawing.Point(140, 338);
-            this.atbilde1.Name = "atbilde1";
-            this.atbilde1.Size = new System.Drawing.Size(20, 22);
-            this.atbilde1.TabIndex = 5;
-            this.atbilde1.Text = "6";
-            // 
-            // atbilde2
-            // 
-            this.atbilde2.AutoSize = true;
-            this.atbilde2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.atbilde2.Location = new System.Drawing.Point(356, 338);
-            this.atbilde2.Name = "atbilde2";
-            this.atbilde2.Size = new System.Drawing.Size(20, 22);
-            this.atbilde2.TabIndex = 6;
-            this.atbilde2.Text = "8";
-            this.atbilde2.Click += new System.EventHandler(this.atbilde2_Click);
-            // 
-            // atbilde3
-            // 
-            this.atbilde3.AutoSize = true;
-            this.atbilde3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.atbilde3.Location = new System.Drawing.Point(140, 443);
-            this.atbilde3.Name = "atbilde3";
-            this.atbilde3.Size = new System.Drawing.Size(20, 22);
-            this.atbilde3.TabIndex = 7;
-            this.atbilde3.Text = "4";
-            // 
-            // atbilde4
-            // 
-            this.atbilde4.AutoSize = true;
-            this.atbilde4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.atbilde4.Location = new System.Drawing.Point(356, 441);
-            this.atbilde4.Name = "atbilde4";
-            this.atbilde4.Size = new System.Drawing.Size(30, 22);
-            this.atbilde4.TabIndex = 8;
-            this.atbilde4.Text = "10";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(647, 382);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 172);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // skipJaut
-            // 
-            this.skipJaut.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.skipJaut.Location = new System.Drawing.Point(87, 561);
-            this.skipJaut.Name = "skipJaut";
-            this.skipJaut.Size = new System.Drawing.Size(131, 34);
-            this.skipJaut.TabIndex = 10;
-            this.skipJaut.Text = "Izlaist jautājumu";
-            this.skipJaut.UseVisualStyleBackColor = true;
-            this.skipJaut.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // izm5050
-            // 
-            this.izm5050.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.izm5050.Location = new System.Drawing.Point(306, 561);
-            this.izm5050.Name = "izm5050";
-            this.izm5050.Size = new System.Drawing.Size(120, 34);
-            this.izm5050.TabIndex = 11;
-            this.izm5050.Text = "Izmantot 50/50";
-            this.izm5050.UseVisualStyleBackColor = true;
-            this.izm5050.Click += new System.EventHandler(this.izm5050_Click);
+            this.dice.Image = ((System.Drawing.Image)(resources.GetObject("dice.Image")));
+            this.dice.Location = new System.Drawing.Point(647, 382);
+            this.dice.Name = "dice";
+            this.dice.Size = new System.Drawing.Size(170, 172);
+            this.dice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dice.TabIndex = 9;
+            this.dice.TabStop = false;
             // 
             // block1
             // 
@@ -209,7 +126,6 @@
             this.block1.Size = new System.Drawing.Size(66, 61);
             this.block1.TabIndex = 12;
             this.block1.Visible = false;
-            this.block1.Click += new System.EventHandler(this.label1_Click);
             // 
             // block2
             // 
@@ -427,7 +343,6 @@
             this.green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.green.TabIndex = 34;
             this.green.TabStop = false;
-            this.green.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // red
             // 
@@ -439,69 +354,38 @@
             this.red.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.red.TabIndex = 35;
             this.red.TabStop = false;
-            this.red.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // atmetL
             // 
             this.atmetL.BackColor = System.Drawing.Color.Silver;
             this.atmetL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.atmetL.Image = ((System.Drawing.Image)(resources.GetObject("atmetL.Image")));
-            this.atmetL.Location = new System.Drawing.Point(647, 239);
+            this.atmetL.Location = new System.Drawing.Point(472, 543);
             this.atmetL.Name = "atmetL";
             this.atmetL.Size = new System.Drawing.Size(66, 61);
             this.atmetL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.atmetL.TabIndex = 36;
             this.atmetL.TabStop = false;
             this.atmetL.Visible = false;
-            this.atmetL.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // atmetK
             // 
             this.atmetK.BackColor = System.Drawing.Color.Silver;
             this.atmetK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.atmetK.Image = ((System.Drawing.Image)(resources.GetObject("atmetK.Image")));
-            this.atmetK.Location = new System.Drawing.Point(647, 315);
+            this.atmetK.Location = new System.Drawing.Point(544, 543);
             this.atmetK.Name = "atmetK";
             this.atmetK.Size = new System.Drawing.Size(66, 61);
             this.atmetK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.atmetK.TabIndex = 38;
             this.atmetK.TabStop = false;
             this.atmetK.Visible = false;
-            this.atmetK.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // supPow
-            // 
-            this.supPow.BackColor = System.Drawing.Color.Silver;
-            this.supPow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.supPow.Image = ((System.Drawing.Image)(resources.GetObject("supPow.Image")));
-            this.supPow.Location = new System.Drawing.Point(780, 239);
-            this.supPow.Name = "supPow";
-            this.supPow.Size = new System.Drawing.Size(66, 61);
-            this.supPow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.supPow.TabIndex = 39;
-            this.supPow.TabStop = false;
-            this.supPow.Visible = false;
-            // 
-            // time
-            // 
-            this.time.AutoSize = true;
-            this.time.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.time.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.time.Location = new System.Drawing.Point(447, 275);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(105, 42);
-            this.time.TabIndex = 40;
-            this.time.Text = "Laiks atlicis:\r\n1:00";
-            this.time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.time.Click += new System.EventHandler(this.label23_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 616);
-            this.Controls.Add(this.time);
-            this.Controls.Add(this.supPow);
             this.Controls.Add(this.atmetK);
             this.Controls.Add(this.atmetL);
             this.Controls.Add(this.red);
@@ -528,17 +412,10 @@
             this.Controls.Add(this.block4);
             this.Controls.Add(this.block2);
             this.Controls.Add(this.block1);
-            this.Controls.Add(this.izm5050);
-            this.Controls.Add(this.skipJaut);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.atbilde4);
-            this.Controls.Add(this.atbilde3);
-            this.Controls.Add(this.atbilde2);
-            this.Controls.Add(this.atbilde1);
+            this.Controls.Add(this.dice);
             this.Controls.Add(this.jautajums);
             this.Controls.Add(this.atbildeBut3);
             this.Controls.Add(this.atbildeBut2);
-            this.Controls.Add(this.atbildeBut4);
             this.Controls.Add(this.atbildeBut1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -546,12 +423,11 @@
             this.ShowIcon = false;
             this.Text = "Spēle: \"Kurš ir gudrāks?";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.green)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.red)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supPow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -560,17 +436,10 @@
         #endregion
 
         private System.Windows.Forms.Button atbildeBut1;
-        private System.Windows.Forms.Button atbildeBut4;
         private System.Windows.Forms.Button atbildeBut2;
         private System.Windows.Forms.Button atbildeBut3;
         private System.Windows.Forms.Label jautajums;
-        private System.Windows.Forms.Label atbilde1;
-        private System.Windows.Forms.Label atbilde2;
-        private System.Windows.Forms.Label atbilde3;
-        private System.Windows.Forms.Label atbilde4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button skipJaut;
-        private System.Windows.Forms.Button izm5050;
+        private System.Windows.Forms.PictureBox dice;
         private System.Windows.Forms.Label block1;
         private System.Windows.Forms.Label block2;
         private System.Windows.Forms.Label block3;
@@ -597,7 +466,5 @@
         private System.Windows.Forms.PictureBox red;
         private System.Windows.Forms.PictureBox atmetL;
         private System.Windows.Forms.PictureBox atmetK;
-        private System.Windows.Forms.PictureBox supPow;
-        private System.Windows.Forms.Label time;
     }
 }
