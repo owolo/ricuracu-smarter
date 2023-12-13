@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.atbildeBut1 = new System.Windows.Forms.Button();
             this.atbildeBut2 = new System.Windows.Forms.Button();
@@ -60,6 +61,7 @@
             this.red = new System.Windows.Forms.PictureBox();
             this.atmetL = new System.Windows.Forms.PictureBox();
             this.atmetK = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.green)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.red)).BeginInit();
@@ -116,6 +118,7 @@
             this.dice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dice.TabIndex = 9;
             this.dice.TabStop = false;
+            this.dice.Visible = false;
             // 
             // block1
             // 
@@ -381,6 +384,11 @@
             this.atmetK.TabStop = false;
             this.atmetK.Visible = false;
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 500;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -466,5 +474,6 @@
         private System.Windows.Forms.PictureBox red;
         private System.Windows.Forms.PictureBox atmetL;
         private System.Windows.Forms.PictureBox atmetK;
+        private System.Windows.Forms.Timer timer;
     }
 }
