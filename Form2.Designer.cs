@@ -75,7 +75,7 @@
             this.atbildeBut1.Name = "atbildeBut1";
             this.atbildeBut1.Size = new System.Drawing.Size(142, 46);
             this.atbildeBut1.TabIndex = 0;
-            this.atbildeBut1.Text = "Izvēlēties šo atbildi";
+            this.atbildeBut1.Text = "1";
             this.atbildeBut1.UseVisualStyleBackColor = true;
             this.atbildeBut1.Click += new System.EventHandler(this.atbildeBut1_Click);
             // 
@@ -85,7 +85,7 @@
             this.atbildeBut2.Name = "atbildeBut2";
             this.atbildeBut2.Size = new System.Drawing.Size(142, 46);
             this.atbildeBut2.TabIndex = 2;
-            this.atbildeBut2.Text = "Izvēlēties šo atbildi";
+            this.atbildeBut2.Text = "2";
             this.atbildeBut2.UseVisualStyleBackColor = true;
             this.atbildeBut2.Click += new System.EventHandler(this.atbildeBut2_Click);
             // 
@@ -95,7 +95,7 @@
             this.atbildeBut3.Name = "atbildeBut3";
             this.atbildeBut3.Size = new System.Drawing.Size(142, 46);
             this.atbildeBut3.TabIndex = 3;
-            this.atbildeBut3.Text = "Izvēlēties šo atbildi";
+            this.atbildeBut3.Text = "3";
             this.atbildeBut3.UseVisualStyleBackColor = true;
             this.atbildeBut3.Click += new System.EventHandler(this.atbildeBut3_Click);
             // 
@@ -103,7 +103,7 @@
             // 
             this.jautajums.AutoSize = true;
             this.jautajums.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.jautajums.Location = new System.Drawing.Point(126, 275);
+            this.jautajums.Location = new System.Drawing.Point(96, 275);
             this.jautajums.Name = "jautajums";
             this.jautajums.Size = new System.Drawing.Size(273, 25);
             this.jautajums.TabIndex = 4;

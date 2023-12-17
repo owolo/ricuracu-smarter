@@ -18,19 +18,20 @@ namespace Ricu_Racu
         public int piemeri = 0;
         public static int punkti = 0;
         public int[] seciba = Enumerable.Range(0, 50).ToArray();
+
         //private readonly string[] diceImg = { "dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png" };
 
         string[] jautajumi = new string[] {
-            "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Rotaļlietu stāsts'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Ja ir 64 cepumi, kas jāsadala starp 16 bērniem, cik cepumus saņems katrs bērns?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Ja Jānim ir 25 kūciņas un Annai 17, cik kūciņu viņiem ir kopā?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu lenķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
+            "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Rotaļlietu stāsts'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu lenķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
             };
         string[] atbildes1 = new string[] {
-            "7", "Londonā", "Parīzē", "Itālijā", "Ēģiptē", "Pekinā", "Sanfrancisko", "Vašingtona, D.C", "Austrālijā", "Juras laikmeta parks", "Jā", "Mufasa", "Jā", "Strauss", "Simts akru mežs", "Mellenes", "Vudijs", "Zilais valis", "Žirafe", "Temperatūra", "Dārgmetāliem", "Medu", "Dzeltenums", "Zaļš", "Ziemeļpolā", "Melni", "8", "100 gadi", "9", "4 cepumi", "2", "5", "7", "10", "42", "Pi", "12", "35", "Taisns lenķis", "Izstiepts lenķis", "5", "10", "100", "24", "60", "25", "200", "206", "365", "366"
+            "7", "Londonā", "Parīzē", "Itālijā", "Ēģiptē", "Pekinā", "Sanfrancisko", "Vašingtona", "Austrālijā", "Juras laikmeta parks", "Jā", "Mufasa", "Jā", "Strauss", "Simts akru mežs", "Mellenes", "Vudijs", "Zilais valis", "Žirafe", "Temperatūru", "Dārgmetāliem", "Medu", "Dzeltenums", "Zaļš", "Ziemeļpolā", "Melni", "8", "100 gadi", "9", "Kuldīgā", "2", "5", "7", "10", "Sidneja", "Pi", "12", "35", "Taisns lenķis", "Izstiepts lenķis", "5", "10", "100", "24", "60", "25", "200", "206", "365", "366"
             };
         string[] atbildes2 = new string[] {
-            "6", "Dublinā", "Las Vegas", "Moldovā", "Amerikā", "Indijā", "Latvijā", "Rīga", "Indonezijā", "Rozā pantera", "Nē", "Dumbo", "Nē", "Pīle", "Rīgas ZOO", "Zemenes", "Bembijs", "Zilonis", "Garnele", "Spiedienu", "Plastmasa", "Pienu", "Siers", "Zili", "Dienvidpolā", "Sarkani", "6", "10 gadi", "8", "2 cepumus", "4", "10", "8", "12", "32", "Pica", "13", "25", "Šaurs lenķis", "Lielais lenķis", "1", "15", "1000", "12", "30", "20", "300", "205", "367", "368"
+            "6", "Dublinā", "Las Vegas", "Moldovā", "Amerikā", "Indijā", "Latvijā", "Rīga", "Indonezijā", "Rozā pantera", "Nē", "Dumbo", "Nē", "Pīle", "Rīgas ZOO", "Zemenes", "Bembijs", "Zilonis", "Garnele", "Spiedienu", "Plastmasa", "Pienu", "Siers", "Zili", "Dienvidpolā", "Sarkani", "6", "10 gadi", "8", "Rīgā", "4", "10", "8", "12", "Melburna", "Pica", "13", "25", "Šaurs lenķis", "Lielais lenķis", "1", "15", "1000", "12", "30", "20", "300", "205", "367", "368"
             };
         string[] atbildes3 = new string[] {
-            "8", "Romā", "Berlīnē", "Vienā", "Meksikā", "Japānā", "Lietuvā", "Tallina", "Niderlandē", "Titaniks", "Neviens nezina", "Mikipele", "Varbūt", "Gailis", "Okeanā", "Ķirbji", "Sūklisbobs", "Suns", "Simtkājis", "Ph līmeni", "Koka", "Kvasu", "Brūnums", "Sarkans", "Austrumpolā", "Brūni", "4", "1000 gadu", "10", "6 cepumi", "8", "12", "14", "20", "45", "Eur", "12", "35", "90° lenķis", "180° lenķis", "200", "70", "50", "48", "80", "30", "400", "203", "350", "390"
+            "8", "Romā", "Berlīnē", "Vienā", "Meksikā", "Japānā", "Lietuvā", "Tallina", "Niderlandē", "Titaniks", "Neviens nezina", "Mikipele", "Varbūt", "Gailis", "Okeanā", "Ķirbji", "Sūklisbobs", "Suns", "Simtkājis", "Ph līmeni", "Koka", "Kvasu", "Brūnums", "Sarkans", "Austrumpolā", "Brūni", "4", "1000 gadu", "10", "Kārsavā", "8", "12", "14", "20", "Kanbera", "Eur", "12", "35", "90° lenķis", "180° lenķis", "200", "70", "50", "48", "80", "30", "400", "203", "350", "390"
             };
 
         Dictionary<string, string> atbildes = new Dictionary<string, string>() {
@@ -41,11 +42,11 @@ namespace Ricu_Racu
             {"Kur atrodas Gīzas Lielās piramīdas?","Ēģiptē"},
             {"Kur atrodas Lielais Ķīnas mūris?","Pekinā"},
             {"Kur atrodas Zelta vārtu tilts?","Sanfrancisko"},
-            {"Kas ir Amerikas Savienoto Valstu galvaspilsēta?","Vašingtona"},
+            {"Kura ir ASV galvaspilsēta?","Vašingtona"},
             {"Kur atrodas Lielais Barjerrifs?","Austrālijā"},
-            {"Kāda ir slavenā filma par parku ar dinozauriem?","Juras laikmeta parks"},
+            {"Kāda ir filma par parku ar dinozauriem?","Juras laikmeta parks"},
             {"Vai cūciņai Pepai ir brāļi un māsas?","Jā"},
-            {"Kas ir Simbas tētis?","Mufasa"},
+            {"Kurš ir Simbas tētis?","Mufasa"},
             {"Vai ziloņiem ir astes?","Jā"},
             {"Kāds ir lielākais putns?","Strauss"},
             {"Kur dzīvo Vinnijs Pūks?","Simts akru mežs"},
@@ -59,17 +60,17 @@ namespace Ricu_Racu
             {"Kā sauc olas dzelteno daļu?","Dzeltenums"},
             {"Kādā krāsā ir spināti?","Zaļš"},
             {"Kur dzīvo Ziemassvētku vecītis?","Ziemeļpolā"},
-            {"Kādā krāsā ir plankumi uz bizbizmārītes?","Melns"},
+            {"Kādā krāsā ir plankumi uz bizbizmārītes?","Melni"},
             {"Cik kāju ir zirneklim?","8"},
             {"Cik gadu gadsimtā?","100 gadi"},
             {"Cik dzīvību ir kaķiem?","9"},
-            {"Ja ir 64 cepumi, kas jāsadala starp 16 bērniem, cik cepumus saņems katrs bērns?","4 cepumi"},
+            {"Kura ir Austrālijas galvaspilsēta?","Kanbera"},
             {"Kāds ir vienīgais pāra pirmskaitlis?","2"},
             {"Cik malu ir piecstūrim?","5"},
             {"Cik malu ir septiņstūrim?","7"},
             {"Cik malu ir desmitstūrim?","10"},
-            {"Ja Tammijam ir 25 kūciņas un Sārai 17, cik kūciņu viņiem ir kopā?","42"},
-            {"Kā cilvēki sauc 31415?","Pi"},
+            {"Kur atrodas Ventas rumba?","Kuldīgā"},
+            {"Kā cilvēki sauc 3.1415?","Pi"},
             {"Cik mēnešu ir vienā gadā?","12"},
             {"Cik ir 22 + 13?","35"},
             {"Kā sauc 90 grādu leņķi?","Taisns lenķis"},
@@ -80,70 +81,19 @@ namespace Ricu_Racu
             {"Cik stundas ir dienā?","24"},
             {"Cik minūtes ir vienā stundā?","60"},
             {"Cik ir 5*5?","25"},
-            {"Ja jūs dubultojat 100, kas jums ir?","200"},
+            {"Ja Jūs dubultojat 100, kas Jums sanāk?","200"},
             {"Cik kaulu ir cilvēka ķermenī?","206"},
             {"Cik dienu ir gadā?","365"},
             {"Cik dienu ir garajā gadā?","366"}
             };
 
-        /*string[] atbildes = new string[] {
-            "7",
-            "Londonā",
-            "Parīzē",
-            "Itālijā",
-            "Ēģiptē",
-            "Pekinā",
-            "Sanfrancisko",
-            "Vašingtona",
-            "Austrālijā",
-            "Juras laikmeta parks",
-            "Jā",
-            "Mufasa",
-            "Jā",
-            "Strauss",
-            "Simts akru mežs",
-            "Mellenes",
-            "Vudijs",
-            "Zilais valis",
-            "Žirafe",
-            "Temperatūru",
-            "Zelts, sudrabs un bronza",
-            "Medu",
-            "Dzeltenums",
-            "Zaļš",
-            "Ziemeļpolā",
-            "Melns",
-            "8",
-            "100 gadi",
-            "9",
-            "4 cepumi",
-            "2",
-            "5",
-            "7",
-            "10",
-            "42",
-            "Pi",
-            "12",
-            "35",
-            "Taisns lenķis",
-            "Izstiepts lenķis",
-            "5",
-            "10",
-            "100",
-            "24",
-            "60",
-            "25",
-            "200",
-            "206",
-            "365",
-            "366",
-            };*/
 
         public Form2()
         {
             InitializeComponent();
             playerSkaits = 0;
             blockSkaits = 0;
+            piemeri = 0;
         }
 
         public Form2(int izvPlayerSkaits, int izvBlockSkaits) : this()
@@ -162,6 +112,7 @@ namespace Ricu_Racu
             var rand = new Random();
             //dice.Visible = false;
             ShuffleQuestionsAndAnswers();
+            usedQuestionIndices.Clear();
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
@@ -433,113 +384,164 @@ namespace Ricu_Racu
             Sajaukt4(jautajumi);
         }
 
-        private void Sajaukt(string[] atbildes1)
+        private void Sajaukt(string[] array)
         {
             var rand = new Random();
-            for (int i = atbildes1.Length - 1; i > 0; i--)
+            for (int i = array.Length - 1; i > 0; i--)
             {
                 int x = rand.Next(0, i + 1);
-                string temp = atbildes1[i];
-                atbildes1[i] = atbildes1[x];
-                atbildes1[x] = temp;
+                string temp = array[i];
+                array[i] = array[x];
+                array[x] = temp;
             }
         }
-        private void Sajaukt2(string[] atbildes2)
+        private void Sajaukt2(string[] array)
         {
             var rand = new Random();
-            for (int i = atbildes2.Length - 1; i > 0; i--)
+            for (int i = array.Length - 1; i > 0; i--)
             {
                 int x = rand.Next(0, i + 1);
-                string temp = atbildes2[i];
-                atbildes2[i] = atbildes2[x];
-                atbildes2[x] = temp;
+                string temp = array[i];
+                array[i] = array[x];
+                array[x] = temp;
             }
         }
-        private void Sajaukt3(string[] atbildes3)
+        private void Sajaukt3(string[] array)
         {
             var rand = new Random();
-            for (int i = atbildes3.Length - 1; i > 0; i--)
+            for (int i = array.Length - 1; i > 0; i--)
             {
                 int x = rand.Next(0, i + 1);
-                string temp = atbildes3[i];
-                atbildes3[i] = atbildes3[x];
-                atbildes3[x] = temp;
+                string temp = array[i];
+                array[i] = array[x];
+                array[x] = temp;
             }
         }
-        private void Sajaukt4(string[] jautajumi)
+        private void Sajaukt4(string[] array)
         {
             var rand = new Random();
-            for (int i = jautajumi.Length - 1; i > 0; i--)
+            for (int i = array.Length - 1; i > 0; i--)
             {
                 int x = rand.Next(0, i + 1);
-                string temp = jautajumi[i];
-                jautajumi[i] = jautajumi[x];
-                jautajumi[x] = temp;
+                string temp = array[i];
+                array[i] = array[x];
+                array[x] = temp;
             }
         }
+        private void JauktPogas()
+        {
+            var rand = new Random();
+
+            Point originalPosition1 = atbildeBut1.Location;
+            Point originalPosition2 = atbildeBut2.Location;
+            Point originalPosition3 = atbildeBut3.Location;
+
+            Point[] positions = { originalPosition1, originalPosition2, originalPosition3 };
+            positions = positions.OrderBy(x => rand.Next()).ToArray();
+
+            atbildeBut1.Location = positions[0];
+            atbildeBut2.Location = positions[1];
+            atbildeBut3.Location = positions[2];
+        }
+
+        List<int> usedQuestionIndices = new List<int>();
+
         private void ShuffleQuestionsAndAnswers()
         {
-            ShuffleArrays();
-            jautajums.Text = jautajumi[seciba[piemeri]];
-            atbildeBut1.Text = atbildes1[seciba[piemeri]];
-            atbildeBut2.Text = atbildes2[seciba[piemeri]];
-            atbildeBut3.Text = atbildes3[seciba[piemeri]];
+            var rand = new Random();
+
+            List<int> unusedQuestionIndices = seciba.Except(usedQuestionIndices).ToList();
+
+            if (unusedQuestionIndices.Count == 0)
+            {
+                usedQuestionIndices.Clear();
+                unusedQuestionIndices = seciba.ToList();
+            }
+
+            int randomIndex = rand.Next(unusedQuestionIndices.Count);
+            int questionIndex = unusedQuestionIndices[randomIndex];
+
+            usedQuestionIndices.Add(questionIndex);
+
+            jautajums.Text = jautajumi[questionIndex];
+            atbildeBut1.Text = atbildes1[questionIndex];
+            atbildeBut2.Text = atbildes2[questionIndex];
+            atbildeBut3.Text = atbildes3[questionIndex];
+
+            atbildeBut1.Click -= atbildeBut1_Click;
+            atbildeBut2.Click -= atbildeBut2_Click;
+            atbildeBut3.Click -= atbildeBut3_Click;
+
+            atbildeBut1.Click += atbildeBut1_Click;
+            atbildeBut2.Click += atbildeBut2_Click;
+            atbildeBut3.Click += atbildeBut3_Click;
+        }
+
+        private void NakJaut()
+        {
+            if (usedQuestionIndices.Count >= seciba.Length)
+            {
+                MessageBox.Show("Visi jautajumi jau uzdoti!");
+                this.Hide();
+                Form3 beigas = new Form3();
+                beigas.Show();
+                return;
+            }
+
+            ShuffleQuestionsAndAnswers();
+            JauktPogas();
         }
 
         private void atbildeBut1_Click(object sender, EventArgs e)
             {
-                if (CheckAnswer(atbildeBut1.Text))
+                if (ParbAtbild(atbildeBut1.Text))
                 {
-                    MessageBox.Show("Button 1 Clicked!");
-                    ShuffleQuestionsAndAnswers();
+                    MessageBox.Show("Uzspiests 1!");
+                    NakJaut();
                 }
             }
 
             private void atbildeBut2_Click(object sender, EventArgs e)
             {
-                if (CheckAnswer(atbildeBut2.Text))
+                if (ParbAtbild(atbildeBut2.Text))
                 {
-                    MessageBox.Show("Button 2 Clicked!");
-                    ShuffleQuestionsAndAnswers();
+                    MessageBox.Show("Uzspiests 2!"); 
+                    NakJaut();
                 }
             }
 
             private void atbildeBut3_Click(object sender, EventArgs e)
             {
-                if (CheckAnswer(atbildeBut3.Text))
+                if (ParbAtbild(atbildeBut3.Text))
                 {
-                    MessageBox.Show("Button 3 Clicked!");
-                    ShuffleQuestionsAndAnswers();
+                    MessageBox.Show("Uzspiests 3!");
+                    NakJaut();
                 }
             }
-        private bool CheckAnswer(string selectedAnswer)
+        private bool ParbAtbild(string selectedAnswer)
         {
-            int shuffledIndex = seciba[piemeri];
-            string shuffledQuestion = jautajumi[shuffledIndex];
+            int shuffledIndex = usedQuestionIndices.Count;
 
-            if (atbildes.ContainsKey(shuffledQuestion))
+            if (shuffledIndex >= 0 && shuffledIndex < jautajumi.Length)
             {
-                string correctAnswer = atbildes[shuffledQuestion];
+                string shuffledQuestion = jautajumi[shuffledIndex];
 
-                string shuffledAnswer1 = atbildes1[shuffledIndex];
-                string shuffledAnswer2 = atbildes2[shuffledIndex];
-                string shuffledAnswer3 = atbildes3[shuffledIndex];
-
-                if (selectedAnswer == shuffledAnswer1 || selectedAnswer == shuffledAnswer2 || selectedAnswer == shuffledAnswer3)
+                if (atbildes.ContainsKey(shuffledQuestion))
                 {
-                    MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
-                    MessageBox.Show($"Selected Answer: {selectedAnswer}");
-                    MessageBox.Show($"Correct Answer: {correctAnswer}");
+                    string correctAnswer = atbildes[shuffledQuestion];
 
-                    if (selectedAnswer == correctAnswer)
+                    MessageBox.Show($"Jautajums: {shuffledQuestion}");
+                    MessageBox.Show($"Izv. atbilde: {selectedAnswer}");
+                    MessageBox.Show($"Pareiz. atbilde: {correctAnswer}");
+
+                    if (string.Equals(selectedAnswer, correctAnswer, StringComparison.OrdinalIgnoreCase))
                     {
-                        MessageBox.Show("Correct Answer!");
+                        MessageBox.Show("Pareizi!");
                         return true;
                     }
                 }
-                MessageBox.Show("Incorrect Answer!");
-                return false;
             }
+            MessageBox.Show("Nepareizi!");
             return false;
         }
     }
