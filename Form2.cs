@@ -112,7 +112,7 @@ namespace Ricu_Racu
             var rand = new Random();
             //dice.Visible = false;
             ShuffleQuestionsAndAnswers();
-            usedQuestionIndices.Clear();
+            //usedQuestionIndices.Clear();
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
@@ -448,25 +448,13 @@ namespace Ricu_Racu
 
         private void ShuffleQuestionsAndAnswers()
         {
-            var rand = new Random();
-
-            List<int> unusedQuestionIndices = seciba.Except(usedQuestionIndices).ToList();
-
-            if (unusedQuestionIndices.Count == 0)
             {
-                usedQuestionIndices.Clear();
-                unusedQuestionIndices = seciba.ToList();
+                ShuffleArrays();
+                jautajums.Text = jautajumi[seciba[piemeri]];
+                atbildeBut1.Text = atbildes1[seciba[piemeri]];
+                atbildeBut2.Text = atbildes2[seciba[piemeri]];
+                atbildeBut3.Text = atbildes3[seciba[piemeri]];
             }
-
-            int randomIndex = rand.Next(unusedQuestionIndices.Count);
-            int questionIndex = unusedQuestionIndices[randomIndex];
-
-            usedQuestionIndices.Add(questionIndex);
-
-            jautajums.Text = jautajumi[questionIndex];
-            atbildeBut1.Text = atbildes1[questionIndex];
-            atbildeBut2.Text = atbildes2[questionIndex];
-            atbildeBut3.Text = atbildes3[questionIndex];
 
             atbildeBut1.Click -= atbildeBut1_Click;
             atbildeBut2.Click -= atbildeBut2_Click;
@@ -493,55 +481,59 @@ namespace Ricu_Racu
         }
 
         private void atbildeBut1_Click(object sender, EventArgs e)
-            {
-                if (ParbAtbild(atbildeBut1.Text))
-                {
-                    MessageBox.Show("Uzspiests 1!");
-                    NakJaut();
-                }
-            }
-
-            private void atbildeBut2_Click(object sender, EventArgs e)
-            {
-                if (ParbAtbild(atbildeBut2.Text))
-                {
-                    MessageBox.Show("Uzspiests 2!"); 
-                    NakJaut();
-                }
-            }
-
-            private void atbildeBut3_Click(object sender, EventArgs e)
-            {
-                if (ParbAtbild(atbildeBut3.Text))
-                {
-                    MessageBox.Show("Uzspiests 3!");
-                    NakJaut();
-                }
-            }
-        private bool ParbAtbild(string selectedAnswer)
         {
-            int shuffledIndex = usedQuestionIndices.Count;
-
-            if (shuffledIndex >= 0 && shuffledIndex < jautajumi.Length)
+            if (ParbAtbild(atbildeBut1.Text))
             {
-                string shuffledQuestion = jautajumi[shuffledIndex];
+                MessageBox.Show("Uzspiests 1!");
+                NakJaut();
+            }
+        }
 
-                if (atbildes.ContainsKey(shuffledQuestion))
+        private void atbildeBut2_Click(object sender, EventArgs e)
+        {
+            if (ParbAtbild(atbildeBut2.Text))
+            {
+                MessageBox.Show("Uzspiests 2!");
+                NakJaut();
+            }
+        }
+
+        private void atbildeBut3_Click(object sender, EventArgs e)
+        {
+            if (ParbAtbild(atbildeBut3.Text))
+            {
+                MessageBox.Show("Uzspiests 3!");
+                NakJaut();
+            }
+        }
+        private bool ParbAtbild(string izvAtb)
+        {
+            int shuffledIndex = seciba[piemeri];
+            string shuffledQuestion = jautajumi[shuffledIndex];
+
+            if (atbildes.ContainsKey(shuffledQuestion))
+            {
+                string correctAnswer = atbildes[shuffledQuestion];
+
+                string shuffledAnswer1 = atbildes1[shuffledIndex];
+                string shuffledAnswer2 = atbildes2[shuffledIndex];
+                string shuffledAnswer3 = atbildes3[shuffledIndex];
+
+                if (izvAtb == shuffledAnswer1 || izvAtb == shuffledAnswer2 || izvAtb == shuffledAnswer3)
                 {
-                    string correctAnswer = atbildes[shuffledQuestion];
+                    MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
+                    MessageBox.Show($"Selected Answer: {izvAtb}");
+                    MessageBox.Show($"Correct Answer: {correctAnswer}");
 
-                    MessageBox.Show($"Jautajums: {shuffledQuestion}");
-                    MessageBox.Show($"Izv. atbilde: {selectedAnswer}");
-                    MessageBox.Show($"Pareiz. atbilde: {correctAnswer}");
-
-                    if (string.Equals(selectedAnswer, correctAnswer, StringComparison.OrdinalIgnoreCase))
+                    if (izvAtb == correctAnswer)
                     {
-                        MessageBox.Show("Pareizi!");
+                        MessageBox.Show("Correct Answer!");
                         return true;
                     }
                 }
+                MessageBox.Show("Incorrect Answer!");
+                return false;
             }
-            MessageBox.Show("Nepareizi!");
             return false;
         }
     }
