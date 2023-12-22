@@ -15,9 +15,9 @@ namespace Ricu_Racu
         //private bool irIzm5050 = false;
         //private bool irSkipJaut = false;
         private Random random = new Random();
-        public int piemeri = 0;
         public static int punkti = 0;
         public int[] seciba = Enumerable.Range(0, 50).ToArray();
+        public int nr = 0;
 
         //private readonly string[] diceImg = { "dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png" };
 
@@ -93,7 +93,6 @@ namespace Ricu_Racu
             InitializeComponent();
             playerSkaits = 0;
             blockSkaits = 0;
-            piemeri = 0;
         }
 
         public Form2(int izvPlayerSkaits, int izvBlockSkaits) : this()
@@ -109,10 +108,9 @@ namespace Ricu_Racu
             bool atmetKIr = false;
             Image atmetLImage = Image.FromFile("arrow right.png");
             Image atmetKImage = Image.FromFile("arrow left.png");
-            var rand = new Random();
             //dice.Visible = false;
+            var rand = new Random();
             ShuffleQuestionsAndAnswers();
-            //usedQuestionIndices.Clear();
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
@@ -366,23 +364,6 @@ namespace Ricu_Racu
                 }
             }
         }
-        private void ShuffleArrays()
-        {
-            var rand = new Random();
-
-            for (int i = seciba.Length - 1; i > 0; i--)
-            {
-                int x = rand.Next(0, i + 1);
-                int temp = seciba[i];
-                seciba[i] = seciba[x];
-                seciba[x] = temp;
-            }
-
-            Sajaukt(atbildes1);
-            Sajaukt2(atbildes2);
-            Sajaukt3(atbildes3);
-            Sajaukt4(jautajumi);
-        }
 
         private void Sajaukt(string[] array)
         {
@@ -395,37 +376,37 @@ namespace Ricu_Racu
                 array[x] = temp;
             }
         }
-        private void Sajaukt2(string[] array)
+        private void Sajaukt2(string[] atbildes1)
         {
             var rand = new Random();
-            for (int i = array.Length - 1; i > 0; i--)
+            for (int i = atbildes1.Length - 1; i > 0; i--)
             {
                 int x = rand.Next(0, i + 1);
-                string temp = array[i];
-                array[i] = array[x];
-                array[x] = temp;
+                string sec = atbildes1[i];
+                atbildes1[i] = atbildes1[x];
+                atbildes1[x] = sec;
             }
         }
-        private void Sajaukt3(string[] array)
+        private void Sajaukt3(string[] atbildes2)
         {
             var rand = new Random();
-            for (int i = array.Length - 1; i > 0; i--)
+            for (int i = atbildes2.Length - 1; i > 0; i--)
             {
                 int x = rand.Next(0, i + 1);
-                string temp = array[i];
-                array[i] = array[x];
-                array[x] = temp;
+                string sec = atbildes2[i];
+                atbildes2[i] = atbildes2[x];
+                atbildes2[x] = sec;
             }
         }
-        private void Sajaukt4(string[] array)
+        private void Sajaukt4(string[] atbildes3)
         {
             var rand = new Random();
-            for (int i = array.Length - 1; i > 0; i--)
+            for (int i = atbildes3.Length - 1; i > 0; i--)
             {
                 int x = rand.Next(0, i + 1);
-                string temp = array[i];
-                array[i] = array[x];
-                array[x] = temp;
+                string sec = atbildes3[i];
+                atbildes3[i] = atbildes3[x];
+                atbildes3[x] = sec;
             }
         }
         private void JauktPogas()
@@ -444,17 +425,27 @@ namespace Ricu_Racu
             atbildeBut3.Location = positions[2];
         }
 
-        List<int> usedQuestionIndices = new List<int>();
+        //List<int> usedQuestionIndices = new List<int>();
 
         private void ShuffleQuestionsAndAnswers()
         {
+            var rand = new Random();
+            /*for (int i = seciba.Length - 1; i > 0; i--)
             {
-                ShuffleArrays();
-                jautajums.Text = jautajumi[seciba[piemeri]];
-                atbildeBut1.Text = atbildes1[seciba[piemeri]];
-                atbildeBut2.Text = atbildes2[seciba[piemeri]];
-                atbildeBut3.Text = atbildes3[seciba[piemeri]];
-            }
+                int x = rand.Next(0, i + 1);
+                string sec = jautajumi[i];
+                jautajumi[i] = jautajumi[x];
+                jautajumi[x] = sec;
+            }*/
+            Sajaukt(jautajumi);
+            Sajaukt2(atbildes1);
+            Sajaukt3(atbildes2);
+            Sajaukt4(atbildes3);
+            jautajums.Text = jautajumi[seciba[nr]];
+            atbildeBut1.Text = atbildes1[seciba[nr]];
+            atbildeBut2.Text = atbildes2[seciba[nr]];
+            atbildeBut3.Text = atbildes3[seciba[nr]];
+            
 
             atbildeBut1.Click -= atbildeBut1_Click;
             atbildeBut2.Click -= atbildeBut2_Click;
@@ -467,7 +458,7 @@ namespace Ricu_Racu
 
         private void NakJaut()
         {
-            if (usedQuestionIndices.Count >= seciba.Length)
+            if (nr == 50)
             {
                 MessageBox.Show("Visi jautajumi jau uzdoti!");
                 this.Hide();
@@ -486,6 +477,7 @@ namespace Ricu_Racu
             {
                 MessageBox.Show("Uzspiests 1!");
                 NakJaut();
+                nr++;
             }
         }
 
@@ -495,6 +487,7 @@ namespace Ricu_Racu
             {
                 MessageBox.Show("Uzspiests 2!");
                 NakJaut();
+                nr++;
             }
         }
 
@@ -504,37 +497,28 @@ namespace Ricu_Racu
             {
                 MessageBox.Show("Uzspiests 3!");
                 NakJaut();
+                nr++;
             }
         }
         private bool ParbAtbild(string izvAtb)
         {
-            int shuffledIndex = seciba[piemeri];
-            string shuffledQuestion = jautajumi[shuffledIndex];
+            string shuffledQuestion = jautajumi[seciba[nr]];
 
-            if (atbildes.ContainsKey(shuffledQuestion))
+            if (atbildes.TryGetValue(shuffledQuestion, out string correctAnswer))
             {
-                string correctAnswer = atbildes[shuffledQuestion];
+                MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
+                MessageBox.Show($"Selected Answer: {izvAtb}");
+                MessageBox.Show($"Correct Answer: {correctAnswer}");
 
-                string shuffledAnswer1 = atbildes1[shuffledIndex];
-                string shuffledAnswer2 = atbildes2[shuffledIndex];
-                string shuffledAnswer3 = atbildes3[shuffledIndex];
-
-                if (izvAtb == shuffledAnswer1 || izvAtb == shuffledAnswer2 || izvAtb == shuffledAnswer3)
+                if (izvAtb == correctAnswer)
                 {
-                    MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
-                    MessageBox.Show($"Selected Answer: {izvAtb}");
-                    MessageBox.Show($"Correct Answer: {correctAnswer}");
-
-                    if (izvAtb == correctAnswer)
-                    {
-                        MessageBox.Show("Correct Answer!");
-                        return true;
-                    }
+                    MessageBox.Show("Correct Answer!");
+                    return true;
                 }
-                MessageBox.Show("Incorrect Answer!");
-                return false;
             }
+            MessageBox.Show("Incorrect Answer!");
             return false;
         }
     }
 }
+
