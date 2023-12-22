@@ -18,6 +18,7 @@ namespace Ricu_Racu
         public static int punkti = 0;
         public int[] seciba = Enumerable.Range(0, 50).ToArray();
         public int nr = 0;
+        private List<int> usedQuestionIndices = new List<int>();
 
         //private readonly string[] diceImg = { "dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png" };
 
@@ -430,22 +431,22 @@ namespace Ricu_Racu
         private void ShuffleQuestionsAndAnswers()
         {
             var rand = new Random();
-            /*for (int i = seciba.Length - 1; i > 0; i--)
+
+            int unusedQuestionIndex;
+            do
             {
-                int x = rand.Next(0, i + 1);
-                string sec = jautajumi[i];
-                jautajumi[i] = jautajumi[x];
-                jautajumi[x] = sec;
-            }*/
-            Sajaukt(jautajumi);
-            Sajaukt2(atbildes1);
-            Sajaukt3(atbildes2);
-            Sajaukt4(atbildes3);
-            jautajums.Text = jautajumi[seciba[nr]];
-            atbildeBut1.Text = atbildes1[seciba[nr]];
-            atbildeBut2.Text = atbildes2[seciba[nr]];
-            atbildeBut3.Text = atbildes3[seciba[nr]];
-            
+                unusedQuestionIndex = rand.Next(0, jautajumi.Length);
+            } while (usedQuestionIndices.Contains(unusedQuestionIndex));
+
+            usedQuestionIndices.Add(unusedQuestionIndex);
+
+            seciba[nr] = unusedQuestionIndex;
+
+            jautajums.Text = jautajumi[unusedQuestionIndex];
+            atbildeBut1.Text = atbildes1[unusedQuestionIndex];
+            atbildeBut2.Text = atbildes2[unusedQuestionIndex];
+            atbildeBut3.Text = atbildes3[unusedQuestionIndex];
+
 
             atbildeBut1.Click -= atbildeBut1_Click;
             atbildeBut2.Click -= atbildeBut2_Click;
@@ -458,7 +459,7 @@ namespace Ricu_Racu
 
         private void NakJaut()
         {
-            if (nr == 50)
+            if (usedQuestionIndices.Count == jautajumi.Length)
             {
                 MessageBox.Show("Visi jautajumi jau uzdoti!");
                 this.Hide();
@@ -466,7 +467,6 @@ namespace Ricu_Racu
                 beigas.Show();
                 return;
             }
-            nr++;
             ShuffleQuestionsAndAnswers();
             JauktPogas();
         }
