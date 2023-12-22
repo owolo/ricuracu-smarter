@@ -466,7 +466,7 @@ namespace Ricu_Racu
                 beigas.Show();
                 return;
             }
-
+            nr++;
             ShuffleQuestionsAndAnswers();
             JauktPogas();
         }
@@ -477,7 +477,7 @@ namespace Ricu_Racu
             {
                 MessageBox.Show("Uzspiests 1!");
                 NakJaut();
-                nr++;
+                //nr++;
             }
         }
 
@@ -487,7 +487,7 @@ namespace Ricu_Racu
             {
                 MessageBox.Show("Uzspiests 2!");
                 NakJaut();
-                nr++;
+                //nr++;
             }
         }
 
@@ -497,7 +497,7 @@ namespace Ricu_Racu
             {
                 MessageBox.Show("Uzspiests 3!");
                 NakJaut();
-                nr++;
+                //nr++;
             }
         }
         private bool ParbAtbild(string izvAtb)
