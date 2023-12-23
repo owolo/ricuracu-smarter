@@ -34,7 +34,6 @@
             this.atbildeBut2 = new System.Windows.Forms.Button();
             this.atbildeBut3 = new System.Windows.Forms.Button();
             this.jautajums = new System.Windows.Forms.Label();
-            this.dice = new System.Windows.Forms.PictureBox();
             this.block1 = new System.Windows.Forms.Label();
             this.block2 = new System.Windows.Forms.Label();
             this.block3 = new System.Windows.Forms.Label();
@@ -57,16 +56,18 @@
             this.block20 = new System.Windows.Forms.Label();
             this.spawnRed = new System.Windows.Forms.Label();
             this.spawnGreen = new System.Windows.Forms.Label();
-            this.green = new System.Windows.Forms.PictureBox();
-            this.red = new System.Windows.Forms.PictureBox();
-            this.atmetL = new System.Windows.Forms.PictureBox();
+            this.imgTimer = new System.Windows.Forms.Timer(this.components);
+            this.winBlock = new System.Windows.Forms.Label();
             this.atmetK = new System.Windows.Forms.PictureBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.green)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.red)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).BeginInit();
+            this.atmetL = new System.Windows.Forms.PictureBox();
+            this.red = new System.Windows.Forms.PictureBox();
+            this.green = new System.Windows.Forms.PictureBox();
+            this.dice = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.atmetK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.red)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.green)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice)).BeginInit();
             this.SuspendLayout();
             // 
             // atbildeBut1
@@ -103,22 +104,11 @@
             // 
             this.jautajums.AutoSize = true;
             this.jautajums.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.jautajums.Location = new System.Drawing.Point(96, 275);
+            this.jautajums.Location = new System.Drawing.Point(117, 288);
             this.jautajums.Name = "jautajums";
             this.jautajums.Size = new System.Drawing.Size(273, 25);
             this.jautajums.TabIndex = 4;
             this.jautajums.Text = "Jautājums: Cik būs 2+2*2?";
-            // 
-            // dice
-            // 
-            this.dice.Image = ((System.Drawing.Image)(resources.GetObject("dice.Image")));
-            this.dice.Location = new System.Drawing.Point(647, 382);
-            this.dice.Name = "dice";
-            this.dice.Size = new System.Drawing.Size(170, 172);
-            this.dice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.dice.TabIndex = 9;
-            this.dice.TabStop = false;
-            this.dice.Visible = false;
             // 
             // block1
             // 
@@ -336,40 +326,18 @@
             this.spawnGreen.Size = new System.Drawing.Size(66, 61);
             this.spawnGreen.TabIndex = 33;
             // 
-            // green
+            // imgTimer
             // 
-            this.green.BackColor = System.Drawing.Color.Silver;
-            this.green.Image = ((System.Drawing.Image)(resources.GetObject("green.Image")));
-            this.green.Location = new System.Drawing.Point(807, 146);
-            this.green.Name = "green";
-            this.green.Size = new System.Drawing.Size(66, 61);
-            this.green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.green.TabIndex = 34;
-            this.green.TabStop = false;
+            this.imgTimer.Tick += new System.EventHandler(this.imgTimer_Tick);
             // 
-            // red
+            // winBlock
             // 
-            this.red.BackColor = System.Drawing.Color.Silver;
-            this.red.Image = ((System.Drawing.Image)(resources.GetObject("red.Image")));
-            this.red.Location = new System.Drawing.Point(15, 55);
-            this.red.Name = "red";
-            this.red.Size = new System.Drawing.Size(66, 61);
-            this.red.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.red.TabIndex = 35;
-            this.red.TabStop = false;
-            // 
-            // atmetL
-            // 
-            this.atmetL.BackColor = System.Drawing.Color.Silver;
-            this.atmetL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.atmetL.Image = ((System.Drawing.Image)(resources.GetObject("atmetL.Image")));
-            this.atmetL.Location = new System.Drawing.Point(472, 543);
-            this.atmetL.Name = "atmetL";
-            this.atmetL.Size = new System.Drawing.Size(66, 61);
-            this.atmetL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.atmetL.TabIndex = 36;
-            this.atmetL.TabStop = false;
-            this.atmetL.Visible = false;
+            this.winBlock.BackColor = System.Drawing.Color.Chartreuse;
+            this.winBlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.winBlock.Location = new System.Drawing.Point(400, 543);
+            this.winBlock.Name = "winBlock";
+            this.winBlock.Size = new System.Drawing.Size(66, 61);
+            this.winBlock.TabIndex = 39;
             // 
             // atmetK
             // 
@@ -384,16 +352,59 @@
             this.atmetK.TabStop = false;
             this.atmetK.Visible = false;
             // 
-            // timer
+            // atmetL
             // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 500;
+            this.atmetL.BackColor = System.Drawing.Color.Silver;
+            this.atmetL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.atmetL.Image = ((System.Drawing.Image)(resources.GetObject("atmetL.Image")));
+            this.atmetL.Location = new System.Drawing.Point(472, 543);
+            this.atmetL.Name = "atmetL";
+            this.atmetL.Size = new System.Drawing.Size(66, 61);
+            this.atmetL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.atmetL.TabIndex = 36;
+            this.atmetL.TabStop = false;
+            this.atmetL.Visible = false;
+            // 
+            // red
+            // 
+            this.red.BackColor = System.Drawing.Color.Silver;
+            this.red.Image = global::Ricu_Racu.Properties.Resources.red_ludo;
+            this.red.Location = new System.Drawing.Point(15, 55);
+            this.red.Name = "red";
+            this.red.Size = new System.Drawing.Size(66, 61);
+            this.red.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.red.TabIndex = 35;
+            this.red.TabStop = false;
+            // 
+            // green
+            // 
+            this.green.BackColor = System.Drawing.Color.Silver;
+            this.green.Image = global::Ricu_Racu.Properties.Resources.green_ludo;
+            this.green.Location = new System.Drawing.Point(807, 146);
+            this.green.Name = "green";
+            this.green.Size = new System.Drawing.Size(66, 61);
+            this.green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.green.TabIndex = 34;
+            this.green.TabStop = false;
+            // 
+            // dice
+            // 
+            this.dice.Image = global::Ricu_Racu.Properties.Resources.dice1;
+            this.dice.Location = new System.Drawing.Point(647, 382);
+            this.dice.Name = "dice";
+            this.dice.Size = new System.Drawing.Size(170, 172);
+            this.dice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.dice.TabIndex = 9;
+            this.dice.TabStop = false;
+            this.dice.Visible = false;
+            this.dice.Click += new System.EventHandler(this.dice_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 616);
+            this.Controls.Add(this.winBlock);
             this.Controls.Add(this.atmetK);
             this.Controls.Add(this.atmetL);
             this.Controls.Add(this.red);
@@ -431,11 +442,11 @@
             this.ShowIcon = false;
             this.Text = "Spēle: \"Kurš ir gudrāks?";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.green)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.red)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.red)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.green)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,6 +485,7 @@
         private System.Windows.Forms.PictureBox red;
         private System.Windows.Forms.PictureBox atmetL;
         private System.Windows.Forms.PictureBox atmetK;
-        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer imgTimer;
+        private System.Windows.Forms.Label winBlock;
     }
 }

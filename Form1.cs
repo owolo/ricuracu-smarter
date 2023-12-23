@@ -59,14 +59,14 @@ namespace Ricu_Racu
         private void but10t_Click(object sender, EventArgs e)
         {
                 this.Hide();
-                Form2 spele = new Form2(playerSkaits, 10);
+                Form3 spele = new Form3(playerSkaits, 10);
                 spele.Show();
         }
 
         private void but20t_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 spele = new Form2(playerSkaits, 20);
+            Form3 spele = new Form3(playerSkaits, 20);
             spele.Show();
         }
 

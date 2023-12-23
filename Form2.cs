@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
 using System.Collections.Generic;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Ricu_Racu
 {
@@ -15,12 +16,11 @@ namespace Ricu_Racu
         //private bool irIzm5050 = false;
         //private bool irSkipJaut = false;
         private Random random = new Random();
-        public static int punkti = 0;
         public int[] seciba = Enumerable.Range(0, 50).ToArray();
         public int nr = 0;
+        private int reizes = 0;
+        private int punkti;
         private List<int> usedQuestionIndices = new List<int>();
-
-        //private readonly string[] diceImg = { "dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png" };
 
         string[] jautajumi = new string[] {
             "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Rotaļlietu stāsts'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu lenķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
@@ -94,6 +94,9 @@ namespace Ricu_Racu
             InitializeComponent();
             playerSkaits = 0;
             blockSkaits = 0;
+            imgTimer = new Timer();
+            imgTimer.Tick += imgTimer_Tick;
+            winBlock.SendToBack();
         }
 
         public Form2(int izvPlayerSkaits, int izvBlockSkaits) : this()
@@ -105,17 +108,17 @@ namespace Ricu_Racu
         private void Form2_Load(object sender, EventArgs e)
         {
             double space = 4;
-            bool atmetLIr = false;
-            bool atmetKIr = false;
-            Image atmetLImage = Image.FromFile("arrow right.png");
-            Image atmetKImage = Image.FromFile("arrow left.png");
-            //dice.Visible = false;
+            //bool atmetLIr = false;
+            //bool atmetKIr = false;
+            //Image atmetLImage = Image.FromFile("arrow right.png");
+            //Image atmetKImage = Image.FromFile("arrow left.png");
             var rand = new Random();
             ShuffleQuestionsAndAnswers();
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
-                this.Size = new Size(650, 500);
+                this.Size = new Size(685, 500);
+                winBlock.Location = new Point(605, 82);
                 green.Visible = false;
                 spawnGreen.Visible = false;
                 red.Location = new Point(11, 82);
@@ -134,7 +137,7 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                if (!atmetKIr)
+                /*if (!atmetKIr)
                 {
                     PictureBox atmetK = new PictureBox
                     {
@@ -151,19 +154,18 @@ namespace Ricu_Racu
                     atmetK.BringToFront();
                     atmetK.BorderStyle = BorderStyle.FixedSingle;
                     atmetKIr = true;
-                }
+                }*/
             }
             if (blockSkaits == 20 && playerSkaits == 1)
             {
-                this.Size = new Size(1180, 530);
-                green.Location = new Point(1145, 82);
-                spawnGreen.BackColor = Color.Silver;
+                this.Size = new Size(1225, 530);
+                winBlock.Location = new Point(1145, 82);
                 dice.Location = new Point(880, 283);
                 jautajums.Location = new Point(480, 222);
                 //time.Location = new Point(780, 222);
                 atbildeBut1.Location = new Point(450, 301);
                 atbildeBut2.Location = new Point(621, 301);
-                atbildeBut3.Location = new Point(450, 393);
+                atbildeBut3.Location = new Point(535, 393);
                 //skipJaut.Location = new Point(455, 490);
                 //izm5050.Location = new Point(628, 490);
                 red.Location = new Point(11, 82);
@@ -184,7 +186,7 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                if (!atmetKIr)
+                /*if (!atmetKIr)
                 {
                     for (int i = 0; i < 3; i++)
                     {
@@ -204,165 +206,7 @@ namespace Ricu_Racu
                         atmetK.BorderStyle = BorderStyle.FixedSingle;
                         atmetKIr = true;
                     }
-                }
-            }
-
-            if (blockSkaits == 10 && playerSkaits == 2)
-            {
-                this.Size = new Size(690, 500);
-                red.Location = new Point(11, 47);
-                spawnRed.Location = new Point(11, 47);
-                green.Location = new Point(605, 120);
-                spawnGreen.Location = new Point(605, 120);
-                dice.Location = new Point(450, 260);
-
-
-                for (int i = 0; i < blockSkaits; i++) //green ludo line
-                {
-
-                    Label block = new Label();
-                    block.Size = new Size(blockGar, blockAug);
-                    block.Text = $"";
-                    int xP = (int)(65 + i * (blockGar + space));
-                    block.Location = new Point(xP, 47);
-                    block.BackColor = Color.Silver;
-                    block.BorderStyle = BorderStyle.FixedSingle;
-
-                    this.Controls.Add(block);
-
-                    if (!atmetLIr)
-                    {
-                        PictureBox atmetL = new PictureBox
-                        {
-                            Size = new Size(blockGar, blockAug),
-                            Image = atmetLImage,
-                            BackColor = Color.Silver,
-                        };
-                        int yPosition = 47;
-                        int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));
-
-                        atmetL.Location = new Point(xPosition, yPosition);
-
-                        this.Controls.Add(atmetL);
-                        atmetL.BringToFront();
-                        atmetL.BorderStyle = BorderStyle.FixedSingle;
-                        atmetLIr = true;
-                    }
-
-                }
-                for (int i = 0; i < blockSkaits; i++) //red ludo line
-                {
-                    Label block = new Label();
-                    block.Size = new Size(blockGar, blockAug);
-                    block.Text = $"";
-                    int xP = (int)(65 + i * (blockGar + space));
-                    block.Location = new Point(xP, 120);
-                    block.BackColor = Color.Silver;
-                    block.BorderStyle = BorderStyle.FixedSingle;
-
-                    this.Controls.Add(block);
-
-                    if (!atmetKIr)
-                    {
-                        PictureBox atmetK = new PictureBox
-                        {
-                            Size = new Size(blockGar, blockAug),
-                            Image = atmetKImage,
-                            BackColor = Color.Silver,
-                        };
-                        int yPosition = 120;
-                        int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));
-
-                        atmetK.Location = new Point(xPosition, yPosition);
-
-                        this.Controls.Add(atmetK);
-                        atmetK.BringToFront();
-                        atmetK.BorderStyle = BorderStyle.FixedSingle;
-                        atmetKIr = true;
-                    }
-                }
-            }
-
-            if (blockSkaits == 20 && playerSkaits == 2)
-            {
-                this.Size = new Size(1235, 530);
-                green.Location = new Point(1145, 82);
-                spawnGreen.BackColor = Color.Silver;
-                dice.Location = new Point(880, 283);
-                jautajums.Location = new Point(480, 222);
-                //time.Location = new Point(780, 222);
-                atbildeBut1.Location = new Point(450, 321);
-                atbildeBut2.Location = new Point(621, 321);
-                atbildeBut3.Location = new Point(450, 413);
-                //skipJaut.Location = new Point(455, 490);
-                //izm5050.Location = new Point(628, 490);
-                spawnGreen.Visible = false;
-                red.Location = new Point(11, 47);
-                spawnRed.Location = new Point(11, 47);
-                green.Location = new Point(1145, 120);
-                spawnGreen.Location = new Point(1145, 120);
-
-                for (int i = 0; i < blockSkaits; i++)  //green ludo line
-                {
-                    Label block = new Label();
-                    block.Size = new Size(blockGar, blockAug);
-                    block.Text = $"";
-                    int xP = (int)(65 + i * (blockGar + space));
-                    block.Location = new Point(xP, 47);
-                    block.BackColor = Color.Silver;
-                    block.BorderStyle = BorderStyle.FixedSingle;
-
-                    this.Controls.Add(block);
-                }
-                if (!atmetLIr)
-                {
-                    PictureBox atmetL = new PictureBox
-                    {
-                        Size = new Size(blockGar, blockAug),
-                        Image = atmetLImage,
-                        BackColor = Color.Silver,
-                    };
-                    int yPosition = 47;
-                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));
-
-                    atmetL.Location = new Point(xPosition, yPosition);
-
-                    this.Controls.Add(atmetL);
-                    atmetL.BringToFront();
-                    atmetL.BorderStyle = BorderStyle.FixedSingle;
-                    atmetLIr = true;
-                }
-
-                for (int i = 0; i < blockSkaits; i++) //red ludo line
-                {
-                    Label block = new Label();
-                    block.Size = new Size(blockGar, blockAug);
-                    block.Text = $"";
-                    int xP = (int)(65 + i * (blockGar + space));
-                    block.Location = new Point(xP, 120);
-                    block.BackColor = Color.Silver;
-                    block.BorderStyle = BorderStyle.FixedSingle;
-
-                    this.Controls.Add(block);
-                }
-                if (!atmetKIr)
-                {
-                    PictureBox atmetK = new PictureBox
-                    {
-                        Size = new Size(blockGar, blockAug),
-                        Image = atmetKImage,
-                        BackColor = Color.Silver,
-                    };
-                    int yPosition = 120;
-                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));
-
-                    atmetK.Location = new Point(xPosition, yPosition);
-
-                    this.Controls.Add(atmetK);
-                    atmetK.BringToFront();
-                    atmetK.BorderStyle = BorderStyle.FixedSingle;
-                    atmetKIr = true;
-                }
+                }*/
             }
         }
 
@@ -463,7 +307,7 @@ namespace Ricu_Racu
             {
                 MessageBox.Show("Visi jautajumi jau uzdoti!");
                 this.Hide();
-                Form3 beigas = new Form3();
+                Form4 beigas = new Form4();
                 beigas.Show();
                 return;
             }
@@ -475,9 +319,8 @@ namespace Ricu_Racu
         {
             if (ParbAtbild(atbildeBut1.Text))
             {
-                MessageBox.Show("Uzspiests 1!");
-                NakJaut();
-                //nr++;
+                //MessageBox.Show("Uzspiests 1!");
+                //NakJaut();
             }
         }
 
@@ -485,9 +328,8 @@ namespace Ricu_Racu
         {
             if (ParbAtbild(atbildeBut2.Text))
             {
-                MessageBox.Show("Uzspiests 2!");
-                NakJaut();
-                //nr++;
+                //MessageBox.Show("Uzspiests 2!");
+                //NakJaut();
             }
         }
 
@@ -495,9 +337,8 @@ namespace Ricu_Racu
         {
             if (ParbAtbild(atbildeBut3.Text))
             {
-                MessageBox.Show("Uzspiests 3!");
-                NakJaut();
-                //nr++;
+                //MessageBox.Show("Uzspiests 3!");
+                //NakJaut();
             }
         }
         private bool ParbAtbild(string izvAtb)
@@ -513,12 +354,83 @@ namespace Ricu_Racu
                 if (izvAtb == correctAnswer)
                 {
                     MessageBox.Show("Correct Answer!");
+                    dice.Visible = true;
                     return true;
                 }
             }
             MessageBox.Show("Incorrect Answer!");
             return false;
         }
+
+        private void imgTimer_Tick(object sender, EventArgs e)
+        {
+                if (reizes < 10)
+                {
+                    punkti = random.Next(6) + 1;
+                    switch (punkti)
+                    {
+                        case 1: dice.Image = Properties.Resources.dice1; break;
+                        case 2: dice.Image = Properties.Resources.dice2; break;
+                        case 3: dice.Image = Properties.Resources.dice3; break;
+                        case 4: dice.Image = Properties.Resources.dice4; break;
+                        case 5: dice.Image = Properties.Resources.dice5; break;
+                        case 6: dice.Image = Properties.Resources.dice6; break;
+                    }
+                    reizes++;
+                }
+            else if (blockSkaits == 10)
+            {
+                if (punkti > 0 && red.Left < 685)
+                {
+                    red.Left = red.Left + 54;
+                    punkti--;
+                }
+                else if (punkti == 0 && red.Left > 600)
+                {
+                    red.Location = new Point(605, 82);
+                    imgTimer.Stop();
+                    PictureBox winner = red;
+                    this.Hide();
+                    Form4 beigas = new Form4(winner.Name);
+                    beigas.Show();
+                    return;
+                }
+                else
+                {
+                    imgTimer.Stop();
+                    NakJaut();
+                    dice.Visible = false;
+                }
+            }
+            else if (blockSkaits == 20)
+            {
+                if (punkti > 0 && red.Left < 1260)
+                {
+                    red.Left = red.Left + 54;
+                    punkti--;
+                }
+                else if (punkti == 0 && red.Left > 1140)
+                {
+                    red.Location = new Point(1145, 82);
+                    imgTimer.Stop();
+                    PictureBox winner = red;
+                    this.Hide();
+                    Form4 beigas = new Form4(winner.Name);
+                    beigas.Show();
+                    return;
+                }
+                else
+                {
+                    imgTimer.Stop();
+                    NakJaut();
+                    dice.Visible = false;
+                }
+            }
+        }
+        private void dice_Click(object sender, EventArgs e)
+        {
+            reizes = 0;
+            imgTimer.Start();
+        }
     }
 }
-

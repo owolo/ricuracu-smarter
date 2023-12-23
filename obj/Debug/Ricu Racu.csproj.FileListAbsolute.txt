@@ -22,3 +22,4 @@ C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Ra
 C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.exe.config
 C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.exe
 C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.pdb
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form4.resources
