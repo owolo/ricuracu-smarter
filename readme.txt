@@ -1,1 +1,3 @@
-The project was heavily inspired by the teacher's "Matēmātiskais Riču-Raču" under the code name "Programma 84", also some code (like dice image switch) was taken from there. Other code was either help from my friend, from the teacher, or the internet. Do not have anything specific to link to, but I'm just confessing that I'm not a genius, and I actually learned a lot from making this project, which I'm thankful for!! 
+The project was heavily inspired by the teacher's "Matēmātiskais Riču-Raču" under the code name "Programma 84", also some code (like dice image switch) was taken from there. Other code was either help from my friend, from the teacher, or the internet. Do not have anything specific to link to, but I'm just confessing that I'm not a genius, and I actually learned a lot from making this project, which I'm thankful for!!
+
+(also I used dice images from teachers program, since I couldn't find anything better, hope you don't and sorry!)
