@@ -295,12 +295,12 @@ namespace Ricu_Racu
 
                 if (izvAtb == correctAnswer)
                 {
-                    MessageBox.Show("Correct Answer!");
+                    MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
                     dice.Visible = true;
                     return true;
                 }
             }
-            MessageBox.Show("Incorrect Answer!");
+            MessageBox.Show("Nepareiza atbilde! Mēģini vēlreiz");
             return false;
         }
 
