@@ -256,14 +256,6 @@ namespace Ricu_Racu
 
         private void NakJaut()
         {
-            if (usedQuestionIndices.Count == jautajumi.Length)
-            {
-                MessageBox.Show("Jautājumi beidzās. Neviens neuzvarēja!");
-                this.Hide();
-                Form1 sakums = new Form1();
-                sakums.Show();
-                return;
-            }
             ShuffleQuestionsAndAnswers();
             JauktPogas();
         }
