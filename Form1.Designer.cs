@@ -45,11 +45,12 @@
             // 
             this.gName.AutoSize = true;
             this.gName.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.gName.Location = new System.Drawing.Point(203, 34);
+            this.gName.Location = new System.Drawing.Point(189, 50);
             this.gName.Name = "gName";
             this.gName.Size = new System.Drawing.Size(405, 58);
             this.gName.TabIndex = 0;
             this.gName.Text = "Kurš ir gudrāks?";
+            this.gName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // onePlay
             // 
@@ -58,6 +59,7 @@
             this.onePlay.Name = "onePlay";
             this.onePlay.Size = new System.Drawing.Size(196, 70);
             this.onePlay.TabIndex = 3;
+            this.onePlay.TabStop = false;
             this.onePlay.Text = "1 spēlētājs";
             this.onePlay.UseVisualStyleBackColor = true;
             this.onePlay.Click += new System.EventHandler(this.onePlay_Click);
@@ -69,6 +71,7 @@
             this.twoPlay.Name = "twoPlay";
             this.twoPlay.Size = new System.Drawing.Size(196, 70);
             this.twoPlay.TabIndex = 4;
+            this.twoPlay.TabStop = false;
             this.twoPlay.Text = "2 spēlētāji";
             this.twoPlay.UseVisualStyleBackColor = true;
             this.twoPlay.Click += new System.EventHandler(this.twoPlay_Click);
@@ -167,6 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.fons2);
             this.Controls.Add(this.fons);
@@ -183,6 +187,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sākums: \"Kurš ir gudrāks?";
             this.ResumeLayout(false);
             this.PerformLayout();

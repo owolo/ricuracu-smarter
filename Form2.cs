@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
 using System.Collections.Generic;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace Ricu_Racu
 {
@@ -23,7 +22,7 @@ namespace Ricu_Racu
         private List<int> usedQuestionIndices = new List<int>();
 
         string[] jautajumi = new string[] {
-            "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Rotaļlietu stāsts'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu lenķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
+            "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Toy Story'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu lenķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
             };
         string[] atbildes1 = new string[] {
             "7", "Londonā", "Parīzē", "Itālijā", "Ēģiptē", "Pekinā", "Sanfrancisko", "Vašingtona", "Austrālijā", "Juras laikmeta parks", "Jā", "Mufasa", "Jā", "Strauss", "Simts akru mežs", "Mellenes", "Vudijs", "Zilais valis", "Žirafe", "Temperatūru", "Dārgmetāliem", "Medu", "Dzeltenums", "Zaļš", "Ziemeļpolā", "Melni", "8", "100 gadi", "9", "Kuldīgā", "2", "5", "7", "10", "Sidneja", "Pi", "12", "35", "Taisns lenķis", "Izstiepts lenķis", "5", "10", "100", "24", "60", "25", "200", "206", "365", "366"
@@ -52,7 +51,7 @@ namespace Ricu_Racu
             {"Kāds ir lielākais putns?","Strauss"},
             {"Kur dzīvo Vinnijs Pūks?","Simts akru mežs"},
             {"Kura oga, pēc mītiem, uzlabo redzi?","Mellenes"},
-            {"Kāds ir kovboja vārds filmā 'Rotaļlietu stāsts'?","Vudijs"},
+            {"Kāds ir kovboja vārds filmā 'Toy Story'?","Vudijs"},
             {"Kāds ir lielākais dzīvnieks?","Zilais valis"},
             {"Kāds ir garākais dzīvnieks?","Žirafe"},
             {"Ko mēra termometrs?","Temperatūru"},
@@ -117,13 +116,16 @@ namespace Ricu_Racu
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
-                this.Size = new Size(685, 500);
+                this.Size = new Size(685, 440);
                 winBlock.Location = new Point(605, 82);
-                green.Visible = false;
-                spawnGreen.Visible = false;
                 red.Location = new Point(11, 82);
                 spawnRed.Location = new Point(11, 82);
-                dice.Location = new Point(450, 250);
+                dice.Location = new Point(450, 220);
+                jautajums.Location = new Point(88, 200);
+                atbildeBut1.Location = new Point(65, 255);
+                atbildeBut2.Location = new Point(224, 255);
+                atbildeBut3.Location = new Point(146, 319);
+                //MessageBox.Show($"X = {atbildeBut1.Left}, X = {atbildeBut2.Left} Y = {atbildeBut1.Top}, Y = {atbildeBut3.Top}");
 
                 for (int i = 0; i < blockSkaits; i++)  //green ludo line
                 {
@@ -158,20 +160,18 @@ namespace Ricu_Racu
             }
             if (blockSkaits == 20 && playerSkaits == 1)
             {
-                this.Size = new Size(1225, 530);
+                this.Size = new Size(1225, 480);
                 winBlock.Location = new Point(1145, 82);
-                dice.Location = new Point(880, 283);
-                jautajums.Location = new Point(480, 222);
+                dice.Location = new Point(880, 233);
+                jautajums.Location = new Point(480, 202);
                 //time.Location = new Point(780, 222);
-                atbildeBut1.Location = new Point(450, 301);
-                atbildeBut2.Location = new Point(621, 301);
-                atbildeBut3.Location = new Point(535, 393);
+                atbildeBut1.Location = new Point(450, 281);
+                atbildeBut2.Location = new Point(621, 281);
+                atbildeBut3.Location = new Point(535, 353);
                 //skipJaut.Location = new Point(455, 490);
                 //izm5050.Location = new Point(628, 490);
                 red.Location = new Point(11, 82);
                 spawnRed.Location = new Point(11, 82);
-                green.Visible = false;
-                spawnGreen.Visible = false;
 
                 for (int i = 0; i < blockSkaits; i++) //red ludo line
                 {
@@ -209,51 +209,6 @@ namespace Ricu_Racu
                 }*/
             }
         }
-
-        private void Sajaukt(string[] array)
-        {
-            var rand = new Random();
-            for (int i = array.Length - 1; i > 0; i--)
-            {
-                int x = rand.Next(0, i + 1);
-                string temp = array[i];
-                array[i] = array[x];
-                array[x] = temp;
-            }
-        }
-        private void Sajaukt2(string[] atbildes1)
-        {
-            var rand = new Random();
-            for (int i = atbildes1.Length - 1; i > 0; i--)
-            {
-                int x = rand.Next(0, i + 1);
-                string sec = atbildes1[i];
-                atbildes1[i] = atbildes1[x];
-                atbildes1[x] = sec;
-            }
-        }
-        private void Sajaukt3(string[] atbildes2)
-        {
-            var rand = new Random();
-            for (int i = atbildes2.Length - 1; i > 0; i--)
-            {
-                int x = rand.Next(0, i + 1);
-                string sec = atbildes2[i];
-                atbildes2[i] = atbildes2[x];
-                atbildes2[x] = sec;
-            }
-        }
-        private void Sajaukt4(string[] atbildes3)
-        {
-            var rand = new Random();
-            for (int i = atbildes3.Length - 1; i > 0; i--)
-            {
-                int x = rand.Next(0, i + 1);
-                string sec = atbildes3[i];
-                atbildes3[i] = atbildes3[x];
-                atbildes3[x] = sec;
-            }
-        }
         private void JauktPogas()
         {
             var rand = new Random();
@@ -269,8 +224,6 @@ namespace Ricu_Racu
             atbildeBut2.Location = positions[1];
             atbildeBut3.Location = positions[2];
         }
-
-        //List<int> usedQuestionIndices = new List<int>();
 
         private void ShuffleQuestionsAndAnswers()
         {
@@ -305,10 +258,10 @@ namespace Ricu_Racu
         {
             if (usedQuestionIndices.Count == jautajumi.Length)
             {
-                MessageBox.Show("Visi jautajumi jau uzdoti!");
+                MessageBox.Show("Jautājumi beidzās. Neviens neuzvarēja!");
                 this.Hide();
-                Form4 beigas = new Form4();
-                beigas.Show();
+                Form1 sakums = new Form1();
+                sakums.Show();
                 return;
             }
             ShuffleQuestionsAndAnswers();
@@ -319,8 +272,7 @@ namespace Ricu_Racu
         {
             if (ParbAtbild(atbildeBut1.Text))
             {
-                //MessageBox.Show("Uzspiests 1!");
-                //NakJaut();
+
             }
         }
 
@@ -328,8 +280,7 @@ namespace Ricu_Racu
         {
             if (ParbAtbild(atbildeBut2.Text))
             {
-                //MessageBox.Show("Uzspiests 2!");
-                //NakJaut();
+
             }
         }
 
@@ -337,8 +288,7 @@ namespace Ricu_Racu
         {
             if (ParbAtbild(atbildeBut3.Text))
             {
-                //MessageBox.Show("Uzspiests 3!");
-                //NakJaut();
+
             }
         }
         private bool ParbAtbild(string izvAtb)
@@ -347,9 +297,9 @@ namespace Ricu_Racu
 
             if (atbildes.TryGetValue(shuffledQuestion, out string correctAnswer))
             {
-                MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
-                MessageBox.Show($"Selected Answer: {izvAtb}");
-                MessageBox.Show($"Correct Answer: {correctAnswer}");
+                //MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
+                //MessageBox.Show($"Selected Answer: {izvAtb}");
+                //MessageBox.Show($"Correct Answer: {correctAnswer}");
 
                 if (izvAtb == correctAnswer)
                 {
@@ -382,6 +332,7 @@ namespace Ricu_Racu
             {
                 if (punkti > 0 && red.Left < 685)
                 {
+                    imgTimer.Interval = 500;
                     red.Left = red.Left + 54;
                     punkti--;
                 }
@@ -406,6 +357,7 @@ namespace Ricu_Racu
             {
                 if (punkti > 0 && red.Left < 1260)
                 {
+                    imgTimer.Interval = 500;
                     red.Left = red.Left + 54;
                     punkti--;
                 }
@@ -429,6 +381,7 @@ namespace Ricu_Racu
         }
         private void dice_Click(object sender, EventArgs e)
         {
+            imgTimer.Interval = 100;
             reizes = 0;
             imgTimer.Start();
         }

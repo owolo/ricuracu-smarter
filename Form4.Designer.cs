@@ -44,6 +44,7 @@
             this.uzvara.Size = new System.Drawing.Size(395, 69);
             this.uzvara.TabIndex = 0;
             this.uzvara.Text = "APSVEICU!!!";
+            this.uzvara.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // text
             // 
@@ -54,6 +55,7 @@
             this.text.Size = new System.Drawing.Size(491, 72);
             this.text.TabIndex = 1;
             this.text.Text = "Zaļais spēlētājs uzvarēja šo! \r\nTagad gan skaidrs kurš ir gudrāks :)";
+            this.text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // toStart
             // 
@@ -75,6 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toStart);
             this.Controls.Add(this.text);
@@ -83,6 +86,7 @@
             this.MinimizeBox = false;
             this.Name = "Form4";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beigas: \"Kurš ir gudrāks?";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();

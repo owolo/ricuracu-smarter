@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ricu_Racu
@@ -33,7 +26,7 @@ namespace Ricu_Racu
 
         private void Uzvaretajs()
         {
-            text.Text = $"{winner} spēlētājs uzvarēja šo! \r\nTagad gan skaidrs kurš ir gudrāks :)";
+            text.Text = $"{winner} spēlētājs uzvarēja šo spēli! \r\nTagad gan skaidrs kurš ir gudrāks :)";
 
         }
 

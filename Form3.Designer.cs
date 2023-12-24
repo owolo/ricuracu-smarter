@@ -75,7 +75,7 @@
             // 
             this.winBlock.BackColor = System.Drawing.Color.Chartreuse;
             this.winBlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.winBlock.Location = new System.Drawing.Point(397, 545);
+            this.winBlock.Location = new System.Drawing.Point(804, 57);
             this.winBlock.Name = "winBlock";
             this.winBlock.Size = new System.Drawing.Size(66, 61);
             this.winBlock.TabIndex = 71;
@@ -354,6 +354,7 @@
             this.dice.TabIndex = 44;
             this.dice.TabStop = false;
             this.dice.Visible = false;
+            this.dice.Click += new System.EventHandler(this.dice_Click_1);
             // 
             // jautajums
             // 
@@ -364,39 +365,50 @@
             this.jautajums.Size = new System.Drawing.Size(273, 25);
             this.jautajums.TabIndex = 43;
             this.jautajums.Text = "Jautājums: Cik būs 2+2*2?";
+            this.jautajums.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // atbildeBut3
             // 
             this.atbildeBut3.Location = new System.Drawing.Point(192, 436);
             this.atbildeBut3.Name = "atbildeBut3";
             this.atbildeBut3.Size = new System.Drawing.Size(142, 46);
-            this.atbildeBut3.TabIndex = 42;
+            this.atbildeBut3.TabIndex = 1;
+            this.atbildeBut3.TabStop = false;
             this.atbildeBut3.Text = "3";
             this.atbildeBut3.UseVisualStyleBackColor = true;
+            this.atbildeBut3.Click += new System.EventHandler(this.atbildeBut3_Click_1);
             // 
             // atbildeBut2
             // 
             this.atbildeBut2.Location = new System.Drawing.Point(295, 358);
             this.atbildeBut2.Name = "atbildeBut2";
             this.atbildeBut2.Size = new System.Drawing.Size(142, 46);
-            this.atbildeBut2.TabIndex = 41;
+            this.atbildeBut2.TabIndex = 2;
+            this.atbildeBut2.TabStop = false;
             this.atbildeBut2.Text = "2";
             this.atbildeBut2.UseVisualStyleBackColor = true;
+            this.atbildeBut2.Click += new System.EventHandler(this.atbildeBut2_Click_1);
             // 
             // atbildeBut1
             // 
             this.atbildeBut1.Location = new System.Drawing.Point(84, 358);
             this.atbildeBut1.Name = "atbildeBut1";
             this.atbildeBut1.Size = new System.Drawing.Size(142, 46);
-            this.atbildeBut1.TabIndex = 40;
+            this.atbildeBut1.TabIndex = 3;
+            this.atbildeBut1.TabStop = false;
             this.atbildeBut1.Text = "1";
             this.atbildeBut1.UseVisualStyleBackColor = true;
+            this.atbildeBut1.Click += new System.EventHandler(this.atbildeBut1_Click_1);
+            // 
+            // imgTimer
+            // 
+            this.imgTimer.Tick += new System.EventHandler(this.imgTimer_Tick_1);
             // 
             // winBlock2
             // 
             this.winBlock2.BackColor = System.Drawing.Color.Chartreuse;
             this.winBlock2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.winBlock2.Location = new System.Drawing.Point(325, 545);
+            this.winBlock2.Location = new System.Drawing.Point(12, 148);
             this.winBlock2.Name = "winBlock2";
             this.winBlock2.Size = new System.Drawing.Size(66, 61);
             this.winBlock2.TabIndex = 72;
@@ -405,6 +417,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(926, 616);
             this.Controls.Add(this.winBlock2);
             this.Controls.Add(this.winBlock);
@@ -440,7 +453,8 @@
             this.Controls.Add(this.atbildeBut2);
             this.Controls.Add(this.atbildeBut1);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.ShowIcon = false;
+            this.Text = "Spēle: \"Kurš ir gudrāks?";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.atmetK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.atmetL)).EndInit();
