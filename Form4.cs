@@ -9,6 +9,7 @@ namespace Ricu_Racu
         public Form4()
         {
             InitializeComponent();
+            this.FormClosed += Form4_FormClosed;
         }
         public Form4(string winner) : this()
         {
@@ -40,6 +41,10 @@ namespace Ricu_Racu
         private void Form4_Load(object sender, EventArgs e)
         {
 
+        }
+        private void Form4_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

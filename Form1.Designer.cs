@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gName = new System.Windows.Forms.Label();
             this.onePlay = new System.Windows.Forms.Button();
             this.twoPlay = new System.Windows.Forms.Button();
@@ -183,6 +184,7 @@
             this.Controls.Add(this.twoPlay);
             this.Controls.Add(this.onePlay);
             this.Controls.Add(this.gName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

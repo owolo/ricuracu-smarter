@@ -22,7 +22,7 @@ namespace Ricu_Racu
         private List<int> usedQuestionIndices = new List<int>();
 
         string[] jautajumi = new string[] {
-            "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Toy Story'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu lenķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
+            "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Toy Story'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu leņķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
             };
         string[] atbildes1 = new string[] {
             "7", "Londonā", "Parīzē", "Itālijā", "Ēģiptē", "Pekinā", "Sanfrancisko", "Vašingtona", "Austrālijā", "Jūras laikmeta parks", "Jā", "Mufasa", "Jā", "Strauss", "Simts akru mežs", "Mellenes", "Vudijs", "Zilais valis", "Žirafe", "Temperatūru", "Dārgmetāliem", "Medu", "Dzeltenums", "Zaļš", "Ziemeļpolā", "Melni", "8", "100 gadi", "9", "Kuldīgā", "2", "5", "7", "10", "Sidneja", "Pi", "12", "35", "Taisns leņķis", "Izstiepts leņķis", "5", "10", "100", "24", "60", "25", "200", "206", "365", "366"
@@ -96,6 +96,7 @@ namespace Ricu_Racu
             imgTimer = new Timer();
             imgTimer.Tick += imgTimer_Tick;
             winBlock.SendToBack();
+            this.FormClosed += Form2_FormClosed;
         }
 
         public Form2(int izvPlayerSkaits, int izvBlockSkaits) : this()
@@ -287,20 +288,23 @@ namespace Ricu_Racu
         {
             string shuffledQuestion = jautajumi[seciba[nr]];
 
-            if (atbildes.TryGetValue(shuffledQuestion, out string correctAnswer))
+            if (dice.Visible == false)
             {
-                //MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
-                //MessageBox.Show($"Selected Answer: {izvAtb}");
-                //MessageBox.Show($"Correct Answer: {correctAnswer}");
-
-                if (izvAtb == correctAnswer)
+                if (atbildes.TryGetValue(shuffledQuestion, out string correctAnswer))
                 {
-                    MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
-                    dice.Visible = true;
-                    return true;
+                    //MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
+                    //MessageBox.Show($"Selected Answer: {izvAtb}");
+                    //MessageBox.Show($"Correct Answer: {correctAnswer}");
+                    if (izvAtb == correctAnswer)
+                    {
+                       MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
+                       dice.Visible = true;
+                       return true;
+                    }
                 }
+                MessageBox.Show("Nepareiza atbilde! Mēģini vēlreiz");
+                return false;
             }
-            MessageBox.Show("Nepareiza atbilde! Mēģini vēlreiz");
             return false;
         }
 
@@ -376,6 +380,10 @@ namespace Ricu_Racu
             imgTimer.Interval = 100;
             reizes = 0;
             imgTimer.Start();
+        }
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Release\Ricu Racu.exe.config
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Release\Ricu Racu.exe
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Release\Ricu Racu.pdb
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu Racu.csproj.AssemblyReference.cache
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu_Racu.Form1.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu_Racu.Form2.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu_Racu.Form4.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu_Racu.Form3.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu_Racu.Properties.Resources.resources
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu Racu.csproj.GenerateResource.cache
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu Racu.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu Racu.exe
+C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Release\Ricu Racu.pdb

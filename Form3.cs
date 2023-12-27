@@ -100,6 +100,7 @@ namespace Ricu_Racu
             winBlock2.SendToBack();
             red.BringToFront();
             green.BringToFront();
+            this.FormClosed += Form3_FormClosed;
         }
 
         public Form3(int izvPlayerSkaits, int izvBlockSkaits) : this()
@@ -355,20 +356,23 @@ namespace Ricu_Racu
         {
             string shuffledQuestion = jautajumi[seciba[nr]];
 
-            if (atbildes.TryGetValue(shuffledQuestion, out string correctAnswer))
+            if (dice.Visible == false)
             {
-                //MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
-                //MessageBox.Show($"Selected Answer: {izvAtb}");
-                //MessageBox.Show($"Correct Answer: {correctAnswer}");
-
-                if (izvAtb == correctAnswer)
+                if (atbildes.TryGetValue(shuffledQuestion, out string correctAnswer))
                 {
-                    MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
-                    dice.Visible = true;
-                    return true;
+                    //MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
+                    //MessageBox.Show($"Selected Answer: {izvAtb}");
+                    //MessageBox.Show($"Correct Answer: {correctAnswer}");
+                    if (izvAtb == correctAnswer)
+                    {
+                        MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
+                        dice.Visible = true;
+                        return true;
+                    }
                 }
+                MessageBox.Show("Nepareiza atbilde! Mēģini vēlreiz");
+                return false;
             }
-            MessageBox.Show("Nepareiza atbilde! Mēģini vēlreiz");
             return false;
         }
 
@@ -518,6 +522,10 @@ namespace Ricu_Racu
             imgTimer.Interval = 100;
             reizes = 0;
             imgTimer.Start();
+        }
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -58,9 +58,9 @@ namespace Ricu_Racu
 
         private void but10t_Click(object sender, EventArgs e)
         {
-                this.Hide();
-                Form3 spele = new Form3(playerSkaits, 10);
-                spele.Show();
+             this.Hide();
+             Form3 spele = new Form3(playerSkaits, 10);
+             spele.Show();
         }
 
         private void but20t_Click(object sender, EventArgs e)
