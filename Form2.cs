@@ -13,82 +13,13 @@ namespace Ricu_Racu
         private readonly int playerSkaits;
         private const int blockGar = 50;
         private const int blockAug = 50;
-        //private bool irIzm5050 = false;
-        //private bool irSkipJaut = false;
         private Random random = new Random();
         public int[] seciba = Enumerable.Range(0, 50).ToArray();
         public int nr = 0;
         private int reizes = 0;
         private int punkti;
-        private List<int> usedQuestionIndices = new List<int>();
-        private long currentGameSessionId;
         private DataTable currentJautajums;
-
-        string[] jautajumi = new string[] {
-            "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Toy Story'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu leņķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
-            };
-        string[] atbildes1 = new string[] {
-            "7", "Londonā", "Parīzē", "Itālijā", "Ēģiptē", "Pekinā", "Sanfrancisko", "Vašingtona", "Austrālijā", "Jūras laikmeta parks", "Jā", "Mufasa", "Jā", "Strauss", "Simts akru mežs", "Mellenes", "Vudijs", "Zilais valis", "Žirafe", "Temperatūru", "Dārgmetāliem", "Medu", "Dzeltenums", "Zaļš", "Ziemeļpolā", "Melni", "8", "100 gadi", "9", "Kuldīgā", "2", "5", "7", "10", "Sidneja", "Pi", "12", "35", "Taisns leņķis", "Izstiepts leņķis", "5", "10", "100", "24", "60", "25", "200", "206", "365", "366"
-            };
-        string[] atbildes2 = new string[] {
-            "6", "Dublinā", "Las Vegas", "Moldovā", "Amerikā", "Indijā", "Latvijā", "Rīga", "Indonēzijā", "Rozā pantera", "Nē", "Dumbo", "Nē", "Pīle", "Rīgas ZOO", "Zemenes", "Bembijs", "Zilonis", "Garnele", "Spiedienu", "Plastmasa", "Pienu", "Siers", "Zils", "Dienvidpolā", "Sarkani", "6", "10 gadi", "8", "Rīgā", "4", "10", "8", "12", "Melburna", "Pica", "13", "25", "Šaurs leņķis", "Lielais leņķis", "1", "15", "500", "12", "30", "20", "300", "205", "367", "368"
-            };
-        string[] atbildes3 = new string[] {
-            "8", "Romā", "Berlīnē", "Vienā", "Meksikā", "Japānā", "Lietuvā", "Tallina", "Nīderlandē", "Titaniks", "Neviens nezina", "Mikipele", "Varbūt", "Gailis", "Okeānā", "Ķirbji", "Sūklis Bobs", "Suns", "Simtkājis", "Ph līmeni", "Koka", "Kvasu", "Brūnums", "Sarkans", "Austrumpolā", "Brūni", "4", "1000 gadu", "10", "Kārsavā", "8", "12", "14", "20", "Kanbera", "Eur", "11", "45", "90° leņķis", "180° leņķis", "200", "70", "50", "48", "80", "30", "400", "203", "350", "390"
-            };
-
-        Dictionary<string, string> atbildes = new Dictionary<string, string>() {
-            {"Cik krāsu ir varavīksnē?","7"},
-            {"Kur atrodas Bigbens?","Londonā"},
-            {"Kur atrodas Eifeļa tornis?","Parīzē"},
-            {"Kur atrodas Pizas tornis?","Itālijā"},
-            {"Kur atrodas Gīzas Lielās piramīdas?","Ēģiptē"},
-            {"Kur atrodas Lielais Ķīnas mūris?","Pekinā"},
-            {"Kur atrodas Zelta vārtu tilts?","Sanfrancisko"},
-            {"Kura ir ASV galvaspilsēta?","Vašingtona"},
-            {"Kur atrodas Lielais Barjerrifs?","Austrālijā"},
-            {"Kāda ir filma par parku ar dinozauriem?","Jūras laikmeta parks"},
-            {"Vai cūciņai Pepai ir brāļi un māsas?","Jā"},
-            {"Kurš ir Simbas tētis?","Mufasa"},
-            {"Vai ziloņiem ir astes?","Jā"},
-            {"Kāds ir lielākais putns?","Strauss"},
-            {"Kur dzīvo Vinnijs Pūks?","Simts akru mežs"},
-            {"Kura oga, pēc mītiem, uzlabo redzi?","Mellenes"},
-            {"Kāds ir kovboja vārds filmā 'Toy Story'?","Vudijs"},
-            {"Kāds ir lielākais dzīvnieks?","Zilais valis"},
-            {"Kāds ir garākais dzīvnieks?","Žirafe"},
-            {"Ko mēra termometrs?","Temperatūru"},
-            {"No kā tiek izgatavotas olimpiskās medaļas?","Dārgmetāliem"},
-            {"Ko bites ražo?","Medu"},
-            {"Kā sauc olas dzelteno daļu?","Dzeltenums"},
-            {"Kādā krāsā ir spināti?","Zaļš"},
-            {"Kur dzīvo Ziemassvētku vecītis?","Ziemeļpolā"},
-            {"Kādā krāsā ir plankumi uz bizbizmārītes?","Melni"},
-            {"Cik kāju ir zirneklim?","8"},
-            {"Cik gadu gadsimtā?","100 gadi"},
-            {"Cik dzīvību ir kaķiem?","9"},
-            {"Kura ir Austrālijas galvaspilsēta?","Kanbera"},
-            {"Kāds ir vienīgais pāra pirmskaitlis?","2"},
-            {"Cik malu ir piecstūrim?","5"},
-            {"Cik malu ir septiņstūrim?","7"},
-            {"Cik malu ir desmitstūrim?","10"},
-            {"Kur atrodas Ventas rumba?","Kuldīgā"},
-            {"Kā cilvēki sauc 3.1415?","Pi"},
-            {"Cik mēnešu ir vienā gadā?","12"},
-            {"Cik ir 22 + 13?","35"},
-            {"Kā sauc 90 grādu leņķi?","Taisns leņķis"},
-            {"Kā sauc 190 grādu leņķi?","Izstiepts leņķis"},
-            {"Ko nozīmē romiešu cipars 'V'?","5"},
-            {"Ko nozīmē romiešu cipars 'X'?","10"},
-            {"Ko nozīmē romiešu cipars 'C'?","100"},
-            {"Cik stundas ir dienā?","24"},
-            {"Cik minūtes ir vienā stundā?","60"},
-            {"Cik ir 5*5?","25"},
-            {"Ja Jūs dubultojat 100, kas Jums sanāk?","200"},
-            {"Cik kaulu ir cilvēka ķermenī?","206"},
-            {"Cik dienu ir gadā?","365"},
-            {"Cik dienu ir garajā gadā?","366"}
-            };
+        private HashSet<long> usedQuestionIds = new HashSet<long>();
 
 
         public Form2()
@@ -112,7 +43,6 @@ namespace Ricu_Racu
         {
             double space = 4;
             var rand = new Random();
-            currentGameSessionId = DatabaseManager.CreateGameSession(playerSkaits, blockSkaits);
             LoadNextJautajums();
 
             if (blockSkaits == 10 && playerSkaits == 1)
@@ -169,9 +99,16 @@ namespace Ricu_Racu
         }
         private void LoadNextJautajums()
         {
-            currentJautajums = DatabaseManager.GetRandomJautajums();
+            do
+            {
+                currentJautajums = DatabaseManager.GetRandomJautajums();
+            } while (usedQuestionIds.Contains((long)currentJautajums.Rows[0]["JautajumiId"]) && usedQuestionIds.Count < 50);
+
             if (currentJautajums.Rows.Count > 0)
             {
+                long questionId = (long)currentJautajums.Rows[0]["JautajumiId"];
+                usedQuestionIds.Add(questionId);
+
                 jautajums.Text = currentJautajums.Rows[0]["JautajumiText"].ToString();
                 atbildeBut1.Text = currentJautajums.Rows[0]["AtbildesText"].ToString();
                 atbildeBut2.Text = currentJautajums.Rows[1]["AtbildesText"].ToString();
@@ -269,46 +206,40 @@ namespace Ricu_Racu
             }
             else if (blockSkaits == 10)
             {
-                if (punkti > 0 && red.Left < 605)
+                if (punkti > 0 && red.Left < 685)
                 {
                     imgTimer.Interval = 500;
                     red.Left = red.Left + 54;
                     punkti--;
                 }
-                if (punkti == 0)
+                else if (red.Left > 600)
                 {
-                    DatabaseManager.UpdateGameProgress(currentGameSessionId, 1, red.Left);
-                    if (red.Left >= 605)
-                    {
-                        DatabaseManager.EndGameSession(currentGameSessionId);
-                        red.Location = new Point(605, 82);
-                        imgTimer.Stop();
-                        PictureBox winner = red;
-                        this.Hide();
-                        Form4 beigas = new Form4(winner.Name);
-                        beigas.Show();
-                        return;
-                    }
-                    else
-                    {
-                        imgTimer.Stop();
-                        NakJaut();
-                        dice.Visible = false;
-                    }
+                    red.Location = new Point(605, 82);
+                    imgTimer.Stop();
+                    PictureBox winner = red;
+                    this.Hide();
+                    Form4 beigas = new Form4(winner.Name);
+                    beigas.Show();
+                    return;
                 }
-                else if (blockSkaits == 20)
+                else
+                {
+                    imgTimer.Stop();
+                    NakJaut();
+                    dice.Visible = false;
+                }
+            }
+            else if (blockSkaits == 20)
                 {
                     if (punkti > 0 && red.Left < 1260)
                     {
                         imgTimer.Interval = 500;
                         red.Left = red.Left + 54;
                         punkti--;
+
                     }
-                    if (punkti == 0)
-                    DatabaseManager.UpdateGameProgress(currentGameSessionId, 1, red.Left);
-                    if (red.Left >= 1140)
+                    else if (punkti == 0 && red.Left > 1140)
                     {
-                        DatabaseManager.EndGameSession(currentGameSessionId);
                         red.Location = new Point(1145, 82);
                         imgTimer.Stop();
                         PictureBox winner = red;
@@ -323,9 +254,9 @@ namespace Ricu_Racu
                         NakJaut();
                         dice.Visible = false;
                     }
+
                 }
             }
-        }
         private void dice_Click(object sender, EventArgs e)
         {
             imgTimer.Interval = 100;
@@ -334,7 +265,6 @@ namespace Ricu_Racu
             dice.Enabled = false;
             dice.Visible = true;
         }
-
         private void EnableDiceButton()
         {
             dice.Enabled = true;

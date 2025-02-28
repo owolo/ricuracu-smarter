@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|c:\\users\\owol\\downloads\\skolas coding\\github\\ricuracu-smarter\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|c:\\users\\owol\\downloads\\skolas coding\\github\\ricuracu-smarter\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,20 +15,20 @@
       "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|c:\\users\\owol\\downloads\\skolas coding\\github\\ricuracu-smarter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|c:\\users\\owol\\downloads\\skolas coding\\github\\ricuracu-smarter\\databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:databasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|c:\\users\\owol\\downloads\\skolas coding\\github\\ricuracu-smarter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|c:\\users\\owol\\downloads\\skolas coding\\github\\ricuracu-smarter\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6373F5C7-CF62-4C3F-98A6-247D3A6D4AB3}|Ricu Racu.csproj|solutionrelative:form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -63,13 +63,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAAwBQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T17:53:50.573Z",
               "IsPinned": true,
@@ -77,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Form2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
@@ -90,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
               "ToolTip": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAgwI8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T17:53:57.257Z",
               "IsPinned": true,
@@ -104,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Form3.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form3.cs",
               "RelativeDocumentMoniker": "Form3.cs",
@@ -117,13 +117,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form3.cs",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form3.cs",
               "RelativeDocumentMoniker": "Form3.cs",
               "ToolTip": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form3.cs",
               "RelativeToolTip": "Form3.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAowKkAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-23T22:56:04.177Z",
               "IsPinned": true,
@@ -131,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "Form4.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form4.cs",
               "RelativeDocumentMoniker": "Form4.cs",
@@ -144,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Form4.cs",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\Form4.cs",
               "RelativeDocumentMoniker": "Form4.cs",
@@ -153,18 +153,17 @@
               "ViewState": "AgIAABQAAAAAAAAAAAAwwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-23T22:55:54.786Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "DatabaseManager.cs",
               "DocumentMoniker": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\DatabaseManager.cs",
               "RelativeDocumentMoniker": "DatabaseManager.cs",
               "ToolTip": "C:\\Users\\Owol\\Downloads\\skolas coding\\github\\ricuracu-smarter\\DatabaseManager.cs",
               "RelativeToolTip": "DatabaseManager.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwNwAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T17:41:47.514Z",
               "IsPinned": true,

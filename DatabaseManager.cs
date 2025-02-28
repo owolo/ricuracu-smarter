@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
+using System.Linq;
 
 namespace Ricu_Racu
 {
@@ -41,30 +43,9 @@ namespace Ricu_Racu
                         Name TEXT NOT NULL
                     )";
 
-                string createGameSessionsTable = @"
-                    CREATE TABLE IF NOT EXISTS GameSessions (
-                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        PlayerCount INTEGER NOT NULL,
-                        BoardSize INTEGER NOT NULL,
-                        StartTime TEXT NOT NULL,
-                        EndTime TEXT
-                    )";
-
-                string createGameProgressTable = @"
-                    CREATE TABLE IF NOT EXISTS GameProgress (
-                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        GameSessionId INTEGER,
-                        PlayerId INTEGER,
-                        Position INTEGER NOT NULL,
-                        FOREIGN KEY (GameSessionId) REFERENCES GameSessions(Id),
-                        FOREIGN KEY (PlayerId) REFERENCES Players(Id)
-                    )";
-
                 ExecuteNonQuery(createJautTable);
                 ExecuteNonQuery(createAtbildTable);
                 ExecuteNonQuery(createPlayersTable);
-                ExecuteNonQuery(createGameSessionsTable);
-                ExecuteNonQuery(createGameProgressTable);
 
                 InsertInitialJautajumi();
             }
@@ -194,12 +175,24 @@ namespace Ricu_Racu
         new[] { true, false, false }
     };
 
+            var indices = Enumerable.Range(0, jautajumi.Length).ToList();
+            var rng = new Random();
+            int n = indices.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                int value = indices[k];
+                indices[k] = indices[n];
+                indices[n] = value;
+            }
+
             using (var connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
                 using (var transaction = connection.BeginTransaction())
                 {
-                    for (int i = 0; i < jautajumi.Length; i++)
+                    foreach (int i in indices)
                     {
                         string insertJautajums = "INSERT INTO Jautajumi (JautajumiText) VALUES (@JautajumiText)";
                         using (var command = new SQLiteCommand(insertJautajums, connection))
@@ -210,9 +203,18 @@ namespace Ricu_Racu
 
                         long jautajumiId = connection.LastInsertRowId;
 
-                        for (int j = 0; j < 3; j++)
+                        var answerIndices = new List<int> { 0, 1, 2 };
+                        for (int j = answerIndices.Count - 1; j > 0; j--)
                         {
-                            string insertAtbilde = "INSERT INTO Atbildes (JautajumiId, AtbildesText, IsCorrect) VALUES (@JautajumiText, @AtbildesText, @IsCorrect)";
+                            int k = rng.Next(j + 1);
+                            int temp = answerIndices[j];
+                            answerIndices[j] = answerIndices[k];
+                            answerIndices[k] = temp;
+                        }
+
+                        foreach (int j in answerIndices)
+                        {
+                            string insertAtbilde = "INSERT INTO Atbildes (JautajumiId, AtbildesText, IsCorrect) VALUES (@JautajumiId, @AtbildesText, @IsCorrect)";
                             using (var command = new SQLiteCommand(insertAtbilde, connection))
                             {
                                 command.Parameters.AddWithValue("@JautajumiId", jautajumiId);
@@ -230,10 +232,11 @@ namespace Ricu_Racu
         public static System.Data.DataTable GetRandomJautajums()
         {
             string query = @"
-                SELECT q.Id AS JautajumiId, q.JautajumiText, a.Id AS AtbildesId, a.AtbildesText, a.IsCorrect
-                FROM Jautajumi q
-                JOIN Atbildes a ON q.Id = a.JautajumiId
-                WHERE q.Id IN (SELECT Id FROM Jautajumi ORDER BY RANDOM() LIMIT 1)";
+                SELECT j.Id AS JautajumiId, j.JautajumiText, a.Id AS AtbildesId, a.AtbildesText, a.IsCorrect
+                FROM Jautajumi j
+                JOIN Atbildes a ON j.Id = a.JautajumiId
+                WHERE j.Id IN (SELECT Id FROM Jautajumi ORDER BY RANDOM() LIMIT 1)
+                ORDER BY RANDOM()";
 
             using (var connection = new SQLiteConnection(connectionString))
             {
@@ -246,57 +249,6 @@ namespace Ricu_Racu
                         adapter.Fill(dataTable);
                         return dataTable;
                     }
-                }
-            }
-        }
-
-        public static long CreateGameSession(int playerCount, int boardSize)
-        {
-            string query = "INSERT INTO GameSessions (PlayerCount, BoardSize, StartTime) VALUES (@PlayerCount, @BoardSize, @StartTime)";
-            using (var connection = new SQLiteConnection(connectionString))
-            {
-                connection.Open();
-                using (var command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@PlayerCount", playerCount);
-                    command.Parameters.AddWithValue("@BoardSize", boardSize);
-                    command.Parameters.AddWithValue("@StartTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    command.ExecuteNonQuery();
-                }
-                return connection.LastInsertRowId;
-            }
-        }
-
-        public static void UpdateGameProgress(long gameSessionId, int playerId, int position)
-        {
-            string query = @"
-                INSERT OR REPLACE INTO GameProgress (GameSessionId, PlayerId, Position)
-                VALUES (@GameSessionId, @PlayerId, @Position)";
-
-            using (var connection = new SQLiteConnection(connectionString))
-            {
-                connection.Open();
-                using (var command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@GameSessionId", gameSessionId);
-                    command.Parameters.AddWithValue("@PlayerId", playerId);
-                    command.Parameters.AddWithValue("@Position", position);
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
-        public static void EndGameSession(long gameSessionId)
-        {
-            string query = "UPDATE GameSessions SET EndTime = @EndTime WHERE Id = @GameSessionId";
-            using (var connection = new SQLiteConnection(connectionString))
-            {
-                connection.Open();
-                using (var command = new SQLiteCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@EndTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                    command.Parameters.AddWithValue("@GameSessionId", gameSessionId);
-                    command.ExecuteNonQuery();
                 }
             }
         }
