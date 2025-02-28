@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Ricu_Racu
 {
@@ -10,6 +12,9 @@ namespace Ricu_Racu
     {
         private static string dbPath = "RicuRacu.sqlite";
         private static string connectionString = $"Data Source={dbPath};Version=3;";
+        private static readonly byte[] Key = Encoding.UTF8.GetBytes("12345678901234567890123456789012"); //32 bytes
+        private static readonly byte[] IV = Encoding.UTF8.GetBytes("1234567890123456"); //16 bytes
+
 
         public static void InitializeDatabase()
         {
@@ -67,9 +72,9 @@ namespace Ricu_Racu
         {
             string[] jautajumi = {
         "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Toy Story'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 180 grādu lenķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
-    };
+        };
 
-    string[][] atbildes = {
+            string[][] atbildes = {
         new[] { "7", "6", "8" },
         new[] { "Londonā", "Parīzē", "Romā" },
         new[] { "Parīzē", "Londonā", "Berlīnē" },
@@ -122,7 +127,7 @@ namespace Ricu_Racu
         new[] { "366", "367", "365" }
     };
 
-    bool[][] correctAtbildes = {
+            bool[][] correctAtbildes = {
         new[] { true, false, false },
         new[] { true, false, false },
         new[] { true, false, false },
@@ -201,7 +206,11 @@ namespace Ricu_Racu
                             command.ExecuteNonQuery();
                         }
 
-                        long jautajumiId = connection.LastInsertRowId;
+                        long jautajumiId;
+                        using (var cmd = new SQLiteCommand("SELECT last_insert_rowid();", connection))
+                        {
+                            jautajumiId = (long)cmd.ExecuteScalar();
+                        }
 
                         var answerIndices = new List<int> { 0, 1, 2 };
                         for (int j = answerIndices.Count - 1; j > 0; j--)
@@ -211,32 +220,59 @@ namespace Ricu_Racu
                             answerIndices[j] = answerIndices[k];
                             answerIndices[k] = temp;
                         }
-
-                        foreach (int j in answerIndices)
-                        {
-                            string insertAtbilde = "INSERT INTO Atbildes (JautajumiId, AtbildesText, IsCorrect) VALUES (@JautajumiId, @AtbildesText, @IsCorrect)";
-                            using (var command = new SQLiteCommand(insertAtbilde, connection))
-                            {
-                                command.Parameters.AddWithValue("@JautajumiId", jautajumiId);
-                                command.Parameters.AddWithValue("@AtbildesText", atbildes[i][j]);
-                                command.Parameters.AddWithValue("@IsCorrect", correctAtbildes[i][j] ? 1 : 0);
-                                command.ExecuteNonQuery();
-                            }
-                        }
                     }
-                    transaction.Commit();
+                }
+            }
+        }
+
+        public static void InsertAtbilde(int jautajumiId, string atbildeText, bool isCorrect)
+        {
+            string encryptedAtbilde = Encrypt(atbildeText);
+
+            string insertAtbilde = "INSERT INTO Atbildes (JautajumiId, AtbildesText, IsCorrect) VALUES (@JautajumiId, @AtbildesText, @IsCorrect)";
+            using (var connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                using (var command = new SQLiteCommand(insertAtbilde, connection))
+                {
+                    command.Parameters.AddWithValue("@JautajumiId", jautajumiId);
+                    command.Parameters.AddWithValue("@AtbildesText", encryptedAtbilde);
+                    command.Parameters.AddWithValue("@IsCorrect", isCorrect ? 1 : 0);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private static string Encrypt(string plainText)
+        {
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                aesAlg.GenerateIV();
+                byte[] iv = aesAlg.IV;
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, iv);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    msEncrypt.Write(iv, 0, iv.Length);
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                    {
+                        swEncrypt.Write(plainText);
+                    }
+                    return Convert.ToBase64String(msEncrypt.ToArray());
                 }
             }
         }
 
         public static System.Data.DataTable GetRandomJautajums()
         {
-            string query = @"
-                SELECT j.Id AS JautajumiId, j.JautajumiText, a.Id AS AtbildesId, a.AtbildesText, a.IsCorrect
-                FROM Jautajumi j
-                JOIN Atbildes a ON j.Id = a.JautajumiId
-                WHERE j.Id IN (SELECT Id FROM Jautajumi ORDER BY RANDOM() LIMIT 1)
-                ORDER BY RANDOM()";
+            string query = @"SELECT j.Id AS JautajumiId, j.JautajumiText, a.Id AS AtbildesId, a.AtbildesText, a.IsCorrect
+                             FROM Jautajumi j
+                             JOIN Atbildes a ON j.Id = a.JautajumiId
+                             WHERE j.Id IN (SELECT Id FROM Jautajumi ORDER BY RANDOM() LIMIT 1)
+                             ORDER BY RANDOM()";
 
             using (var connection = new SQLiteConnection(connectionString))
             {
@@ -247,8 +283,38 @@ namespace Ricu_Racu
                     {
                         var dataTable = new System.Data.DataTable();
                         adapter.Fill(dataTable);
+
+                        foreach (System.Data.DataRow row in dataTable.Rows)
+                        {
+                            string encryptedText = row["AtbildesText"].ToString();
+                            row["AtbildesText"] = encryptedText.StartsWith("/") || encryptedText.EndsWith("=") ? Decrypt(encryptedText) : encryptedText;
+
+                        }
+
                         return dataTable;
                     }
+                }
+            }
+        }
+        private static string Decrypt(string cipherText)
+        {
+            byte[] fullCipher = Convert.FromBase64String(cipherText);
+
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+
+                byte[] iv = new byte[16];
+                Array.Copy(fullCipher, iv, iv.Length);
+                aesAlg.IV = iv;
+
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msDecrypt = new MemoryStream(fullCipher, iv.Length, fullCipher.Length - iv.Length))
+                using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                {
+                    return srDecrypt.ReadToEnd();
                 }
             }
         }
