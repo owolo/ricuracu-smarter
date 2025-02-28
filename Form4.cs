@@ -46,5 +46,10 @@ namespace Ricu_Racu
         {
             Application.Exit();
         }
+
+        private void text_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

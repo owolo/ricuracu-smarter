@@ -1,0 +1,23 @@
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\Ricu Racu.exe.config
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\Ricu Racu.exe
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\Ricu Racu.pdb
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\EntityFramework.SqlServer.dll
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\EntityFramework.dll
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\System.Data.SQLite.dll
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\System.Data.SQLite.EF6.dll
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\net472\System.Data.SQLite.Linq.dll
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.csproj.AssemblyReference.cache
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu_Racu.Form1.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu_Racu.Form2.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu_Racu.Form3.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu_Racu.Form4.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu_Racu.Properties.Resources.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.csproj.GenerateResource.cache
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.AssemblyInfoInputs.cache
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.AssemblyInfo.cs
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.csproj.CoreCompileInputs.cache
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.sourcelink.json
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.csproj.Up2Date
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.exe
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\net472\Ricu Racu.pdb

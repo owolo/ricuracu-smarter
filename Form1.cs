@@ -11,6 +11,7 @@ namespace Ricu_Racu
             InitializeComponent();
             fons.SendToBack();
             fons2.SendToBack();
+            DatabaseManager.InitializeDatabase();
         }
 
         int playerSkaits;
@@ -119,6 +120,11 @@ namespace Ricu_Racu
             fons.Visible = false;
             fons2.Visible = false;
             menuVisible = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

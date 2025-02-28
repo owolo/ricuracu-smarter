@@ -23,3 +23,16 @@ C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Ra
 C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.exe
 C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.pdb
 C:\Users\Chris\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form4.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.exe.config
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.exe
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\bin\Debug\Ricu Racu.pdb
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.csproj.AssemblyReference.cache
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form1.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form2.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form4.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Form3.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu_Racu.Properties.Resources.resources
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.csproj.GenerateResource.cache
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.csproj.CoreCompileInputs.cache
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.exe
+C:\Users\Owol\Downloads\skolas coding\github\ricuracu-smarter\obj\Debug\Ricu Racu.pdb

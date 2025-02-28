@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.winBlock = new System.Windows.Forms.Label();
-            this.atmetK = new System.Windows.Forms.PictureBox();
-            this.atmetL = new System.Windows.Forms.PictureBox();
             this.red = new System.Windows.Forms.PictureBox();
             this.green = new System.Windows.Forms.PictureBox();
             this.spawnGreen = new System.Windows.Forms.Label();
@@ -64,8 +61,6 @@
             this.atbildeBut1 = new System.Windows.Forms.Button();
             this.imgTimer = new System.Windows.Forms.Timer(this.components);
             this.winBlock2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.atmetK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.red)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.green)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dice)).BeginInit();
@@ -75,44 +70,20 @@
             // 
             this.winBlock.BackColor = System.Drawing.Color.Chartreuse;
             this.winBlock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.winBlock.Location = new System.Drawing.Point(804, 57);
+            this.winBlock.Location = new System.Drawing.Point(603, 46);
+            this.winBlock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.winBlock.Name = "winBlock";
-            this.winBlock.Size = new System.Drawing.Size(66, 61);
+            this.winBlock.Size = new System.Drawing.Size(50, 50);
             this.winBlock.TabIndex = 71;
-            // 
-            // atmetK
-            // 
-            this.atmetK.BackColor = System.Drawing.Color.Silver;
-            this.atmetK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.atmetK.Image = ((System.Drawing.Image)(resources.GetObject("atmetK.Image")));
-            this.atmetK.Location = new System.Drawing.Point(541, 545);
-            this.atmetK.Name = "atmetK";
-            this.atmetK.Size = new System.Drawing.Size(66, 61);
-            this.atmetK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.atmetK.TabIndex = 70;
-            this.atmetK.TabStop = false;
-            this.atmetK.Visible = false;
-            // 
-            // atmetL
-            // 
-            this.atmetL.BackColor = System.Drawing.Color.Silver;
-            this.atmetL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.atmetL.Image = ((System.Drawing.Image)(resources.GetObject("atmetL.Image")));
-            this.atmetL.Location = new System.Drawing.Point(469, 545);
-            this.atmetL.Name = "atmetL";
-            this.atmetL.Size = new System.Drawing.Size(66, 61);
-            this.atmetL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.atmetL.TabIndex = 69;
-            this.atmetL.TabStop = false;
-            this.atmetL.Visible = false;
             // 
             // red
             // 
             this.red.BackColor = System.Drawing.Color.Silver;
             this.red.Image = global::Ricu_Racu.Properties.Resources.red_ludo;
-            this.red.Location = new System.Drawing.Point(12, 57);
+            this.red.Location = new System.Drawing.Point(9, 46);
+            this.red.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.red.Name = "red";
-            this.red.Size = new System.Drawing.Size(66, 61);
+            this.red.Size = new System.Drawing.Size(50, 50);
             this.red.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.red.TabIndex = 68;
             this.red.TabStop = false;
@@ -121,9 +92,10 @@
             // 
             this.green.BackColor = System.Drawing.Color.Silver;
             this.green.Image = global::Ricu_Racu.Properties.Resources.green_ludo;
-            this.green.Location = new System.Drawing.Point(804, 148);
+            this.green.Location = new System.Drawing.Point(603, 120);
+            this.green.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.green.Name = "green";
-            this.green.Size = new System.Drawing.Size(66, 61);
+            this.green.Size = new System.Drawing.Size(50, 50);
             this.green.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.green.TabIndex = 67;
             this.green.TabStop = false;
@@ -131,26 +103,29 @@
             // spawnGreen
             // 
             this.spawnGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spawnGreen.Location = new System.Drawing.Point(804, 148);
+            this.spawnGreen.Location = new System.Drawing.Point(603, 120);
+            this.spawnGreen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.spawnGreen.Name = "spawnGreen";
-            this.spawnGreen.Size = new System.Drawing.Size(66, 61);
+            this.spawnGreen.Size = new System.Drawing.Size(50, 50);
             this.spawnGreen.TabIndex = 66;
             // 
             // spawnRed
             // 
             this.spawnRed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.spawnRed.Location = new System.Drawing.Point(12, 57);
+            this.spawnRed.Location = new System.Drawing.Point(9, 46);
+            this.spawnRed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.spawnRed.Name = "spawnRed";
-            this.spawnRed.Size = new System.Drawing.Size(66, 61);
+            this.spawnRed.Size = new System.Drawing.Size(50, 50);
             this.spawnRed.TabIndex = 65;
             // 
             // block11
             // 
             this.block11.BackColor = System.Drawing.Color.Silver;
             this.block11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block11.Location = new System.Drawing.Point(732, 148);
+            this.block11.Location = new System.Drawing.Point(549, 120);
+            this.block11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block11.Name = "block11";
-            this.block11.Size = new System.Drawing.Size(66, 61);
+            this.block11.Size = new System.Drawing.Size(50, 50);
             this.block11.TabIndex = 64;
             this.block11.Visible = false;
             // 
@@ -158,9 +133,10 @@
             // 
             this.block12.BackColor = System.Drawing.Color.Silver;
             this.block12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block12.Location = new System.Drawing.Point(660, 148);
+            this.block12.Location = new System.Drawing.Point(495, 120);
+            this.block12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block12.Name = "block12";
-            this.block12.Size = new System.Drawing.Size(66, 61);
+            this.block12.Size = new System.Drawing.Size(50, 50);
             this.block12.TabIndex = 63;
             this.block12.Visible = false;
             // 
@@ -168,9 +144,10 @@
             // 
             this.block13.BackColor = System.Drawing.Color.Silver;
             this.block13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block13.Location = new System.Drawing.Point(588, 148);
+            this.block13.Location = new System.Drawing.Point(441, 120);
+            this.block13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block13.Name = "block13";
-            this.block13.Size = new System.Drawing.Size(66, 61);
+            this.block13.Size = new System.Drawing.Size(50, 50);
             this.block13.TabIndex = 62;
             this.block13.Visible = false;
             // 
@@ -178,9 +155,10 @@
             // 
             this.block14.BackColor = System.Drawing.Color.Silver;
             this.block14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block14.Location = new System.Drawing.Point(516, 148);
+            this.block14.Location = new System.Drawing.Point(387, 120);
+            this.block14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block14.Name = "block14";
-            this.block14.Size = new System.Drawing.Size(66, 61);
+            this.block14.Size = new System.Drawing.Size(50, 50);
             this.block14.TabIndex = 61;
             this.block14.Visible = false;
             // 
@@ -188,9 +166,10 @@
             // 
             this.block15.BackColor = System.Drawing.Color.Silver;
             this.block15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block15.Location = new System.Drawing.Point(444, 148);
+            this.block15.Location = new System.Drawing.Point(333, 120);
+            this.block15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block15.Name = "block15";
-            this.block15.Size = new System.Drawing.Size(66, 61);
+            this.block15.Size = new System.Drawing.Size(50, 50);
             this.block15.TabIndex = 60;
             this.block15.Visible = false;
             // 
@@ -198,9 +177,10 @@
             // 
             this.block16.BackColor = System.Drawing.Color.Silver;
             this.block16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block16.Location = new System.Drawing.Point(372, 148);
+            this.block16.Location = new System.Drawing.Point(279, 120);
+            this.block16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block16.Name = "block16";
-            this.block16.Size = new System.Drawing.Size(66, 61);
+            this.block16.Size = new System.Drawing.Size(50, 50);
             this.block16.TabIndex = 59;
             this.block16.Visible = false;
             // 
@@ -208,9 +188,10 @@
             // 
             this.block17.BackColor = System.Drawing.Color.Silver;
             this.block17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block17.Location = new System.Drawing.Point(300, 148);
+            this.block17.Location = new System.Drawing.Point(225, 120);
+            this.block17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block17.Name = "block17";
-            this.block17.Size = new System.Drawing.Size(66, 61);
+            this.block17.Size = new System.Drawing.Size(50, 50);
             this.block17.TabIndex = 58;
             this.block17.Visible = false;
             // 
@@ -218,9 +199,10 @@
             // 
             this.block18.BackColor = System.Drawing.Color.Silver;
             this.block18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block18.Location = new System.Drawing.Point(228, 148);
+            this.block18.Location = new System.Drawing.Point(171, 120);
+            this.block18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block18.Name = "block18";
-            this.block18.Size = new System.Drawing.Size(66, 61);
+            this.block18.Size = new System.Drawing.Size(50, 50);
             this.block18.TabIndex = 57;
             this.block18.Visible = false;
             // 
@@ -228,9 +210,10 @@
             // 
             this.block19.BackColor = System.Drawing.Color.Silver;
             this.block19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block19.Location = new System.Drawing.Point(156, 148);
+            this.block19.Location = new System.Drawing.Point(117, 120);
+            this.block19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block19.Name = "block19";
-            this.block19.Size = new System.Drawing.Size(66, 61);
+            this.block19.Size = new System.Drawing.Size(50, 50);
             this.block19.TabIndex = 56;
             this.block19.Visible = false;
             // 
@@ -238,9 +221,10 @@
             // 
             this.block20.BackColor = System.Drawing.Color.Silver;
             this.block20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block20.Location = new System.Drawing.Point(84, 148);
+            this.block20.Location = new System.Drawing.Point(63, 120);
+            this.block20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block20.Name = "block20";
-            this.block20.Size = new System.Drawing.Size(66, 61);
+            this.block20.Size = new System.Drawing.Size(50, 50);
             this.block20.TabIndex = 55;
             this.block20.Visible = false;
             // 
@@ -248,9 +232,10 @@
             // 
             this.block9.BackColor = System.Drawing.Color.Silver;
             this.block9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block9.Location = new System.Drawing.Point(732, 57);
+            this.block9.Location = new System.Drawing.Point(549, 46);
+            this.block9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block9.Name = "block9";
-            this.block9.Size = new System.Drawing.Size(66, 61);
+            this.block9.Size = new System.Drawing.Size(50, 50);
             this.block9.TabIndex = 54;
             this.block9.Visible = false;
             // 
@@ -258,9 +243,10 @@
             // 
             this.block10.BackColor = System.Drawing.Color.Silver;
             this.block10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block10.Location = new System.Drawing.Point(660, 57);
+            this.block10.Location = new System.Drawing.Point(495, 46);
+            this.block10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block10.Name = "block10";
-            this.block10.Size = new System.Drawing.Size(66, 61);
+            this.block10.Size = new System.Drawing.Size(50, 50);
             this.block10.TabIndex = 53;
             this.block10.Visible = false;
             // 
@@ -268,9 +254,10 @@
             // 
             this.block7.BackColor = System.Drawing.Color.Silver;
             this.block7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block7.Location = new System.Drawing.Point(588, 57);
+            this.block7.Location = new System.Drawing.Point(441, 46);
+            this.block7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block7.Name = "block7";
-            this.block7.Size = new System.Drawing.Size(66, 61);
+            this.block7.Size = new System.Drawing.Size(50, 50);
             this.block7.TabIndex = 52;
             this.block7.Visible = false;
             // 
@@ -278,9 +265,10 @@
             // 
             this.block8.BackColor = System.Drawing.Color.Silver;
             this.block8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block8.Location = new System.Drawing.Point(516, 57);
+            this.block8.Location = new System.Drawing.Point(387, 46);
+            this.block8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block8.Name = "block8";
-            this.block8.Size = new System.Drawing.Size(66, 61);
+            this.block8.Size = new System.Drawing.Size(50, 50);
             this.block8.TabIndex = 51;
             this.block8.Visible = false;
             // 
@@ -288,9 +276,10 @@
             // 
             this.block5.BackColor = System.Drawing.Color.Silver;
             this.block5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block5.Location = new System.Drawing.Point(444, 57);
+            this.block5.Location = new System.Drawing.Point(333, 46);
+            this.block5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block5.Name = "block5";
-            this.block5.Size = new System.Drawing.Size(66, 61);
+            this.block5.Size = new System.Drawing.Size(50, 50);
             this.block5.TabIndex = 50;
             this.block5.Visible = false;
             // 
@@ -298,9 +287,10 @@
             // 
             this.block6.BackColor = System.Drawing.Color.Silver;
             this.block6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block6.Location = new System.Drawing.Point(372, 57);
+            this.block6.Location = new System.Drawing.Point(279, 46);
+            this.block6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block6.Name = "block6";
-            this.block6.Size = new System.Drawing.Size(66, 61);
+            this.block6.Size = new System.Drawing.Size(50, 50);
             this.block6.TabIndex = 49;
             this.block6.Visible = false;
             // 
@@ -308,9 +298,10 @@
             // 
             this.block3.BackColor = System.Drawing.Color.Silver;
             this.block3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block3.Location = new System.Drawing.Point(300, 57);
+            this.block3.Location = new System.Drawing.Point(225, 46);
+            this.block3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block3.Name = "block3";
-            this.block3.Size = new System.Drawing.Size(66, 61);
+            this.block3.Size = new System.Drawing.Size(50, 50);
             this.block3.TabIndex = 48;
             this.block3.Visible = false;
             // 
@@ -318,9 +309,10 @@
             // 
             this.block4.BackColor = System.Drawing.Color.Silver;
             this.block4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block4.Location = new System.Drawing.Point(228, 57);
+            this.block4.Location = new System.Drawing.Point(171, 46);
+            this.block4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block4.Name = "block4";
-            this.block4.Size = new System.Drawing.Size(66, 61);
+            this.block4.Size = new System.Drawing.Size(50, 50);
             this.block4.TabIndex = 47;
             this.block4.Visible = false;
             // 
@@ -328,9 +320,10 @@
             // 
             this.block2.BackColor = System.Drawing.Color.Silver;
             this.block2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block2.Location = new System.Drawing.Point(156, 57);
+            this.block2.Location = new System.Drawing.Point(117, 46);
+            this.block2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block2.Name = "block2";
-            this.block2.Size = new System.Drawing.Size(66, 61);
+            this.block2.Size = new System.Drawing.Size(50, 50);
             this.block2.TabIndex = 46;
             this.block2.Visible = false;
             // 
@@ -338,18 +331,20 @@
             // 
             this.block1.BackColor = System.Drawing.Color.Silver;
             this.block1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.block1.Location = new System.Drawing.Point(84, 57);
+            this.block1.Location = new System.Drawing.Point(63, 46);
+            this.block1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.block1.Name = "block1";
-            this.block1.Size = new System.Drawing.Size(66, 61);
+            this.block1.Size = new System.Drawing.Size(50, 50);
             this.block1.TabIndex = 45;
             this.block1.Visible = false;
             // 
             // dice
             // 
             this.dice.Image = global::Ricu_Racu.Properties.Resources.dice1;
-            this.dice.Location = new System.Drawing.Point(644, 384);
+            this.dice.Location = new System.Drawing.Point(483, 312);
+            this.dice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dice.Name = "dice";
-            this.dice.Size = new System.Drawing.Size(170, 172);
+            this.dice.Size = new System.Drawing.Size(128, 140);
             this.dice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.dice.TabIndex = 44;
             this.dice.TabStop = false;
@@ -360,18 +355,20 @@
             // 
             this.jautajums.AutoSize = true;
             this.jautajums.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.jautajums.Location = new System.Drawing.Point(120, 283);
+            this.jautajums.Location = new System.Drawing.Point(90, 230);
+            this.jautajums.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.jautajums.Name = "jautajums";
-            this.jautajums.Size = new System.Drawing.Size(273, 25);
+            this.jautajums.Size = new System.Drawing.Size(222, 20);
             this.jautajums.TabIndex = 43;
             this.jautajums.Text = "Jautājums: Cik būs 2+2*2?";
             this.jautajums.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // atbildeBut3
             // 
-            this.atbildeBut3.Location = new System.Drawing.Point(192, 436);
+            this.atbildeBut3.Location = new System.Drawing.Point(144, 354);
+            this.atbildeBut3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.atbildeBut3.Name = "atbildeBut3";
-            this.atbildeBut3.Size = new System.Drawing.Size(142, 46);
+            this.atbildeBut3.Size = new System.Drawing.Size(106, 37);
             this.atbildeBut3.TabIndex = 1;
             this.atbildeBut3.TabStop = false;
             this.atbildeBut3.Text = "3";
@@ -380,9 +377,10 @@
             // 
             // atbildeBut2
             // 
-            this.atbildeBut2.Location = new System.Drawing.Point(295, 358);
+            this.atbildeBut2.Location = new System.Drawing.Point(221, 291);
+            this.atbildeBut2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.atbildeBut2.Name = "atbildeBut2";
-            this.atbildeBut2.Size = new System.Drawing.Size(142, 46);
+            this.atbildeBut2.Size = new System.Drawing.Size(106, 37);
             this.atbildeBut2.TabIndex = 2;
             this.atbildeBut2.TabStop = false;
             this.atbildeBut2.Text = "2";
@@ -391,9 +389,10 @@
             // 
             // atbildeBut1
             // 
-            this.atbildeBut1.Location = new System.Drawing.Point(84, 358);
+            this.atbildeBut1.Location = new System.Drawing.Point(63, 291);
+            this.atbildeBut1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.atbildeBut1.Name = "atbildeBut1";
-            this.atbildeBut1.Size = new System.Drawing.Size(142, 46);
+            this.atbildeBut1.Size = new System.Drawing.Size(106, 37);
             this.atbildeBut1.TabIndex = 3;
             this.atbildeBut1.TabStop = false;
             this.atbildeBut1.Text = "1";
@@ -408,21 +407,20 @@
             // 
             this.winBlock2.BackColor = System.Drawing.Color.Chartreuse;
             this.winBlock2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.winBlock2.Location = new System.Drawing.Point(12, 148);
+            this.winBlock2.Location = new System.Drawing.Point(9, 120);
+            this.winBlock2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.winBlock2.Name = "winBlock2";
-            this.winBlock2.Size = new System.Drawing.Size(66, 61);
+            this.winBlock2.Size = new System.Drawing.Size(50, 50);
             this.winBlock2.TabIndex = 72;
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(926, 616);
+            this.ClientSize = new System.Drawing.Size(694, 500);
             this.Controls.Add(this.winBlock2);
             this.Controls.Add(this.winBlock);
-            this.Controls.Add(this.atmetK);
-            this.Controls.Add(this.atmetL);
             this.Controls.Add(this.red);
             this.Controls.Add(this.green);
             this.Controls.Add(this.spawnGreen);
@@ -452,12 +450,11 @@
             this.Controls.Add(this.atbildeBut3);
             this.Controls.Add(this.atbildeBut2);
             this.Controls.Add(this.atbildeBut1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form3";
             this.ShowIcon = false;
             this.Text = "Spēle: \"Kurš ir gudrāks?";
             this.Load += new System.EventHandler(this.Form3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.atmetK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atmetL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.red)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.green)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dice)).EndInit();
@@ -469,8 +466,6 @@
         #endregion
 
         private System.Windows.Forms.Label winBlock;
-        private System.Windows.Forms.PictureBox atmetK;
-        private System.Windows.Forms.PictureBox atmetL;
         private System.Windows.Forms.PictureBox red;
         private System.Windows.Forms.PictureBox green;
         private System.Windows.Forms.Label spawnGreen;

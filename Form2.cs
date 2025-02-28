@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Ricu_Racu
 {
@@ -20,6 +21,8 @@ namespace Ricu_Racu
         private int reizes = 0;
         private int punkti;
         private List<int> usedQuestionIndices = new List<int>();
+        private long currentGameSessionId;
+        private DataTable currentJautajums;
 
         string[] jautajumi = new string[] {
             "Cik krāsu ir varavīksnē?", "Kur atrodas Bigbens?", "Kur atrodas Eifeļa tornis?", "Kur atrodas Pizas tornis?", "Kur atrodas Gīzas Lielās piramīdas?", "Kur atrodas Lielais Ķīnas mūris?", "Kur atrodas Zelta vārtu tilts?", "Kura ir ASV galvaspilsēta?", "Kur atrodas Lielais Barjerrifs?", "Kāda ir filma par parku ar dinozauriem?", "Vai cūciņai Pepai ir brāļi un māsas?", "Kurš ir Simbas tētis?", "Vai ziloņiem ir astes?", "Kāds ir lielākais putns?", "Kur dzīvo Vinnijs Pūks?", "Kura oga, pēc mītiem, uzlabo redzi?", "Kāds ir kovboja vārds filmā 'Toy Story'?", "Kāds ir lielākais dzīvnieks?", "Kāds ir garākais dzīvnieks?", "Ko mēra termometrs?", "No kā tiek izgatavotas olimpiskās medaļas?", "Ko bites ražo?", "Kā sauc olas dzelteno daļu?", "Kādā krāsā ir spināti?", "Kur dzīvo Ziemassvētku vecītis?", "Kādā krāsā ir plankumi uz bizbizmārītes?", "Cik kāju ir zirneklim?", "Cik gadu gadsimtā?", "Cik dzīvību ir kaķiem?", "Kur atrodas Ventas rumba?", "Kāds ir vienīgais pāra pirmskaitlis?", "Cik malu ir piecstūrim?", "Cik malu ir septiņstūrim?", "Cik malu ir desmitstūrim?", "Kura ir Austrālijas galvaspilsēta?", "Kā cilvēki sauc 3.1415?", "Cik mēnešu ir vienā gadā?", "Cik ir 22 + 13?", "Kā sauc 90 grādu leņķi?", "Kā sauc 190 grādu leņķi?", "Ko nozīmē romiešu cipars 'V'?", "Ko nozīmē romiešu cipars 'X'?", "Ko nozīmē romiešu cipars 'C'?", "Cik stundas ir dienā?", "Cik minūtes ir vienā stundā?", "Cik ir 5*5?", "Ja Jūs dubultojat 100, kas Jums sanāk?", "Cik kaulu ir cilvēka ķermenī?", "Cik dienu ir gadā?", "Cik dienu ir garajā gadā?"
@@ -108,12 +111,9 @@ namespace Ricu_Racu
         private void Form2_Load(object sender, EventArgs e)
         {
             double space = 4;
-            //bool atmetLIr = false;
-            //bool atmetKIr = false;
-            //Image atmetLImage = Image.FromFile("arrow right.png");
-            //Image atmetKImage = Image.FromFile("arrow left.png");
             var rand = new Random();
-            ShuffleQuestionsAndAnswers();
+            currentGameSessionId = DatabaseManager.CreateGameSession(playerSkaits, blockSkaits);
+            LoadNextJautajums();
 
             if (blockSkaits == 10 && playerSkaits == 1)
             {
@@ -126,7 +126,6 @@ namespace Ricu_Racu
                 atbildeBut1.Location = new Point(65, 255);
                 atbildeBut2.Location = new Point(224, 255);
                 atbildeBut3.Location = new Point(146, 319);
-                //MessageBox.Show($"X = {atbildeBut1.Left}, X = {atbildeBut2.Left} Y = {atbildeBut1.Top}, Y = {atbildeBut3.Top}");
 
                 for (int i = 0; i < blockSkaits; i++)  //green ludo line
                 {
@@ -140,24 +139,6 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                /*if (!atmetKIr)
-                {
-                    PictureBox atmetK = new PictureBox
-                    {
-                        Size = new Size(blockGar, blockAug),
-                        Image = atmetKImage,
-                        BackColor = Color.Silver,
-                    };
-                    int yPosition = 82;
-                    int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));
-
-                    atmetK.Location = new Point(xPosition, yPosition);
-
-                    this.Controls.Add(atmetK);
-                    atmetK.BringToFront();
-                    atmetK.BorderStyle = BorderStyle.FixedSingle;
-                    atmetKIr = true;
-                }*/
             }
             if (blockSkaits == 20 && playerSkaits == 1)
             {
@@ -165,12 +146,9 @@ namespace Ricu_Racu
                 winBlock.Location = new Point(1145, 82);
                 dice.Location = new Point(880, 233);
                 jautajums.Location = new Point(480, 202);
-                //time.Location = new Point(780, 222);
                 atbildeBut1.Location = new Point(450, 281);
                 atbildeBut2.Location = new Point(621, 281);
                 atbildeBut3.Location = new Point(535, 353);
-                //skipJaut.Location = new Point(455, 490);
-                //izm5050.Location = new Point(628, 490);
                 red.Location = new Point(11, 82);
                 spawnRed.Location = new Point(11, 82);
 
@@ -187,28 +165,26 @@ namespace Ricu_Racu
 
                     this.Controls.Add(block);
                 }
-                /*if (!atmetKIr)
-                {
-                    for (int i = 0; i < 3; i++)
-                    {
-                        PictureBox atmetK = new PictureBox
-                        {
-                            Size = new Size(blockGar, blockAug),
-                            Image = atmetKImage,
-                            BackColor = Color.Silver,
-                        };
-                        int yPosition = 82;
-                        int xPosition = (int)(65 + random.Next(0, blockSkaits) * (blockGar + space));
-
-                        atmetK.Location = new Point(xPosition, yPosition);
-
-                        this.Controls.Add(atmetK);
-                        atmetK.BringToFront();
-                        atmetK.BorderStyle = BorderStyle.FixedSingle;
-                        atmetKIr = true;
-                    }
-                }*/
             }
+        }
+        private void LoadNextJautajums()
+        {
+            currentJautajums = DatabaseManager.GetRandomJautajums();
+            if (currentJautajums.Rows.Count > 0)
+            {
+                jautajums.Text = currentJautajums.Rows[0]["JautajumiText"].ToString();
+                atbildeBut1.Text = currentJautajums.Rows[0]["AtbildesText"].ToString();
+                atbildeBut2.Text = currentJautajums.Rows[1]["AtbildesText"].ToString();
+                atbildeBut3.Text = currentJautajums.Rows[2]["AtbildesText"].ToString();
+            }
+        }
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            var keys = new[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down };
+            if (keys.Contains(keyData))
+                return true;
+            else
+                return base.ProcessDialogKey(keyData);
         }
         private void JauktPogas()
         {
@@ -226,39 +202,11 @@ namespace Ricu_Racu
             atbildeBut3.Location = positions[2];
         }
 
-        private void ShuffleQuestionsAndAnswers()
-        {
-            var rand = new Random();
-
-            int unusedQuestionIndex;
-            do
-            {
-                unusedQuestionIndex = rand.Next(0, jautajumi.Length);
-            } while (usedQuestionIndices.Contains(unusedQuestionIndex));
-
-            usedQuestionIndices.Add(unusedQuestionIndex);
-
-            seciba[nr] = unusedQuestionIndex;
-
-            jautajums.Text = jautajumi[unusedQuestionIndex];
-            atbildeBut1.Text = atbildes1[unusedQuestionIndex];
-            atbildeBut2.Text = atbildes2[unusedQuestionIndex];
-            atbildeBut3.Text = atbildes3[unusedQuestionIndex];
-
-
-            atbildeBut1.Click -= atbildeBut1_Click;
-            atbildeBut2.Click -= atbildeBut2_Click;
-            atbildeBut3.Click -= atbildeBut3_Click;
-
-            atbildeBut1.Click += atbildeBut1_Click;
-            atbildeBut2.Click += atbildeBut2_Click;
-            atbildeBut3.Click += atbildeBut3_Click;
-        }
-
         private void NakJaut()
         {
-            ShuffleQuestionsAndAnswers();
+            LoadNextJautajums();
             JauktPogas();
+            EnableDiceButton();
         }
 
         private void atbildeBut1_Click(object sender, EventArgs e)
@@ -286,20 +234,15 @@ namespace Ricu_Racu
         }
         private bool ParbAtbild(string izvAtb)
         {
-            string shuffledQuestion = jautajumi[seciba[nr]];
-
             if (dice.Visible == false)
             {
-                if (atbildes.TryGetValue(shuffledQuestion, out string correctAnswer))
+                foreach (DataRow row in currentJautajums.Rows)
                 {
-                    //MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
-                    //MessageBox.Show($"Selected Answer: {izvAtb}");
-                    //MessageBox.Show($"Correct Answer: {correctAnswer}");
-                    if (izvAtb == correctAnswer)
+                    if (row["AtbildesText"].ToString() == izvAtb && Convert.ToBoolean(row["IsCorrect"]))
                     {
-                       MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
-                       dice.Visible = true;
-                       return true;
+                        MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
+                        dice.Visible = true;
+                        return true;
                     }
                 }
                 MessageBox.Show("Nepareiza atbilde! Mēģini vēlreiz");
@@ -310,68 +253,76 @@ namespace Ricu_Racu
 
         private void imgTimer_Tick(object sender, EventArgs e)
         {
-                if (reizes < 10)
+            if (reizes < 10)
+            {
+                punkti = random.Next(6) + 1;
+                switch (punkti)
                 {
-                    punkti = random.Next(6) + 1;
-                    switch (punkti)
-                    {
-                        case 1: dice.Image = Properties.Resources.dice1; break;
-                        case 2: dice.Image = Properties.Resources.dice2; break;
-                        case 3: dice.Image = Properties.Resources.dice3; break;
-                        case 4: dice.Image = Properties.Resources.dice4; break;
-                        case 5: dice.Image = Properties.Resources.dice5; break;
-                        case 6: dice.Image = Properties.Resources.dice6; break;
-                    }
-                    reizes++;
+                    case 1: dice.Image = Properties.Resources.dice1; break;
+                    case 2: dice.Image = Properties.Resources.dice2; break;
+                    case 3: dice.Image = Properties.Resources.dice3; break;
+                    case 4: dice.Image = Properties.Resources.dice4; break;
+                    case 5: dice.Image = Properties.Resources.dice5; break;
+                    case 6: dice.Image = Properties.Resources.dice6; break;
                 }
+                reizes++;
+            }
             else if (blockSkaits == 10)
             {
-                if (punkti > 0 && red.Left < 685)
+                if (punkti > 0 && red.Left < 605)
                 {
                     imgTimer.Interval = 500;
                     red.Left = red.Left + 54;
                     punkti--;
                 }
-                else if (punkti == 0 && red.Left > 600)
+                if (punkti == 0)
                 {
-                    red.Location = new Point(605, 82);
-                    imgTimer.Stop();
-                    PictureBox winner = red;
-                    this.Hide();
-                    Form4 beigas = new Form4(winner.Name);
-                    beigas.Show();
-                    return;
+                    DatabaseManager.UpdateGameProgress(currentGameSessionId, 1, red.Left);
+                    if (red.Left >= 605)
+                    {
+                        DatabaseManager.EndGameSession(currentGameSessionId);
+                        red.Location = new Point(605, 82);
+                        imgTimer.Stop();
+                        PictureBox winner = red;
+                        this.Hide();
+                        Form4 beigas = new Form4(winner.Name);
+                        beigas.Show();
+                        return;
+                    }
+                    else
+                    {
+                        imgTimer.Stop();
+                        NakJaut();
+                        dice.Visible = false;
+                    }
                 }
-                else
+                else if (blockSkaits == 20)
                 {
-                    imgTimer.Stop();
-                    NakJaut();
-                    dice.Visible = false;
-                }
-            }
-            else if (blockSkaits == 20)
-            {
-                if (punkti > 0 && red.Left < 1260)
-                {
-                    imgTimer.Interval = 500;
-                    red.Left = red.Left + 54;
-                    punkti--;
-                }
-                else if (punkti == 0 && red.Left > 1140)
-                {
-                    red.Location = new Point(1145, 82);
-                    imgTimer.Stop();
-                    PictureBox winner = red;
-                    this.Hide();
-                    Form4 beigas = new Form4(winner.Name);
-                    beigas.Show();
-                    return;
-                }
-                else
-                {
-                    imgTimer.Stop();
-                    NakJaut();
-                    dice.Visible = false;
+                    if (punkti > 0 && red.Left < 1260)
+                    {
+                        imgTimer.Interval = 500;
+                        red.Left = red.Left + 54;
+                        punkti--;
+                    }
+                    if (punkti == 0)
+                    DatabaseManager.UpdateGameProgress(currentGameSessionId, 1, red.Left);
+                    if (red.Left >= 1140)
+                    {
+                        DatabaseManager.EndGameSession(currentGameSessionId);
+                        red.Location = new Point(1145, 82);
+                        imgTimer.Stop();
+                        PictureBox winner = red;
+                        this.Hide();
+                        Form4 beigas = new Form4(winner.Name);
+                        beigas.Show();
+                        return;
+                    }
+                    else
+                    {
+                        imgTimer.Stop();
+                        NakJaut();
+                        dice.Visible = false;
+                    }
                 }
             }
         }
@@ -380,7 +331,14 @@ namespace Ricu_Racu
             imgTimer.Interval = 100;
             reizes = 0;
             imgTimer.Start();
+            dice.Enabled = false;
+            dice.Visible = true;
         }
+
+        private void EnableDiceButton()
+        {
+            dice.Enabled = true;
+        }       
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
