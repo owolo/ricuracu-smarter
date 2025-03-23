@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright ©  2023")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+659d2b7f3acff27e875f9e875f598567bb22e93f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffcbc5b07ad5296871005bd2261031e0325c759f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ricu Racu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ricu Racu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

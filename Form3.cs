@@ -201,9 +201,6 @@ namespace Ricu_Racu
                 {
                     if (row["AtbildesText"].ToString() == izvAtb && Convert.ToBoolean(row["IsCorrect"]))
                     {
-                        //MessageBox.Show($"Shuffled Question: {shuffledQuestion}");
-                        //MessageBox.Show($"Selected Answer: {izvAtb}");
-                        //MessageBox.Show($"Correct Answer: {correctAnswer}");
                         MessageBox.Show("Pareiza atbilde! Tagad vari mest kauliņu uzspiežot uz tā");
                         dice.Visible = true;
                         return true;

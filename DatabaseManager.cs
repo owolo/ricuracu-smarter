@@ -13,7 +13,6 @@ namespace Ricu_Racu
         private static string dbPath = "RicuRacu.sqlite";
         private static string connectionString = $"Data Source={dbPath};Version=3;";
         private static readonly byte[] Key = Encoding.UTF8.GetBytes("12345678901234567890123456789012"); //32 bytes
-        private static readonly byte[] IV = Encoding.UTF8.GetBytes("1234567890123456"); //16 bytes
 
 
         public static void InitializeDatabase()
@@ -42,15 +41,8 @@ namespace Ricu_Racu
                         FOREIGN KEY (JautajumiId) REFERENCES Jautajumi(Id)
                     )";
 
-                string createPlayersTable = @"
-                    CREATE TABLE IF NOT EXISTS Players (
-                        Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                        Name TEXT NOT NULL
-                    )";
-
                 ExecuteNonQuery(createJautTable);
                 ExecuteNonQuery(createAtbildTable);
-                ExecuteNonQuery(createPlayersTable);
 
                 InsertInitialJautajumi();
             }
