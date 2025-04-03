@@ -27,7 +27,7 @@ namespace Ricu_Racu
 
         private void Uzvaretajs()
         {
-            text.Text = $"{winner} spēlētājs uzvarēja šo spēli! \r\nTagad gan skaidrs kurš ir gudrāks :)";
+            text.Text = $"{winner} spēlētājs uzvarēja šo spēli! \r\nTagad gan skaidrs, kurš ir gudrāks :)";
 
         }
 

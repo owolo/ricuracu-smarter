@@ -51,12 +51,12 @@
             // 
             this.text.AutoSize = true;
             this.text.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.text.Location = new System.Drawing.Point(109, 163);
+            this.text.Location = new System.Drawing.Point(93, 157);
             this.text.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.text.Name = "text";
-            this.text.Size = new System.Drawing.Size(395, 58);
+            this.text.Size = new System.Drawing.Size(401, 58);
             this.text.TabIndex = 1;
-            this.text.Text = "Zaļais spēlētājs uzvarēja šo! \r\nTagad gan skaidrs kurš ir gudrāks :)";
+            this.text.Text = "Zaļais spēlētājs uzvarēja šo! \r\nTagad gan skaidrs, kurš ir gudrāks :)";
             this.text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.text.Click += new System.EventHandler(this.text_Click);
             // 
@@ -64,7 +64,7 @@
             // 
             this.toStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toStart.Location = new System.Drawing.Point(183, 273);
-            this.toStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toStart.Margin = new System.Windows.Forms.Padding(2);
             this.toStart.Name = "toStart";
             this.toStart.Size = new System.Drawing.Size(204, 54);
             this.toStart.TabIndex = 2;
@@ -86,7 +86,7 @@
             this.Controls.Add(this.toStart);
             this.Controls.Add(this.text);
             this.Controls.Add(this.uzvara);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form4";
